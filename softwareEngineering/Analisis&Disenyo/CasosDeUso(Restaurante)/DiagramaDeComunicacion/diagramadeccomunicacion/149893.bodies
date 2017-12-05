@@ -1,0 +1,10 @@
+class Prueba
+!!!172677.java!!!	Prueba()
+		num = siguiente;
+		siguiente++;
+!!!172805.java!!!	getNum() : int
+		return num;
+!!!172933.java!!!	setNum(in num : int) : void
+		this.num = num;
+!!!173061.java!!!	toNum() : int
+		return this.getNum();

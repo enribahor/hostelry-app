@@ -1,0 +1,5 @@
+class Tablon
+!!!163973.java!!!	Tablon()
+		notas = new ArrayList<String>();
+!!!164101.java!!!	crearNota(in nota : String) : void
+		notas.add(nota);

@@ -1,0 +1,128 @@
+format 76
+
+note 128005 "Caso de uso:
+Generar factura del restaurante"
+  color mediumblue  xyzwh 739.2 410.7 2000 97 59
+classinstance 128133 class_ref 128011 // RestauranteSwing
+  name ""   xyz 2.7 4 2000 life_line_z 2000
+classinstance 128389 class_ref 129026 // Factura
+  name ""   xyz 589.5 4 2000 life_line_z 2000
+classinstance 128645 class_ref 142466 // Restaurante
+  name ""   xyz 287.1 4 2000 life_line_z 2000
+classinstance 128773 class_ref 142594 // Mesa
+  name ""   xyz 414.9 4 2000 life_line_z 2000
+classinstance 128901 class_ref 134661 // GUIController
+  name ""   xyz 144.5 4 2000 life_line_z 2000
+classinstance 130565 class_ref 128130 // Consumicion
+  name ""   xyz 689.8 4 2000 life_line_z 5010
+fragment 131589 "loop"
+  xyzwh 563.3 177.1 5045 205 154
+end
+fragment 131717 "loop"
+  xyzwh 538.2 148.5 3005 255 195
+end
+textcanvas 131845 "[hayMasTiposDeConsumicion]"
+  xyzwh 580 147 5030 154 14
+textcanvas 131973 "[hayMasComandas]"
+  xyzwh 609 178 5025 103 15
+note 132101 "Aclaración de las condiciones de guarda: 
+
+Para cada tipo de consumición, recorre todas las comandas, acumulando todos los nombres (y precios) de ese tipo en una única comanda, que será la factura."
+  xyzwh 259.5 401.1 2005 232 105
+durationcanvas 129029 classinstance_ref 128133 // :RestauranteSwing
+  xyzwh 49 67 2010 11 324
+end
+durationcanvas 129157 classinstance_ref 128901 // :GUIController
+  xyzwh 177 75 2010 11 317
+end
+durationcanvas 129413 classinstance_ref 128645 // :Restaurante
+  xyzwh 318 85 2010 11 293
+end
+durationcanvas 132229 classinstance_ref 128773 // :Mesa
+  xyzwh 433 96 2010 11 274
+end
+durationcanvas 132997 classinstance_ref 128389 // :Factura
+  xyzwh 609 120 5020 11 244
+end
+durationcanvas 133253 classinstance_ref 130565 // :Consumicion
+  xyzwh 721 210 5020 11 45
+end
+durationcanvas 133637 classinstance_ref 130565 // :Consumicion
+  xyzwh 721 206 5020 11 115
+end
+msg 129285 synchronous
+  from durationcanvas_ref 129029
+  to durationcanvas_ref 129157
+  yz 75 2015 explicitmsg "generarFactura(Mesa)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 71 63
+msg 129541 synchronous
+  from durationcanvas_ref 129157
+  to durationcanvas_ref 129413
+  yz 89 2015 explicitmsg "generarFactura(Mesa)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 209 77
+msg 132357 synchronous
+  from durationcanvas_ref 129413
+  to durationcanvas_ref 132229
+  yz 99 2020 msg operation_ref 136837 // "generaFactura()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 353 88
+msg 133125 synchronous
+  from durationcanvas_ref 132229
+  to durationcanvas_ref 132997
+  yz 120 5025 explicitmsg "uneComandas(ListaComandas)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 454 109
+msg 133381 synchronous
+  from durationcanvas_ref 132997
+  to durationcanvas_ref 133253
+  yz 214 5025 msg operation_ref 128139 // "getNombre()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 663 202
+msg 133509 return
+  from durationcanvas_ref 133253
+  to durationcanvas_ref 132997
+  yz 240 5030 explicitmsg "nombre"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 627 231
+msg 133765 synchronous
+  from durationcanvas_ref 132997
+  to durationcanvas_ref 133637
+  yz 281 5035 msg operation_ref 136709 // "getPrecio()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 669 271
+msg 133893 return
+  from durationcanvas_ref 133637
+  to durationcanvas_ref 132997
+  yz 308 5040 explicitmsg "precio"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 625 299
+msg 134021 return
+  from durationcanvas_ref 132997
+  to durationcanvas_ref 132229
+  yz 348 5025 explicitmsg "comandaString"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 452 337
+msg 134149 return
+  from durationcanvas_ref 132229
+  to durationcanvas_ref 129413
+  yz 357 5030 explicitmsg "comandaString"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 337 345
+msg 134277 return
+  from durationcanvas_ref 129413
+  to durationcanvas_ref 129157
+  yz 366 5035 explicitmsg "comandaString"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 204 355
+msg 134405 return
+  from durationcanvas_ref 129157
+  to durationcanvas_ref 129029
+  yz 375 2015 explicitmsg "comandaString"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 71 364
+line 134533 -_-_ decenter_begin 625 decenter_end 54
+  from ref 132101 z 3006 to point 402 254
+  line 134661 z 3006 to ref 131717
+end

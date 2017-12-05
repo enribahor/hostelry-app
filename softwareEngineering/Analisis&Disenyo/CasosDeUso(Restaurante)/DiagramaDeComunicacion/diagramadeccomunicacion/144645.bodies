@@ -1,0 +1,163 @@
+class RealizarReserva
+!!!152069.java!!!	RealizarReserva(inout controller : GUIController)
+		super();
+		this.controlador = controller;
+		this.setLayout(new BorderLayout());
+		this.inicializaBox();
+		JPanel reserva = new JPanel();
+	
+		reserva.setLayout(new SpringLayout());
+		
+		final JLabel fecha = new JLabel("Fecha: ");
+		datePicker = new JXDatePicker(System.currentTimeMillis());
+		datePicker.setFormats(new SimpleDateFormat("EEE, dd-MM-yyyy"));
+		datePicker.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//fecha.setText(datePicker.getDate().toString());
+				//TODO
+			}
+
+		});
+		reserva.add(fecha);
+		reserva.add(datePicker);	
+		
+		JLabel horaLabel = new JLabel("Hora: ");
+		//hora.add(this.hora);
+		reserva.add(horaLabel);
+		JPanel eligeHora = new JPanel();
+		eligeHora.setLayout(new FlowLayout());
+			eligeHora.add(this.hora);
+			eligeHora.add(this.minutos);
+		reserva.add(eligeHora);
+		
+		//JLabel minutos = new JLabel("Minutos: ");
+		//reserva.add(minutos);
+		//reserva.add(this.minutos);
+		
+		JLabel nombreL = new JLabel ("Nombre: ");
+		//nombre.add(this.nombre);
+		reserva.add(nombreL);
+		reserva.add(this.nombre);
+		
+		JLabel comensalesL = new JLabel ("Número de comensales");
+		comensales.setValue(0);
+		comensales.addChangeListener(new ChangeListener(){
+
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				if ((int) comensales.getValue() < 0)
+					comensales.setValue(0);
+			}
+			
+		});
+		
+		//comensales.add(this.comensales);
+		reserva.add(comensalesL);
+		reserva.add(this.comensales);
+		//p.add(comensales);*/
+
+		/*
+		 * Atención!!, después de reserva va el número de botoncitos que queremos
+		 */
+		SpringUtilities.makeCompactGrid(reserva, 4, 2, 6, 6, 10, 10);
+		this.add(reserva, BorderLayout.CENTER);
+		this.add(new JButton("Reservar") {
+			{
+				this.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						if (datosValidos()){
+							Date reservaDate = datePicker.getDate();
+							int year = reservaDate.getMonth();
+							int month = reservaDate.getMonth();
+							int day = reservaDate.getDay();
+							
+							
+							controlador.communicateReserva(year, month, day, (int)hora.getSelectedItem(), 
+									(int)minutos.getSelectedItem(), nombre.getText(), 
+									(int)comensales.getValue());						
+							frame.setVisible(false);
+							
+						}//TODO else mostrar mensaje de error, donde sea, diciendo 
+						//que hay que poner un numero de comensales
+						else {
+							String error = "";
+							if (!comensalesValidos()) error += COMENSALES_NO_VALIDOS;
+							if (!nombreValido()) error += NOMBRE_RESERVA;
+							
+						JOptionPane.showMessageDialog(frame,
+							    error,
+							    "Error",
+							    JOptionPane.WARNING_MESSAGE);
+					}
+					
+					}
+					
+
+				
+				});
+				
+			}
+
+		}, BorderLayout.AFTER_LAST_LINE);
+	
+		
+		/** Este era otro frame que habia por aqui, si eso unirlo con el otro.
+/*
+		frame = new JFrame("Reservas");
+
+		JPanel aceptarOCancelar = new JPanel();
+		JButton aceptar = new JButton("Aceptar");
+		aceptar.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//TODO
+				//if (esReserva()){
+				//	GUIController.comunicaReserva();
+				//}
+			}
+			
+		});
+		
+		*/
+		frame = new JFrame("Reservas");
+
+		frame.setVisible(true);
+		//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		frame.add(this);
+		frame.pack();
+		
+!!!152197.java!!!	datosValidos() : boolean
+		return comensalesValidos() && nombreValido();
+!!!152325.java!!!	comensalesValidos() : boolean
+		return (int)comensales.getValue() > 0;
+!!!152453.java!!!	nombreValido() : boolean
+		return nombre.getText().length() != 0;
+!!!152581.java!!!	inicializaBox() : void
+		/*for (int i=1; i<=12; i++){
+			mes.addItem(meses[i]);
+		}
+		for (int j = year; j < year+3; j++ ){
+			this.año.addItem(j);
+		}*/
+		Vector<Integer> horas = new Vector<Integer>();
+		for (int i=13; i<16; i++){
+			horas.add(i);
+		}for (int i=21; i<24; i++){
+			horas.add(i);
+		}
+		Vector<Integer> minutos = new Vector<Integer>();
+		for (int j=0; j<12; j++){
+			minutos.add(j*5);
+		}
+		//int year = Calendar.getInstance().get(Calendar.YEAR);
+		//mes = new JComboBox(meses);
+		hora = new JComboBox(horas);
+		this.minutos = new JComboBox(minutos);
+		//año.addItem(year++);
+		//año.addItem(year++);
+		//año.addItem(year);
+		

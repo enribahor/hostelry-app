@@ -1,0 +1,2 @@
+Los diagramas de clases de análisis y los diagramas de clases se encuentan 
+en la carpeta "CasosDeUso(Restaurante)", en un único proyecto de Bouml. 

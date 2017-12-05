@@ -1,0 +1,6 @@
+class Factura
+!!!163077.java!!!	generarFactura(inout listaComandas : List<Comanda>) : Comanda
+		Comanda comanda = new Comanda();
+		for (Comanda c : listaComandas)
+			comanda.append(c);
+		return comanda;

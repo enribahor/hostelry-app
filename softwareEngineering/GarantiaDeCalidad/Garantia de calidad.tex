@@ -1,0 +1,708 @@
+%Documento de garantia de calidad software, en la teoría el tema 8
+
+
+\documentclass[spanish,a4paper,11pt, twoside]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+
+%%% PAQUETES
+\usepackage[spanish,activeacute]{babel}				
+% Babel: Adapta cosas como la tipografia, la fecha, lo de Chapter al español, y activeacute para apóstrofes (') como abreviaciones de acentos: \'{a}
+\usepackage[utf8]{inputenc}					% Codificacion UTF8 (para meter tildes normal: á --> \'{a} )
+\usepackage{multicol}						% Escritura en varias columnas
+\usepackage{graphics}						% Inclusión de imágenes
+\usepackage{graphicx}						% Mas para imagenes
+\usepackage{geometry}						% Distribucion de la pagina: margenes, encabezados, tamaño pagina...
+\usepackage{fancyhdr}						% Paquete para añadir y modificar encabezados y pies de pagina
+\usepackage{hyperref}						% Para hipervínculos, en el indice al menos, GRACIAS A DAVID
+%\usepackage{lastpage}						% Ultima pagina para poner, por ejemplo, 3 de 15
+%%% PAQUETES MATEMATICOS
+\usepackage{amsmath}						% Conjunto de paquetes desarrollados por la Amercian Matematical Society
+\usepackage{amssymb}						% Tipografía mathbb y otros símbolos tambien de la AMS
+\usepackage{amsthm}						% Paquete AMS theorem, de la AMS
+\usepackage{amsfonts}						% Paquete con símbolos y mas, de la AMS
+%\usepackage{nicefrac}						% Fracciones bonitas, LO DEJO COMENTADO PORQUE A VECES DA PROBLEMAS AL COMPILAR
+
+
+%%% DECLARACIONES (sobre la forma de la pagina, encabezado etc.)
+\pagenumbering{roman}						
+% Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
+\pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
+%\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Garantía de calidad} 	%Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries Casos de uso}				%Encabezado a la derecha
+\cfoot{\thepage}							% Numero de pagina centrado en el pie
+%\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
+\renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
+\renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
+\renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
+\newcommand*{\PKT}{\hbox{P}\kern-2.5pt\lower3.5pt\hbox{\small{K}}\kern-2.8pt\hbox{T}\kern-2pt}	%PiKey Team en bonito
+
+
+%%%%% CUERPO %%%%%
+\begin{document}
+
+\renewcommand{\chaptername}{Parte}			% Renombrar "Capítulo" como "Parte"
+\renewcommand{\thechapter}{\Roman{chapter}}	% Cambio la numeración de los capítulos a números romanos en mayúsculas
+
+\title{\textbf{\huge{Garantía de \\ 
+	calidad Software}} \\ 
+	\textit{v4.0.1} \\	\vspace{0.1cm}
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{{\Large{PiKey Team-}} \PKT \ : \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
+	 Enrique Ballesteros Horcajo \\
+	 Jaime Dan Porras Rhee \\
+	 Ignacio Iker Prado Rujas \\
+	 Alejandro Villarín Prieto }
+\date{\Today}
+\maketitle
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+
+\tableofcontents 							%INDICE hipervinvulado
+
+
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
+
+
+%INTRODUCCIÓN 
+\chapter{ Propósito del SQA}
+
+	
+	 La Garantía de Calidad del Software consiste en un medio de seguimiento de los procesos de ingeniería de software y métodos utilizados para asegurar la calidad del software que se produce en el proyecto.\\
+	
+	La SQA abarca todo el proceso de desarrollo de software, incluyendo procesos tales como la definición de requerimientos, diseño de software, programación, control de código fuente, revisiones de código, gestión de cambios, gestión de configuración, pruebas o gestión de versiones.\\
+	
+	El plan de Garantía de Calidad del Software define las actividades específicas a llevar a cabo en  este proyecto. Contiene una lista de comprobación para las actividades que se deben llevar a cabo para asegurar la calidad del producto y garantizar que KIKE- Hostelería ® cumple los requisitos especificados en la documentación.\\
+	%No hagais caso a estos comentarios, son de panchitos del internes
+	%Para cada fase del proyecto, se debe crear un plan para su monitoreo.
+	%Este documento pretende entregar la pauta general del proceso que debe seguir una Gerencia de SQA en una fábrica de software.
+	La SQA engloba:
+
+\begin{itemize}
+	\item Enfoque de gestión de calidad.
+	\item Tecnologías de IS (métodos y herramientas).
+	\item Revisiones Técnicas Formales.
+	\item Estrategia de pruebas.
+	\item Control de la documentación y de cambios.
+	\item Procedimientos que aseguren ajustes a los estándares de IS
+	\item Mecanismos de medición y generación de informes
+\end{itemize}	
+
+Las Revisiones Técnicas Formales serán la base de las correcciones de los documentos, y el principal elemento de garantía del software. En cada iteración del Proceso Unificado se producirán nuevas correcciones de los documentos existentes, nombradas según se ha visto en el apartado "Nombrado" del documento \texttt{Gestión de la Configuración}. Además, al finalizar cada iteración el proyecto pasa por una fase específica de correccion donde todos los miembros de  \PKT \ revisan cada documento.
+
+El control de la documentación ya ha sido comentado en el documento de \texttt{Gestión de la Configuración}	
+
+\chapter{ Documentos de referencia}
+	
+\begin{itemize}
+	\item Documento \texttt{Gestión de la Configuración}.
+	\item \texttt{Documento de Casos de uso}
+	\item \texttt{Especificación de requisitos}
+	\item \texttt{Glosario}
+	\item \texttt{Plan de proyecto}
+	\item \texttt{Gestión de Riesgos}
+	\item \texttt{Estimación del proyecto}
+	\item \texttt{Gestión de la Configuración}
+	\item \texttt{Garantía de Calidad}.
+	\item IEEE Std 730 -2002
+	
+\end{itemize}	
+	
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Gestión}% by Kike
+
+	\section{ Descripción general}
+
+	En la gestión de la calidad en nuestro grupo  prácticamente todos los integrantes revisan cada documento, por lo que todos tienen una visión general del mismo y conocen cada documento aunque no
+	lo hayan redactado ellos.La asignación concreta es responsabilidad del jefe del proyecto, que indica a cada integrante qué parte de cada documento revisa.\\
+
+	\section{Organización del documento}
+
+	 En cuanto al documento de SQA, Jesús Aguirre se encarga de la redacción, Iker Prado de la organización de las tareas, Kike Ballesteros de la 
+	gestión, Alejandro Villarín de las herramientas y Jaime Porras del mantenimiento.\\
+	Además, Iker y Jesús supervisan todo el trabajo para asegurarse de que cada integrante realiza correctamente su parte.
+
+	\section{ Proceso de gestión}
+	
+	En la parte de redacción se incluyen  la introducción del documento de SQA, la relación de los documentos de referencia, y la colección de registros, mantenimiento y conservación. En la organización se incluyen  la asignación de tareas, 
+	la creación de los modelos para \LaTeX \ y el seguimiento del trabajo. En la gestión se registra la organización del equipo y de las tareas. En las herramientas se escribe la relación de tareas, y en el mantenimiento se garantiza
+	que el plan de garantía de calidad esté actualizado según va avanzando el proyecto.\\
+
+	\section{ Planes de procesos técnicos}
+	
+	La gestión del documento se hará siguiendo el estándar IEEE Std 1058-1998 adaptado a nuestros conocimientos, y de acuerdo a las indicaciones de Gonzalo.
+	
+	\section{ Planes adicionales}
+
+	Como plan adicional  se incluyen comparativas con los estándares de los documentos para comprobar que se ajustan a los esquemas, y la revisión del proyecto por personal relacinado con el 
+	ámbito de la hostelería, más concretamente con personal que trabaja en hoteles-restaurantes.
+
+	
+
+
+\chapter{ Documentación}%By Jaime
+	
+	
+	\section{Propósito}
+			Durante el proceso de desarrollo se generará numerosa documentación.
+		Por el momento se han elaborado los documentos \texttt{ Documento de Casos de uso}, \texttt{Especificación de requisitos}, \texttt{Glosario}, \texttt{Plan de proyecto}, 
+		que incluye los documentos \texttt{Gestión de Riesgos} y \texttt{Estimación del proyecto}, \texttt{Gestión de la Configuración}, 
+		y el actual documento, \texttt{Garantía de Calidad}.
+
+		Actualmente esta es toda la documentación existente, pero en el futuro se elaborará nueva documentación, 
+		como los manuales de usuario o la descripción del diseño del producto.
+
+			En la primera entrega, los documentos \texttt{Casos de uso} y \texttt{Especificación de requisitos} fueron revisados por Gonzalo. 
+		La segunda entrega estaba formada por los documentos \texttt{Casos de uso}, \texttt{Especificación de requisitos}, \texttt{Plan de proyecto}, 
+		\texttt{Gestión de Riesgos} y \texttt{Estimación del proyecto} que fueron revisados por otros grupos.
+		 \begin{itemize}
+		   \item \texttt{Casos de uso: }Revisado por \texttt{Grupo Diedral}, a la revisión asistieron Iker Prado y Jaime Dan.
+		   \item \texttt{Especificación de requisitos: }Revisado por \texttt{Nameless}. A la revisión asisiteron Jesús Aguirre y Alex Villarín.
+		   \item \texttt{Plan de proyecto: }Revisado por \texttt{Cauchy Team}. A la reunión asistieron Jesús Aguirre, Kike y Jaime Dan.
+		   \item \texttt{Gestión de riesgos: }Revisado por \texttt{Cauchy Team}. A la reunión asistieron Alex Villarín y Jaime Dan.
+		   \item \texttt{Estimación del proyecto: }Revisado por \texttt{}. A la reunión asistió Iker Prado.%También conocido como el Führer.
+		 \end{itemize}
+		 Toda la información referente a dichas revisiones se encuentra en las Actas de las RTF.\\
+		 En el futuro habrá que revisar los nuevos documentos que vayan surgiendo. Serán revisados según disponga el supervisor del proyecto, Gonzalo.
+		 
+	\section{Requisitos mínimos de documentación}
+		Para asegurar que la implementación del software satisface los requisitos técnicos, al menos se requiere la siguiente documentación.
+		\begin{itemize}
+		  \item \texttt{Especificación de requisitos: }En este documento se explican los requisitos que debe cumplir el programa. 
+		  			Fue elaborado por los miembros del grupo \PKT , con la colaboración del cliente. Se hicieron varias reuniones con el cliente 
+		  			en las que este explicó qué era lo que esperaba del programa. En las siguientes reuniones se le mostraban al cliente las propuestas del 
+		  			grupo \PKT\ acerca de los requisitos y del funcionamiento del programa, y el cliente aceptaba o rechazaba dichas propuestas. 
+		  			De esta manera se elaboró este documento.
+		\end{itemize}
+		El resto de documentos mencionados en el \texttt{IEEE 730-2002}, es decir \texttt{Descripción del diseño del software}, \texttt{Plan de verificación y validación}, 
+		\texttt{Manual de usuario} y  \texttt{Plan de configuración del software} se escribirán en las próximas etapas del proceso de desarrollo. 
+	\section{Otra documentación}
+		Por el momento no se pueden identificar otros documentos aplicables al desarrollo del producto software.\\
+	
+%(- Define toda la documentación que se va a generar durante el proceso de desarrollo.
+% - Lista los documentos que serán revisados o auditados, así como los criterios de revisión.)
+
+
+\chapter{ Estándares, prácticas, convenciones y métricas}
+
+	\section{Propósito}
+	En esta parte, se trata de identificar, como su título indica, qué estándares, prácticas, convenciones y métricas se van a utilizar en el SQAP, así como indicar cómo será monitoreado y asegurado el cumplimiento de los mimos.
+	
+	\section{Estándar de documentación}
+	La documentación del software KIKE- Hostelería ® debe ser adecuada para que otro grupo autónomo y aislado se pueda encargar de continuar desarrollando la aplicación, así como de su mantenimiento. No se debe olvidar, que la aplicación, en un futuro, es muy probable que se amplie para más clientes.
+
+	Como ya se ha comentado más veces, la documentación está realizada en \LaTeX \ siguiendo plantillas definidas por el propio equipo y los estándares de IEEE. En las plantillas siempre se sigue una estructura común:
+	\begin{itemize}
+		\item Documento de tipo report, tamaño del papel DINA4, con tamaño de la fuente a 11 puntos, y disposición en dos lados (twoside, a modo de libro). La fuente es la presentada por defecto en \LaTeX.
+		\item Portada con título del documento, versión y fecha del mismo, nombre del grupo y componentes.
+		\item Índice general, con el contenido del documento.
+		\item Documento dividido en partes, que a su vez se dividen en secciones, que a su vez se dividen en subsecciones, y algunas de estas en subsubsecciones.
+		\item Encabezado: Según el lado en el que cae (páginas pares o impares),  en un extremo nombre de la sección y en el otro el nombre del documento del que se trate. Además aparece una línea de 0.4 puntos para separar el encabezado del texto.
+		\item Pie de página: Número de la página centrado. También aparece una línea de 0.4 puntos que separa el pie de página del resto de la página. En cuanto a la numeración, las primeras páginas aparecen numeradas con números romanos en minúscula (\textit{roman}), hasta que empieza la primera parte. A partir de ese momento, se numera desde 1 con numeración arábiga (\textit{arabic}).
+	\end{itemize}
+
+	\section{Estándar de código y comentarios}
+	
+	No se utiliza ningún estándar en concreto para ésta parte, sólo se aplican los conocimientos obtenidos en el estudio de la programación y los algoritmos. Se debe recordar que estamos trabajando con Java, un lenguaje imperativo orientado a objetos. Algunas ideas a tener en cuenta para el estilo de código y comentarios son:
+
+	\begin{itemize}
+	\item Cada clase debe tener una descripción, tanto de su función como de sus atributos. Incluirá también nombre del fichero, autor, versión y fecha.
+	\item Se deben detallar todas las relaciones de hererencia que se den.
+	\item En cada clase, primero aparecerán los métodos y al final los atributos.
+	\item Cada método debe tener una breve explicación sobre sus parámetros de entrada y, cuando proceda, el valor devuelto.
+	\item Todas las partes del código que sean confusas o complejas deben estar bien documentadas.
+	\item Sólo los métodos necesarios deben ser públicos. Por supuesto, salvo en situaciones contadas, los atributos serán privados.
+	\item Los comentarios en una línea se escriben así: \quad \texttt{// Comentario...}
+	\item Si un comentario ocupa más de una línes se escribirá así: 
+
+			\hspace {-0.33cm} \texttt{/*  \\
+			* \ Línea 1 comentario... \\
+			 * \ Línea 2 comentario... \\
+			%* \ Línea 3 comentario... \\
+			........................ \\
+			* \ Línea n comentario... \\
+			*/ }
+	\end{itemize}
+
+
+	\section{Estándar de verificación y prácticas}
+	
+	Para la verificación y validación, se utiliza el plan propuesto por IEEE. Éste es el IEEE Std. 1012-2004 Standard for Software Verification and Validation Plans.
+
+
+\chapter{ Revisiones del software}
+	\section{Propósito}
+	La intención de las revisiones del software es detectar lo antes posible los fallos que exitan en el software que estamos desarrollando, con el fin de ahorrar costes en la corrección de estos fallos. Nos centraremos en las revisiones técnicas formales,
+	y se las haremos a los documentos que hemos producido hasta ahora, es decir, al plan de proyecto, al documento de casos de uso, a la especificación de requisitos, y al documento de gestión de riesgos. Además de detectar posibles errores,
+ 	las revisiones nos permitirán asegurarnos de que nuestros documentos se ajustan a los estándares y de que se cumplen los requisitos especificados.
+
+	\section{Requisitos mínimos}
+	Mediante las revisiones nos aseguraremos de que no haya faltas de ortografía ni errores de expresión en ningún documento, y de que se respetan los estándares elegidos para cada documento.
+	\section{Otras revisiones y auditorias}
+	Por ahora, además de las revisiones técnicas formales, realizaremos revisiones internas llevadas a cabo por los mismos integrantes del  equipo de desarrollo;  y Gonzalo por su parte realizará varias revisiones independientes.
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage  
+
+%\chapter{ Prueba}%By Jaime
+%	No se ha realizado ninguna prueba.
+%	(- Identifica todas las pruebas no incluidas en el plan
+%	de verificación y validación.)
+
+%\newpage
+%\mbox{}
+%\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+%\newpage
+
+\chapter{ \hspace{0.25cm}Informe de problemas y acción correctiva}
+	\begin{itemize} 
+		\item Hasta el momento hemos llevado a cabo entregas y revisiones por parte del profesor de cada documento que íbamos realizando. Sobre cada documento nos proporcionaba ciertos problemas que había encontrado y que debíamos corregir. 
+
+	Hasta el momento hemos recibido la corrección de los documentos: Casos de Uso, Especificación de Requisitos Software, Plan de Proyecto y Gestión de Riesgos. En todos ellos hemos realizado las modificaciones pertinentes, siempre siguiendo lo establecido en el Plan de Gestión de Configuración Software. 
+
+	En último lugar hemos realizado una Revisión Técnica Formal con los distintos grupos de clase, en la cuál detectamos otro problemas y también vimos como los demas grupos han afrontado el proyecto. A partir de la revisión se realizó un informe de los errores que nuestro proyecto contenía y de como debíamos resolverlos. Todo ello está incluido en un acta acerca de cada reunión que se llevó a cabo. 
+
+	Actualmente ya hemos corregido todos aquellos problemas y se realizarán más revisiones con el fin de solucionar todos los prosibles problemas.
+
+		\item El trabajo fue repartido entre los distintos integrantes del equipo, de modo que cada uno se encargaba de una parte del proyecto, intentando siempre que fuese equitativo. 
+
+	Para la revisión y posterior corrección actuamos del mismo modo, ya que cada uno conoce mejor su trabajo y es capaz de detectar mejor los fallos y corregirlos. 
+
+	De este modo todos los miembros se centraron en su sección de los distintos documentos, aunque la posterior modificación fue realizada de distinto modo. En particular este fue el reparto en cada documento:
+		\begin{itemize}
+			\item Casos de uso: Enrique Ballesteros, Jaime Dan Porras, Ignacio Iker Prado.
+			\item Especificación de Requisitos: Jesús Aguirre y Alejandro Villarín.
+			\item Plan de proyecto:  Jesús Aguirre y Enrique Ballesteros.
+			\item Riesgos: Jaime Dan Porras y Alejandro Villarín.
+			\item Estimación: Ignacio Iker Prado.
+		\end{itemize}
+	\end{itemize}
+
+
+\chapter{ Herramientas, técnicas y metodologías}
+Hemos llevado a cabo el proceso de revisiones software para la Garantía de Calidad Software. En particular, nos hemos centrado en las Revisiones Técnicas Formales RTFs o Inspecciones Formales. El objetivo de las Revisiones Técincas Formales es detectar errores antes de que se conviertan en defectos y garantizar y verificar que el desarrollo del proyecto sigue el camino correcto y es coherente con el resto del proyecto.
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+%\chapter{ Control de medios}
+%	\begin{itemize}
+%		\item A partir de lo establecido en la especificación de requisitos debemos buscar las plataformas que mejor se adaptan a nuestro software. Así, mientras que los datos se deben almacenar en discos duros y sistemas de almacenamiento de datos, la mayor parte del uso de la aplicación se desarrolla desde otros terminales.
+%		\item Para garantizar que estos medios físicos son los óptimos para nuestros productos software debemos realizar revisiones ocasionales de los avances que se producen en el desarrollo de nuevos productos y de cómo esos avances pueden sernos útiles. También debemos modificar los medios que vamos a utilizar cuando se produzca un cambio en los casos de uso o en la especificación de requisitos, por leve que sea, pues estos cambios pueden tener importantes repercusiones en los medios físicos que van a ser mejores para nuestra aplicación.
+%	\end{itemize}
+
+%\newpage
+%\mbox{}
+%\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+%\newpage
+
+%\chapter{ Control de proveedor}
+%De momento el único software que será proporcionado por proveedores externos serán las bases de datos contra las que trabaja KIKE- Hostelería ®. Dado que el proyecto no se ha materializado, no hemos tenido la necesidad de subcontratar a una empresa para la programacion de las susodichas bases de datos.
+ 
+	%(- Determina las técnicas para garantizar que el software proporcionado por proveedores externos 				cumple sus requisitos.
+%	- También es aplicable a código heredado.)
+
+%\newpage
+%\mbox{}
+%\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+%\newpage
+
+\chapter{ Colección de registros, mantenimiento y conservación}
+
+	Como mediante la Garantía de Calidad software se mejora la documentación del proyecto, ésta debe mantenerse dentro de la propia documentación, pues será de gran utilidad una vez acabado el proceso si se desea comprobar la fiabilidad y pruebas realizadas al software. En nuestro caso, esto cobra especial relevancia en el campo de la seguridad del programa, puesto que lo único que diferencia a los distintos tipos de empleados es el nombre de usuario y la contraseña. Por tanto, es vital aseverar que la seguridad de KIKE- Hostelería ® es total, y las pruebas que lo demuestran deben salvaguardarse una vez acabado el proceso.\\
+
+El proyecto, al trabajar on la herramienta Google Code, está almacenado en los servidores de Google Inc., aunque cada miembro de \PKT \ posee una copia en su ordenador para prevenir un posible fallo de los servidores anteriormente mencionados. Una vez acabado el proceso, se elaborará un documento que contenga toda la información relativa a este, incluyendo todos los documentos que se han producido durante la realización del proyecto. \\
+
+Los registros de cambios en la documentación se conservarán como testimonio del avance gradual del proyecto, permitiendo a su lector conocer qué pasos se siguieron para el refinamiento de los documentos englobados en la entrega final.
+
+	%(- Identifica la documentación SQA que no se debe tirar tras acabar el proceso.
+	% - Determina los métodos y medios para ensamblar, archivar, salvaguardar y mantener la documentación.
+	% - Fija el periodo de conservación de la información.)
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ \hspace{0.25cm}Formación}
+	La formación que han recibido los integrantes del grupo de desarrollo para satisfacer las necesidades del plan SQA, es la de la asignatura Ingeniería del Software de la Universidad Complutense de Madrid, impartida por Gonzalo Méndez. En ella se les ha enseñado el manejo
+	de varias herramientas de ingeniería del software, como ArgoUML, Microsoft Project o COCOMO II. También han sido instruidos acerca de la realización de un desarrollo de software que se ajuste a los estándares más utilizados, y cómo
+	 desarrollar un software de calidad que se ajuste a los requisitos y que satisfaga al cliente.\\
+	
+	Como complemento se han recibido clases de programación orientada a objetos en Java, lo que permitirá el desarrollo de la aplicación en este lenguaje. Para el desarrollo de código se utilizará el entorno de Eclipse, también introducido en la UCM, en la asignatura de Tecnología de Programación.
+
+	En cuanto al usuario de la aplicación, al tratarse de una empresa mediana- grande, los trabajadores poseen experiencia en el sector y habrán utilizado software parecido. Por tanto se tienen conocimientos y experiencia suficiente para el manejo de la aplicación. Si el cliente lo considera necesario, se podrían dar charlas sobre el manejo de la misma, aunque con el manual de usuario es suficiente.
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ \hspace{0.25cm}Gestión del riesgo}
+	El estudio y monitorización de los riesgos se encuentra en el documento anexo \texttt{Gestión de riesgos}. Allí se distinguieron una serie de riesgos críticos y se trató su mitigación. 
+
+	Primero se llevó a cabo la identificación de los riesgos que podían afectar al proyecto. Seguidamente se analizaron estos riesgos, estudiando tanto la probabilidad que tenían de ocurrir como la consecuencia que podían tener en el proyecto. Posteriormente se priorizaron los riesgos, eligiendo aquellos que tenían mayor nivel de riesgo. Aplicando el Principio de Pareto, se eligieron los primeros 7 riesgos. Finalmente se gestionaron estos 7 riesgos.
+
+	Para más información consultar el documento mencionado.
+
+%\chapter{Glosario} (- Términos específicos del plan SQA.) 					EL GLOSARIO VA A PARTE
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\chapter{ Procedimiento de cambio e historia del plan SQA}
+	\section{Procedimientos de modificación del SQAP y de mantenimiento del historial de cambios}
+	
+	Una vez redactado y terminado el SQAP, a fecha de \date{\Today}, la modificación del mismo sólo deberá producirse mediante una reunión (salvo errores insignificantes, como ortográficos). Por ello, a partir de ésta versión, la \textit{v3.0.1}, sólo se harán modificaciones mediante revisiones técnicas formales. La explicación sobre el nombrado de versiones aparece en el apartado III.1.2 del documento de \texttt{Gestión de la Configuración Software}.
+
+	Se debe tener en cuenta que el SQAP incluye la gestión de riesgos, que se encuentra en un documento a parte (\texttt{Gestión de riesgos}), por lo que la aparición de nuevos riesgos durante el proyecto requerirá de una RTF para admitirlo, tratarlo y monitorizarlo.
+
+	En cuanto al mantenimiento del historial de cambios, deberá registrarse en el siguiente punto (el XV.2) del modo que se indica. Tras la RTF y la aceptación de los cambios, como parte de las actividades de modificación y mejora, se añadirá la nueva versión, indicando fecha, código de versión y autor/es, así como las modificaciones de los distintos \textit{commits} que se den. Si se requiere, se puede dar una descripción del motivo de la RTF y del cambio producido.
+		
+	Por supuesto, el cambio debe pasar por la RTF y ser aceptado por al menos 3 de los 5 miembros del equipo, entre ellos el jefe. Si se trata de una modificación importante, deberá dar el visto bueno el supervisor Gonzalo Méndez.
+
+	El historial de modificaciones del plan de Garantía de Calidad Software, así como el del documento de Gestión de riesgos, se encuentra en el siguiente apartado.
+
+	\section{Historial de cambios}
+	
+	A continuación se muestra el historial de cambios del plan SQA. Como se ha mencionado varias veces ya, los documentos se archivan en el repositorio de \textit{Google Code}, permitiendo gestionar las versiones con relativa facilidad. La obtención de este historial se ha hecho mediante la herramienta Tortoise SVN, que permite generar un historial de versiones, con comentarios si los hubiera, y gráficos asociados.
+
+	\vspace{0.25cm}
+
+	Revision: 229
+	
+	Author: kike.hosteleria.is
+	
+	Date: viernes, 29 de marzo de 2013 12:18:24
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 227
+	
+	Author: kike.hosteleria.is		
+	
+	Date: miércoles, 27 de marzo de 2013 23:33:03
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 225
+	
+	Author: jaguirrepeman@gmail.com
+	
+	Date: martes, 26 de marzo de 2013 18:50:13
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 224
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: martes, 26 de marzo de 2013 15:15:08
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 222
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: martes, 26 de marzo de 2013 11:35:48
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 221
+	
+	Author: j.dan.por@gmail.com
+	
+	Date: martes, 26 de marzo de 2013 1:04:14
+	
+	Message:	Añadidas las partes Documentación y Pruebas
+
+	Added : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.pdf
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 218
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: lunes, 25 de marzo de 2013 18:29:23
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 217
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: lunes, 25 de marzo de 2013 17:33:46
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+	
+	Modified : /trunk/TerceraEntrega20-3-13/Glosario/Glosario.tex
+
+	\vspace{0.25cm}
+
+	Revision: 216
+	
+	Author: alex.vi.pr@gmail.com
+	
+	Date: lunes, 25 de marzo de 2013 14:59:55
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 207
+	
+	Author: kike.hosteleria.is
+	
+	Date: lunes, 25 de marzo de 2013 12:10:24
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 206
+	
+	Author: j.dan.por@gmail.com
+	
+	Date: lunes, 25 de marzo de 2013 12:03:13
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 201
+	
+	Author: kike.hosteleria.is
+	
+	Date: domingo, 24 de marzo de 2013 22:45:09
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 193
+	
+	Author: jaguirrepeman@gmail.com
+	
+	Date: domingo, 24 de marzo de 2013 18:34:56
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 187
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: domingo, 24 de marzo de 2013 17:48:48
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 183
+	
+	Author: kike.hosteleria.is
+	
+	Date: domingo, 24 de marzo de 2013 15:29:27
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 181
+	
+	Author: kike.hosteleria.is
+	
+	Date: domingo, 24 de marzo de 2013 13:57:37
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 167
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: sábado, 23 de marzo de 2013 16:28:41
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+	
+	Modified : /trunk/TerceraEntrega20-3-13/Glosario/Glosario.tex
+
+	\vspace{0.25cm}
+
+	Revision: 165
+	
+	Author: kike.hosteleria.is
+	
+	Date: viernes, 22 de marzo de 2013 22:56:23
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 159
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: viernes, 22 de marzo de 2013 18:12:56
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+	
+	Added : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/ucm.pdf
+	
+	Modified : /trunk/TerceraEntrega20-3-13/Glosario/Glosario.tex
+	
+	Added : /trunk/TerceraEntrega20-3-13/Glosario/ucm.pdf
+
+	\vspace{0.25cm}
+
+	Revision: 158
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: viernes, 22 de marzo de 2013 16:20:19
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 157
+	
+	Author: iker.prado13@gmail.com	
+	
+	Date: viernes, 22 de marzo de 2013 1:12:54
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 154
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: miércoles, 20 de marzo de 2013 23:07:30
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+
+	\vspace{0.25cm}
+
+	Revision: 153
+	
+	Author: kike.hosteleria.is	
+	
+	Date: viernes, 08 de marzo de 2013 20:25:20
+	
+	Modified : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+	\vspace{0.25cm}
+
+	Revision: 149
+	
+	Author: iker.prado13@gmail.com
+	
+	Date: viernes, 08 de marzo de 2013 19:36:45
+	
+	Added : /trunk/TerceraEntrega20-3-13/GarantiaDeCalidad/Garantia de calidad.tex
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada al final del documento
+\newpage
+
+\end{document}
+
+%JESÚS, ya está empezado by Kike(no hacer mucho caso a lo que haya puesto kike)
+1. Propósito
+
+%JESÚS (creo que este es corto)
+2. Documentos de referencia 
+
+%KIKE. La concha, este nombre me perseguirá el resto de mi historia
+%Eso te pasa por decir qué mingas es esto, te lo buscaste tu solito. Serás...
+3. Gestión
+
+%JAIME (creo que es corto)
+4. Documentación
+	4.1 Propósito
+	4.2 Requisitos mínimos de documentación 
+	4.3 Otra documentación
+
+%IKER
+5. Estándares, prácticas, convenciones y métricas 
+	5.1 Propósito
+	5.2 Contenido
+
+%KIKE & IKER
+6. Revisiones del software 
+	6.1 Propósito
+	6.2 Requisitos mínimos
+	6.3 Otras revisiones y auditorias 
+
+%JAIME (creo que este es corto)
+7. Pruebas
+
+%ALEX
+8. Informe de errores y acciones correctoras 
+
+%ALEX (creo que este es corto)
+9. Herramientas, técnicas y metodologías 
+
+%ALEX (creo que este es corto)
+10. Control de medios
+
+%JESUS (creo que este es corto)
+11. Control de proveedor
+
+%JESUS
+12. Colección de registros, mantenimiento y conservación 
+
+%IKER (npi de qué va esto, Kike ayudame por favor!!) ¿Qué concha son las actividades de formación? Jajajajajaj 
+% Aquí hay que meter las clase de is que nos han dado. Es tanto la formación que se da a los que van a usar el software como la que ha recibido el equipo de is. Prometo que esto se lo pregunté en clase
+% Me lo creo, con eso me vale. En resumen => PeTaKeo
+13. Formación
+
+%ESTA HECHO A PARTE BY ALEX & JAIME
+14. Gestión del riesgo
+
+%ESTA EN UN DOCUMENTO A PARTE
+15. Glosario
+
+%IKER
+16. Procedimiento de cambio e historial del plan de SQA

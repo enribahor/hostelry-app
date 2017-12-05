@@ -1,0 +1,65 @@
+format 76
+
+classcanvas 128005 class_ref 141957 // GUIController
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 589 80 2000
+end
+classcanvas 128517 class_ref 142213 // CeldaPlato
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 358 13 2006
+end
+classcanvas 129029 class_ref 142981 // ConsumicionSwing
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 352 211 3005
+end
+classcanvas 129285 class_ref 143109 // VerMenu
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_operations
+    operation_ref 158469 // buscarBoton
+    operation_ref 158597 // borrarBoton
+    operation_ref 158725 // buscarPanel
+  xyz 89 75 3011
+end
+classcanvas 132101 class_ref 144133 // ModificarMenu
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 368 490 2000
+end
+note 132869 "Parte visual (de GUI) del Menú"
+  color mediumblue  xyzwh 616 491 2000 101 51
+relationcanvas 128645 relation_ref 136581 // <aggregation>
+  decenter_begin 565
+  decenter_end 54
+  from ref 128517 z 2007 to ref 128005
+  role_a_pos 525 84 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129157 relation_ref 137093 // <aggregation>
+  decenter_begin 286
+  decenter_end 527
+  from ref 129029 z 3006 to ref 128005
+  role_a_pos 525 282 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129413 relation_ref 141701 // <aggregation>
+  decenter_begin 282
+  decenter_end 277
+  from ref 129285 z 3012 to ref 128005
+  role_a_pos 523 177 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129541 relation_ref 137349 // <aggregation>
+  decenter_begin 365
+  decenter_end 577
+  from ref 129029 z 3012 to ref 129285
+  role_a_pos 247 284 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132229 relation_ref 146693 // <unidirectional association>
+  decenter_begin 181
+  decenter_end 838
+  from ref 132101 z 3012 to point 320 496
+  line 132485 z 3012 to ref 129285
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

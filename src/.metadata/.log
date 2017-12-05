@@ -1,0 +1,80 @@
+!SESSION 2014-06-11 11:45:07.699 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\enrique ballesteros\Desktop\KikeHosteleria\is-hosteleria\Source C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+
+!ENTRY org.eclipse.ui 2 2 2014-06-11 13:32:04.890
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-06-11 22:22:23.688 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+
+!ENTRY org.eclipse.ui 2 2 2014-06-12 02:46:02.776
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-06-12 16:15:22.232 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\enrique ballesteros\Desktop\KikeHosteleria\is-hosteleria\Source C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+
+!ENTRY org.eclipse.ui 2 2 2014-06-13 00:00:13.561
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-06-25 15:19:04.449 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+
+!ENTRY org.eclipse.ui 2 2 2014-06-25 16:26:57.893
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-06-26 16:43:23.399 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+
+!ENTRY org.eclipse.ui 2 2 2014-06-26 16:50:29.062
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-07-01 15:50:53.864 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+
+!ENTRY org.eclipse.ui 2 2 2014-07-01 16:11:22.800
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-07-02 17:40:46.981 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+
+!ENTRY org.eclipse.ui 2 2 2014-07-03 03:28:04.708
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-07-08 21:25:25.982 -----------------------------------------------
+eclipse.buildId=M20130204-1200
+java.version=1.7.0_10
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_ES
+Framework arguments:  C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\enrique ballesteros\Desktop\Tercero\ProjectoMarpMochila\Source\.project
+
+!ENTRY org.eclipse.ui 2 2 2014-07-08 21:37:40.724
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)

@@ -1,0 +1,70 @@
+format 76
+
+classcanvas 128005 class_ref 141957 // GUIController
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 93 93 2000
+end
+classcanvas 128645 class_ref 146053 // VistaMesas
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 374 6 2006
+end
+classcanvas 129157 class_ref 143365 // Mesa
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 377 309 3005
+end
+classcanvas 129285 class_ref 143749 // MesaInfo
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 460 182 3011
+end
+classcanvas 129797 class_ref 143493 // Restaurante
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 617 128 3011
+end
+classcanvas 130181 class_ref 146949 // MesaObserver
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 294 181 3011
+end
+note 131205 "Clase Mesa y relacionadas. VistaMesas es un observador de las mesas y Mesa implementa MesaInfo."
+  color mediumblue  xyzwh 669 483 2000 105 107
+relationcanvas 128773 relation_ref 142341 // <aggregation>
+  decenter_end 200
+  from ref 128645 z 2007 to ref 128005
+  role_a_pos 257 154 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129413 relation_ref 142469 // <aggregation>
+  from ref 128645 z 3012 to ref 129285
+  role_a_pos 502 163 3000 no_role_b
+  multiplicity_a_pos 476 163 3000 no_multiplicity_b
+end
+relationcanvas 129541 relation_ref 144005 // <realization>
+  from ref 129157 z 3012 to ref 129285
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129925 relation_ref 144901 // <aggregation>
+  decenter_end 337
+  from ref 129797 z 3012 to ref 129157
+  role_a_pos 507 387 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130053 relation_ref 137861 // <aggregation>
+  decenter_begin 935
+  decenter_end 119
+  from ref 128005 z 3012 to point 235 597
+  line 130821 z 3012 to point 631 597
+  line 130693 z 3012 to ref 129797
+  role_a_pos 643 481 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130309 relation_ref 144133 // <aggregation>
+  from ref 129157 z 3012 to ref 130181
+  role_a_pos 369 252 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130437 relation_ref 147333 // <realization>
+  from ref 128645 z 3012 to ref 130181
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

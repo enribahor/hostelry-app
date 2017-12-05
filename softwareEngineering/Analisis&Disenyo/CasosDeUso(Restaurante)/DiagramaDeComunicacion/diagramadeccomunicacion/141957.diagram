@@ -1,0 +1,44 @@
+format 76
+
+classinstance 128005 class_ref 128011 // RestauranteSwing
+  name ""   xyz 150.3 5.6 2000 life_line_z 2000
+classinstance 128133 class_ref 128514 // Menu
+  name ""   xyz 359.6 4 2000 life_line_z 2000
+note 128261 "Caso de uso:
+Modificar menu"
+  color mediumblue  xyzwh 504.3 325.7 2000 99 49
+fragment 128773 "alt"
+  xyzwh 157.9 116.5 0 262 178
+  separator 1224
+  separator 3928
+  separator 6938
+end
+textcanvas 128901 "[añadirConsumicion]"
+  xyzwh 209 141 2000 110 15
+textcanvas 129029 "[modificarConsumicion]"
+  xyzwh 209 244 2000 119 14
+textcanvas 129157 "[eliminarConsumicion]"
+  xyzwh 210 187 2000 114 14
+note 129413 "Hay tres alternativas al modificar el menu. Para más información acudir a los diagramas \"AñadirConsumicion\", \"EliminarConsumicion\" y \"ModificarConsumicion\"."
+  xyzwh 462.7 64.6 2000 183 101
+durationcanvas 128389 classinstance_ref 128005 // :RestauranteSwing
+  xyzwh 197 83 2010 11 280
+end
+durationcanvas 128517 classinstance_ref 128133 // :Menu
+  xyzwh 378 84 2010 11 265
+end
+msg 128645 synchronous
+  from durationcanvas_ref 128389
+  to durationcanvas_ref 128517
+  yz 84 2015 explicitmsg "run()"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 346 71
+msg 129285 return
+  from durationcanvas_ref 128517
+  to durationcanvas_ref 128389
+  yz 325 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 212 313
+line 130565 -_-_ decenter_begin 754 decenter_end 321
+  from ref 129413 z 2001 to ref 128773
+end

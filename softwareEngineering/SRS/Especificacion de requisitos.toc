@@ -1,0 +1,23 @@
+\select@language {spanish}
+\contentsline {part}{I\hspace {1em}Introducci\IeC {\'o}n}{1}{part.1}
+\contentsline {section}{\numberline {1}Prop\IeC {\'o}sito}{2}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Prop\IeC {\'o}sito}{2}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}Audiencia}{2}{subsection.0.1.2}
+\contentsline {section}{\numberline {2}Alcance}{2}{section.0.2}
+\contentsline {section}{\numberline {3}Definiciones, acr\IeC {\'o}nimos y abreviaturas}{3}{section.0.3}
+\contentsline {section}{\numberline {4}Referencias}{3}{section.0.4}
+\contentsline {section}{\numberline {5}Resumen}{3}{section.0.5}
+\contentsline {part}{II\hspace {1em}Descripci\IeC {\'o}n general}{5}{part.2}
+\contentsline {section}{\numberline {1}Perspectiva del producto}{6}{section.0.1}
+\contentsline {section}{\numberline {2}Funciones del producto}{6}{section.0.2}
+\contentsline {section}{\numberline {3}Caracter\IeC {\'\i }sticas del usuario}{8}{section.0.3}
+\contentsline {section}{\numberline {4}Restricciones}{8}{section.0.4}
+\contentsline {section}{\numberline {5}Supuestos y dependencias}{8}{section.0.5}
+\contentsline {section}{\numberline {6}Requisitos futuros}{9}{section.0.6}
+\contentsline {part}{III\hspace {1em}Requisitos espec\IeC {\'\i }ficos}{11}{part.3}
+\contentsline {section}{\numberline {1}Interfaces externos}{12}{section.0.1}
+\contentsline {section}{\numberline {2}Funciones}{14}{section.0.2}
+\contentsline {section}{\numberline {3}Requisitos de rendimiento}{29}{section.0.3}
+\contentsline {section}{\numberline {4}Requisitos l\IeC {\'o}gicos de la base de datos}{29}{section.0.4}
+\contentsline {section}{\numberline {5}Restricciones de dise\IeC {\~n}o}{29}{section.0.5}
+\contentsline {section}{\numberline {6}Atributos del sistema software}{29}{section.0.6}

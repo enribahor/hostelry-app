@@ -1,0 +1,39 @@
+\select@language {spanish}
+\contentsline {part}{I\hspace {1em}Introduci\IeC {\'o}n}{2}{part.1}
+\contentsline {section}{\numberline {1}Prop\IeC {\'o}sito}{3}{section.0.1}
+\contentsline {section}{\numberline {2}Audiencia}{3}{section.0.2}
+\contentsline {section}{\numberline {3}Alcance}{3}{section.0.3}
+\contentsline {section}{\numberline {4}Definiciones, acr\IeC {\'o}nimos y abreviaturas}{3}{section.0.4}
+\contentsline {section}{\numberline {5}Referencias}{3}{section.0.5}
+\contentsline {part}{II\hspace {1em}Requisitos}{6}{part.2}
+\contentsline {section}{\numberline {1}Modelo de Dominio}{8}{section.0.1}
+\contentsline {section}{\numberline {2}Diagramas de actividad}{8}{section.0.2}
+\contentsline {part}{III\hspace {1em}An\IeC {\'a}lisis}{9}{part.3}
+\contentsline {section}{\numberline {1}Diagamas de paquetes}{10}{section.0.1}
+\contentsline {section}{\numberline {2}Diagramas de comunicaci\IeC {\'o}n}{10}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}Men\IeC {\'u} del restaurante}{10}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}Reservas del restaurante}{12}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}Comandas del restaurante}{13}{subsection.0.2.3}
+\contentsline {subsection}{\numberline {2.4}Factura del restaurante}{13}{subsection.0.2.4}
+\contentsline {subsection}{\numberline {2.5}Incidencias de mantenimiento}{13}{subsection.0.2.5}
+\contentsline {section}{\numberline {3}Diagramas de clases de an\IeC {\'a}lisis}{14}{section.0.3}
+\contentsline {subsection}{\numberline {3.1}Men\IeC {\'u} del restaurante}{14}{subsection.0.3.1}
+\contentsline {subsection}{\numberline {3.2}Reservas del restaurante}{14}{subsection.0.3.2}
+\contentsline {subsection}{\numberline {3.3}Comandas del restaurante}{15}{subsection.0.3.3}
+\contentsline {subsection}{\numberline {3.4}Factura del restaurante}{15}{subsection.0.3.4}
+\contentsline {part}{IV\hspace {1em}Dise\IeC {\~n}o}{17}{part.4}
+\contentsline {section}{\numberline {1}Diagramas de secuencia}{18}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Men\IeC {\'u} del restaurante}{18}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}Reservas del restaurante}{18}{subsection.0.1.2}
+\contentsline {subsection}{\numberline {1.3}Comandas del restaurante}{19}{subsection.0.1.3}
+\contentsline {subsection}{\numberline {1.4}Factura del restaurante}{22}{subsection.0.1.4}
+\contentsline {subsection}{\numberline {1.5}Recuento de existencias}{23}{subsection.0.1.5}
+\contentsline {section}{\numberline {2}Diagramas de clases de dise\IeC {\~n}o}{23}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}Men\IeC {\'u} del restaurante}{23}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}Reservas del restaurante}{23}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}Comandas del restaurante}{23}{subsection.0.2.3}
+\contentsline {subsection}{\numberline {2.4}Factura del restaurante}{30}{subsection.0.2.4}
+\contentsline {subsection}{\numberline {2.5}Cargadores de ficheros}{30}{subsection.0.2.5}
+\contentsline {section}{\numberline {3}Diagramas de componentes}{30}{section.0.3}
+\contentsline {section}{\numberline {4}Diagramas de despliegue}{30}{section.0.4}
+\contentsline {part}{V\hspace {1em}Patrones de dise\IeC {\~n}o}{31}{part.5}

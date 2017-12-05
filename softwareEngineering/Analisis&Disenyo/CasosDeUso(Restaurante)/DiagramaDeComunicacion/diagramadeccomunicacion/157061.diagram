@@ -1,0 +1,48 @@
+format 76
+
+classcanvas 128005 class_ref 141957 // GUIController
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 224 91 2000
+end
+classcanvas 128133 class_ref 144773 // RealizarReserva
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 448 102 3005
+end
+classcanvas 128389 class_ref 145797 // VerReserva
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 53 313 3010
+end
+classcanvas 128645 class_ref 145541 // TableReservas
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 669 184 3016
+end
+classcanvas 128901 class_ref 145925 // LibroReservaObserver
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 41 176 3016
+end
+note 129413 "Parte visual (de GUI) de las reservas"
+  color mediumblue  xyzwh 661 328 2000 121 45
+relationcanvas 128261 relation_ref 140549 // <aggregation>
+  from ref 128133 z 3006 to ref 128005
+  role_a_pos 388 274 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128517 relation_ref 142085 // <aggregation>
+  decenter_end 620
+  from ref 128389 z 3011 to ref 128005
+  role_a_pos 158 333 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128773 relation_ref 146949 // <association>
+  decenter_begin 386
+  decenter_end 277
+  from ref 128645 z 3017 to ref 128133
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129029 relation_ref 141957 // <realization>
+  from ref 128389 z 3017 to ref 128901
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

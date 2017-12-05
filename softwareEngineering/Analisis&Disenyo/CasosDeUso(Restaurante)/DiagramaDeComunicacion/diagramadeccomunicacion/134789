@@ -1,0 +1,3117 @@
+format 76
+"gui" // ClasesJava::gui
+  revision 2
+  modified_by 2 "enrique ballesteros"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  java_dir "C:/Users/usuario/Desktop/Cosas para imprimir y tal/Source/src/is/gui/"
+  java_package "is.gui"
+  classview 156165 "gui"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 141829 "CantidadExistencias"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 148357 "CantidadExistencias"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "controller" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 137093 // controlador (<unidirectional association>)
+	relation 136197 --->
+	  a role_name "controlador" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137093 // controlador (<unidirectional association>)
+	  b parent class_ref 141957 // GUIController
+      end
+
+      classrelation 137221 // menu (<unidirectional association>)
+	relation 136325 --->
+	  a role_name "menu" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137221 // menu (<unidirectional association>)
+	  b parent class_ref 142085 // Menu
+      end
+    end
+
+    class 141957 "GUIController"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Clase que se encarga de llevar los avisos recibidos en la vista al modelo
+@author JaimeDan"
+      operation 150149 "crearComanda"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150277 "GUIController"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "restaurante" type class_ref 143493 // Restaurante
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150405 "getMenu"
+	public return_type class_ref 142085 // Menu
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150533 "requestPrimeros"
+	public return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150661 "requestSegundos"
+	public return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150789 "requestPostres"
+	public return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 150917 "requestBebidas"
+	public return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151045 "getReservas"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param in name "i" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151173 "communicateReserva"
+	public explicit_return_type "void"
+	nparams 6
+	  param in name "cad" explicit_type "String"
+	  param in name "hora" explicit_type "int"
+	  param in name "minutos" explicit_type "int"
+	  param in name "cliente" explicit_type "String"
+	  param in name "numeroComensales" explicit_type "int"
+	  param inout name "mesasSel" explicit_type "boolean"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5}[] ${p5}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151301 "comunicarComanda"
+	public explicit_return_type "void"
+	nparams 7
+	  param in name "año" explicit_type "int"
+	  param in name "mes" explicit_type "int"
+	  param in name "dia" explicit_type "int"
+	  param in name "hora" explicit_type "int"
+	  param in name "minutos" explicit_type "int"
+	  param in name "cliente" explicit_type "String"
+	  param in name "numeroComensales" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151429 "requestMesas"
+	public return_type class_ref 143749 // MesaInfo
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type}[] ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151557 "reservasDeUnCliente"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param in name "nombre" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151685 "getMesa"
+	public return_type class_ref 143365 // Mesa
+	nparams 1
+	  param in name "j" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "TODO hay que hacer los avisos de nueva comanda, nuevos platos en el pedido, nueva reserva, editar reserva, editar comanda, etc"
+      end
+
+      operation 151813 "getMesa"
+	public return_type class_ref 143365 // Mesa
+	nparams 1
+	  param in name "j" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 151941 "avisaComanda"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "numMesa" explicit_type "int"
+	  param in name "comandaSelected" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152069 "eliminarComanda"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "numMesa" explicit_type "int"
+	  param in name "comandaSelected" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152197 "requestNewConsumption"
+	public explicit_return_type "void"
+	nparams 4
+	  param in name "numComanda" explicit_type "int"
+	  param in name "numMesa" explicit_type "int"
+	  param inout name "plato" type class_ref 142469 // Consumicion
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152325 "actualizaConsumicion"
+	public explicit_return_type "void"
+	nparams 3
+	  param inout name "consAntigua" type class_ref 142469 // Consumicion
+	  param inout name "consNueva" type class_ref 142469 // Consumicion
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152453 "deleteConsumicion"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152581 "addConsumicion"
+	public explicit_return_type "void"
+	nparams 2
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 152709 "addComandaObserver"
+	public explicit_return_type "void"
+	nparams 2
+	  param inout name "observer" type class_ref 143877 // ComandaObserver
+	  param in name "numeroMesa" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 138757 // restaurante (<aggregation>)
+	relation 137861 o---
+	  a role_name "restaurante" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138757 // restaurante (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 151173 // <aggregation>
+      end
+
+      operation 152837 "registerMenuObserver"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "verMenu" type class_ref 144005 // MenuObserver
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 146949 // <association>
+	relation 146053 ----
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 146949 // <association>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 147077 // <association>
+      end
+
+      classrelation 148869 // <aggregation>
+	relation_ref 141701 // <aggregation>
+      end
+
+      classrelation 148997 // <aggregation>
+	relation_ref 136581 // <aggregation>
+      end
+
+      classrelation 149125 // <aggregation>
+	relation_ref 137093 // <aggregation>
+      end
+
+      classrelation 150405 // <aggregation>
+	relation_ref 142085 // <aggregation>
+      end
+
+      classrelation 150533 // <aggregation>
+	relation_ref 140549 // <aggregation>
+      end
+
+      classrelation 150661 // <aggregation>
+	relation_ref 139653 // <aggregation>
+      end
+
+      classrelation 151045 // <aggregation>
+	relation_ref 142341 // <aggregation>
+      end
+
+      classrelation 151685 // <aggregation>
+	relation_ref 137733 // <aggregation>
+      end
+
+      operation 141442 "requestRemoveReserva"
+	public explicit_return_type ""
+	nparams 4
+	  param in name "name" explicit_type "string"
+	  param in name "fecha" explicit_type "string"
+	  param in name "comensales" explicit_type "string"
+	  param in name "mesas" explicit_type "string"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141826 "requestNewCommand"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "numMesa" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 142213 "CeldaPlato"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      java_annotation "@SuppressWarnings(\"serial\")
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Celda que tiene un plato, y un JSpinner con el numero de veces que ha sido elegido.
+Posteriormente se mostrara por pantalla al elegir el menu
+@author JaimeDan"
+      classrelation 137349 // <generalisation>
+	relation 136453 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 137349 // <generalisation>
+	  b parent class_ref 142341 // JPanel
+      end
+
+      operation 148485 "CeldaPlato"
+	public explicit_return_type ""
+	nparams 5
+	  param inout name "controller" type class_ref 141957 // GUIController
+	  param in name "plato" type class_ref 142469 // Consumicion
+	  param in name "numMesa" explicit_type "int"
+	  param in name "numComanda" explicit_type "int"
+	  param in name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, final ${t1} ${p1}, final ${t2} ${p2}, final ${t3} ${p3}, final ${t4} ${p4}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148613 "incrementaVeces"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 148741 "getVeces"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 137477 // restControl (<aggregation>)
+	relation 136581 o---
+	  a role_name "restControl" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137477 // restControl (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 148997 // <aggregation>
+      end
+
+      attribute 142725 "veces"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 142853 "botonPlato"
+	private explicit_type "JButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 137605 // plato (<unidirectional association>)
+	relation 136709 --->
+	  a role_name "plato" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137605 // plato (<unidirectional association>)
+	  b parent class_ref 142469 // Consumicion
+      end
+
+      attribute 142981 "flechitas"
+	private explicit_type "JSpinner"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143109 "numComanda"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143237 "numMesa"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+    end
+
+    class 142725 "CloseApp"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Cierra la aplicación, preguntándole al usuario si desea salir
+@author Jesús"
+      classrelation 137733 // <realization>
+	relation 136837 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 137733 // <realization>
+	  b parent class_ref 142853 // ActionListener
+      end
+
+      operation 148869 "actionPerformed"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "e" explicit_type "ActionEvent"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 148997 "requestQuit"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param in name "quitReason" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149125 "quitApp"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 142981 "ConsumicionSwing"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      java_annotation "@SuppressWarnings(\"serial\")
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Muestra en swing una consumicion
+Aparecen por tanto el precion, nombre, descripcion y si esta disponible o no.
+Asimismo, permite editar estos campos al correr la aplicacion, y crear nuevos platos anadiendolos al menu.
+@author Kike"
+      classrelation 137861 // <generalisation>
+	relation 136965 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 137861 // <generalisation>
+	  b parent class_ref 142341 // JPanel
+      end
+
+      operation 149253 "ConsumicionSwing"
+	public explicit_return_type ""
+	nparams 4
+	  param inout name "ventana" type class_ref 143109 // VerMenu
+	  param inout name "controller" type class_ref 141957 // GUIController
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	  param inout name "edit" explicit_type "boolean"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149381 "anyadirControles"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149509 "nuevaConsumicion"
+	private return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149637 "guardarPlato"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149765 "notificar"
+	private explicit_return_type "void"
+	nparams 1
+	  param in name "message" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 149893 "isNumber"
+	private explicit_return_type "boolean"
+	nparams 1
+	  param in name "palabra" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 143365 "campos"
+	private explicit_type "JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment "TODO Elegir disponibilidad"
+      end
+
+      attribute 143493 "disponible"
+	private explicit_type "JRadioButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143621 "precioField"
+	private explicit_type "JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 137989 // restControl (<aggregation>)
+	relation 137093 o---
+	  a role_name "restControl" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 137989 // restControl (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 149125 // <aggregation>
+      end
+
+      attribute 143749 "nombrePlato"
+	private explicit_type "JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 143877 "descripcion"
+	private explicit_type "JTextArea"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 138117 // tipoPlato (<unidirectional association>)
+	relation 137221 --->
+	  stereotype "JComboBox"
+	  a role_name "tipoPlato" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 138117 // tipoPlato (<unidirectional association>)
+	  b parent class_ref 142597 // TipoPlatos
+      end
+
+      classrelation 138245 // ventanaGeneral (<aggregation>)
+	relation 137349 o---
+	  a role_name "ventanaGeneral" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138245 // ventanaGeneral (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 149253 // <aggregation>
+      end
+
+      attribute 144005 "edit"
+	private explicit_type "boolean"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 138373 // consumicionInicial (<unidirectional association>)
+	relation 137477 --->
+	  a role_name "consumicionInicial" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138373 // consumicionInicial (<unidirectional association>)
+	  b parent class_ref 142469 // Consumicion
+      end
+
+      attribute 144133 "contenerDisponibilidad"
+	package explicit_type "JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144261 "textoDisponibilidad"
+	package explicit_type "JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+    end
+
+    class 143109 "VerMenu"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      java_annotation "@SuppressWarnings(\"serial\")
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Muestra el menu, pudiendo crear platos y a�adirlos al propio menu.
+@author Kike
+@author JaimeDan
+
+ MenuObserver"
+      classrelation 142341 // <generalisation>
+	relation 141445 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 142341 // <generalisation>
+	  b parent class_ref 145029 // JFrame
+      end
+
+      classrelation 142469 // <realization>
+	relation 141573 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 142469 // <realization>
+	  b parent class_ref 144005 // MenuObserver
+      end
+
+      operation 157061 "VerMenu"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "controller" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 157189 "nuevoTipoPlato"
+	private explicit_return_type "void"
+	nparams 1
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Crea la pestaña para un tipo de plato"
+      end
+
+      operation 157317 "inicializarVentana"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 157445 "inicializarVerMenu"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " 	Inicializa la ventana"
+      end
+
+      operation 157573 "borrarPlato"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "	Elimina el plato seleccionado	"
+      end
+
+      operation 157701 "editarPlato"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "	Edita el Plato que esté seleccionado	"
+      end
+
+      operation 157829 "anyadirNuevoPlato"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "	 Añade un nuevo plato al menu	"
+      end
+
+      operation 157957 "consumicionPulsada"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "	Libera todos los botones excepto el último pulsado, 
+y guarda el plato pulsado	"
+      end
+
+      operation 158085 "mostrarDescripcion"
+	private explicit_return_type "void"
+	nparams 1
+	  param in name "description" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "	Muestra la descripción de la consumición dada "
+      end
+
+      operation 158213 "devolverControlPrincipal"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158341 "notificar"
+	private explicit_return_type "void"
+	nparams 1
+	  param in name "message" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158469 "buscarBoton"
+	private explicit_return_type "JToggleButton"
+	nparams 1
+	  param in name "name" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "	Metodos del observer"
+      end
+
+      operation 158597 "borrarBoton"
+	private explicit_return_type "void"
+	nparams 2
+	  param in name "nameBoton" explicit_type "String"
+	  param in name "nameTipo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158725 "buscarPanel"
+	private explicit_return_type "JPanel"
+	nparams 1
+	  param in name "namePanel" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158853 "anyadirBoton"
+	private explicit_return_type "void"
+	nparams 2
+	  param in name "consId" explicit_type "String"
+	  param in name "tipo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 158981 "addConsumption"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "consId" explicit_type "String"
+	  param in name "tipo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 159109 "deleteConsumption"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "consId" explicit_type "String"
+	  param in name "tipo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 159237 "editConsumption"
+	public explicit_return_type "void"
+	nparams 4
+	  param in name "nameAnt" explicit_type "String"
+	  param in name "nameNuevo" explicit_type "String"
+	  param in name "tipoAnt" explicit_type "String"
+	  param in name "tipoNuevo" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      attribute 148613 "descriptions"
+	private explicit_type "JTextField"
+	stereotype "ArrayList"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148741 "cadaPestanya"
+	private explicit_type "JPanel"
+	stereotype "ArrayList"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148869 "pestanyas"
+	private explicit_type "JTabbedPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148997 "cardLayout"
+	private explicit_type "CardLayout"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 149125 "panelGeneral"
+	private explicit_type "JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 149253 "ventanas"
+	private explicit_type "JPanel"
+	stereotype "ArrayList"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 149381 "consumicionSeleccionada"
+	private explicit_type "JToggleButton"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 149509 "botones"
+	private explicit_type "JToggleButton"
+	stereotype "ArrayList"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 142597 // controlador (<aggregation>)
+	relation 141701 o---
+	  a role_name "controlador" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142597 // controlador (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 148869 // <aggregation>
+      end
+
+      classrelation 142725 // menu (<unidirectional association>)
+	relation 141829 --->
+	  a role_name "menu" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142725 // menu (<unidirectional association>)
+	  b parent class_ref 142085 // Menu
+      end
+
+      classrelation 149253 // <aggregation>
+	relation_ref 137349 // <aggregation>
+      end
+    end
+
+    class 143237 "GenerarFactura"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Genera la factura de una mesa, sumando el coste de todas las comandas asociadas a esa mesa, y la muestra por pantalla.
+@author Villarin"
+      operation 150021 "GenerarFactura"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "rest" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"serial\")
+"
+	
+	
+	
+      end
+
+      attribute 144389 "marco"
+	private explicit_type "JFrame"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 138501 // mesa (<aggregation>)
+	relation 137605 o---
+	  a role_name "mesa" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138501 // mesa (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 151813 // <aggregation>
+      end
+
+      classrelation 138629 // controlador (<aggregation>)
+	relation 137733 o---
+	  a role_name "controlador" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138629 // controlador (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 151685 // <aggregation>
+      end
+
+      attribute 144517 "numMesa"
+	private explicit_type "JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 147461 // <association>
+	relation 146309 ----
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 147461 // <association>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 147589 // <association>
+      end
+
+      classrelation 154373 // <unidirectional association>
+	relation 149765 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 154373 // <unidirectional association>
+	  b parent class_ref 143365 // Mesa
+      end
+    end
+
+    class 144133 "ModificarMenu"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 152965 "ModificarMenu"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "rest" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 147973 // <unidirectional association>
+	relation 146693 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 147973 // <unidirectional association>
+	  b parent class_ref 143109 // VerMenu
+      end
+
+      classrelation 148101 // <unidirectional association>
+	relation 146821 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 148101 // <unidirectional association>
+	  b parent class_ref 143109 // VerMenu
+      end
+    end
+
+    class 144261 "NotificarIncidencias"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 153093 "NotificarIncidencias"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "controller" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 138885 // controlador (<unidirectional association>)
+	relation 137989 --->
+	  a role_name "controlador" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 138885 // controlador (<unidirectional association>)
+	  b parent class_ref 141957 // GUIController
+      end
+    end
+
+    class 144389 "PlatosPanel"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      java_annotation "@SuppressWarnings(\"serial\")
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Panel con todos los platos disponibles al realizar un pedido, son platos de un determinado tipo
+
+@author JaimeDan
+@author Jesus"
+      classrelation 139013 // <generalisation>
+	relation 138117 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 139013 // <generalisation>
+	  b parent class_ref 142341 // JPanel
+      end
+
+      operation 153221 "PlatosPanel"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "rest" type class_ref 143493 // Restaurante
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153349 "PlatosPanel"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "rest" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153477 "PlatosPanel"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "i" explicit_type "int"
+	  param inout name "rest" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 153605 "generarPanel"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 139141 // platos (<unidirectional association>)
+	relation 138245 --->
+	  stereotype "ArrayList"
+	  a role_name "platos" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 139141 // platos (<unidirectional association>)
+	  b parent class_ref 142469 // Consumicion
+      end
+
+      classrelation 139269 // menu (<unidirectional association>)
+	relation 138373 --->
+	  a role_name "menu" private
+	    comment "hashtable de celdaPlatos, parecido al citypanel de pr4 y 5 private 
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 139269 // menu (<unidirectional association>)
+	  b parent class_ref 142085 // Menu
+      end
+
+      classrelation 139397 // celdaPlatos (<unidirectional association>)
+	relation 138501 --->
+	  stereotype "ArrayList"
+	  a role_name "celdaPlatos" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 139397 // celdaPlatos (<unidirectional association>)
+	  b parent class_ref 142213 // CeldaPlato
+      end
+
+      classrelation 139525 // celdas (<unidirectional association>)
+	relation 138629 --->
+	  a role_name "celdas" multiplicity "[]" package
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 139525 // celdas (<unidirectional association>)
+	  b parent class_ref 142213 // CeldaPlato
+      end
+    end
+
+    class 144517 "RealizarPedido"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      java_annotation "@SuppressWarnings(\"serial\")
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Gestiona el pedido desde una mesa, puediendole a�adir bebidas, primeros, segundos o postres y mandando la comanda a cocina.
+@author Jesus"
+      classrelation 139653 // <generalisation>
+	relation 138757 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 139653 // <generalisation>
+	  b parent class_ref 142341 // JPanel
+      end
+
+      classrelation 139781 // <realization>
+	relation 138885 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 139781 // <realization>
+	  b parent class_ref 143877 // ComandaObserver
+      end
+
+      operation 153861 "RealizarPedido"
+	public explicit_return_type ""
+	nparams 3
+	  param in name "rest" type class_ref 141957 // GUIController
+	  param in name "numeroMesa" explicit_type "int"
+	  param in name "comandaSeleccionada" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}final ${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "
+@param rest"
+      end
+
+      operation 153989 "RealizarPedido"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "controller" type class_ref 141957 // GUIController
+	  param inout name "comandaEdit" type class_ref 144645 // ComandaInfo
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154117 "inicializaPaneles"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154245 "comandaHaCambiado"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "comanda" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      classrelation 139909 // primeros (<unidirectional association>)
+	relation 139013 --->
+	  a role_name "primeros" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 139909 // primeros (<unidirectional association>)
+	  b parent class_ref 142213 // CeldaPlato
+      end
+
+      classrelation 140037 // segundos (<unidirectional association>)
+	relation 139141 --->
+	  a role_name "segundos" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 140037 // segundos (<unidirectional association>)
+	  b parent class_ref 142213 // CeldaPlato
+      end
+
+      classrelation 140165 // postres (<unidirectional association>)
+	relation 139269 --->
+	  a role_name "postres" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 140165 // postres (<unidirectional association>)
+	  b parent class_ref 142213 // CeldaPlato
+      end
+
+      classrelation 140293 // bebidas (<unidirectional association>)
+	relation 139397 --->
+	  a role_name "bebidas" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 140293 // bebidas (<unidirectional association>)
+	  b parent class_ref 142213 // CeldaPlato
+      end
+
+      attribute 144645 "frame"
+	private explicit_type "JFrame"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 144773 "panelCentral"
+	private explicit_type "JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 140421 // platosPanel (<unidirectional association>)
+	relation 139525 --->
+	  a role_name "platosPanel" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 140421 // platosPanel (<unidirectional association>)
+	  b parent class_ref 144389 // PlatosPanel
+      end
+
+      attribute 144901 "scroller"
+	private explicit_type "JScrollPane"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 145029 "text"
+	private explicit_type "JTextArea"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 140549 // restControl (<aggregation>)
+	relation 139653 o---
+	  a role_name "restControl" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 140549 // restControl (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 150661 // <aggregation>
+      end
+
+      attribute 145157 "mesas"
+	private explicit_type "JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 145285 "elementosMenu"
+	private explicit_type "JPanel"
+	multiplicity "[]"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 140677 // comanda (<aggregation>)
+	relation 139781 o---
+	  a role_name "comanda" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 140677 // comanda (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 150917 // <aggregation>
+      end
+
+      attribute 145413 "numeroComanda"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 145541 "numeroMesa"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 140805 // tPlato (<unidirectional association>)
+	relation 139909 --->
+	  a role_name "tPlato" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 140805 // tPlato (<unidirectional association>)
+	  b parent class_ref 142597 // TipoPlatos
+      end
+
+      classrelation 148613 // <unidirectional association>
+	relation 147205 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 148613 // <unidirectional association>
+	  b parent class_ref 142085 // Menu
+      end
+
+      classrelation 153477 // <unidirectional association>
+	relation 148869 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 153477 // <unidirectional association>
+	  b parent class_ref 143365 // Mesa
+      end
+    end
+
+    class 144773 "RealizarReserva"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      java_annotation "@SuppressWarnings(\"serial\")
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Realiza una reserva para el restaurante a nombre del cliente, permitiendo seleccionar fecha y hora, numero de comensales y mesas.
+La aplicacion exigira que el nombre no esta vacio y que el numero de comensales no sea nulo.
+Pueden seleccionarse mas de una mesa en cada reserva.
+Tras comprobar que estos campos son correctos, crea la reserva y la a�ade a la lista de reservas.
+@author Jaime
+@author Jesus
+@author Kike"
+      classrelation 140933 // <generalisation>
+	relation 140037 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 140933 // <generalisation>
+	  b parent class_ref 142341 // JPanel
+      end
+
+      operation 154373 "RealizarReserva"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "controller" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"deprecation\")
+"
+	
+	
+	
+      end
+
+      operation 154501 "datosValidos"
+	public explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154629 "comensalesValidos"
+	public explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154757 "nombreValido"
+	public explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 154885 "inicializaBox"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      class 144901 "SeleccionMesas"
+	visibility public 
+	cpp_decl ""
+	final java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	
+	classrelation 141061 // <generalisation>
+	  relation 140165 ---|>
+	    a public
+	      java "${type}"
+	      classrelation_ref 141061 // <generalisation>
+	    b parent class_ref 145029 // JFrame
+	end
+
+	classrelation 141189 // <realization>
+	  relation 140293 -_-|>
+	    a public
+	      java "${type}"
+	      classrelation_ref 141189 // <realization>
+	    b parent class_ref 145157 // ChangeListener
+	end
+
+	attribute 145669 "checkMesas"
+	  private explicit_type "JCheckBox"
+	  multiplicity "[]"
+	  init_value " new JCheckBox[mesasSel.length]"
+	  cpp_decl ""
+	  java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	end
+
+	operation 155013 "SeleccionMesas"
+	  public explicit_return_type ""
+	  nparams 0
+	  
+	  preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	end
+
+	operation 155141 "stateChanged"
+	  public explicit_return_type "void"
+	  nparams 1
+	    param inout name "e" explicit_type "ChangeEvent"
+	  
+	  preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	  
+	  
+	  
+	end
+      end
+
+      attribute 145797 "LINE_SEPARATOR"
+	class_attribute const_attribute package explicit_type "String"
+	init_value " System.getProperty(\"line.separator\")"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 145925 "COMENSALES_NO_VALIDOS"
+	class_attribute private explicit_type "String"
+	init_value " \"Debe seleccionar el número de comensales\" + LINE_SEPARATOR"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146053 "NOMBRE_RESERVA"
+	class_attribute private explicit_type "String"
+	init_value " \"Debe introcudir el nombre del cliente\" + LINE_SEPARATOR"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146181 "frame"
+	private explicit_type "JFrame"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146309 "error"
+	private explicit_type "boolean"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146437 "mesasSel"
+	private explicit_type "boolean"
+	multiplicity "[]"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 141317 // reserva (<aggregation>)
+	relation 140421 o---
+	  a role_name "reserva" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 141317 // reserva (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 150149 // <aggregation>
+      end
+
+      attribute 146565 "fecha"
+	private explicit_type "JTextField"
+	init_value " new JTextField(10)"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146693 "dia"
+	private explicit_type "JTextField"
+	init_value " new JTextField(2)"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146821 "mes"
+	private explicit_type "JComboBox"
+	init_value " new JComboBox()"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 146949 "a�o"
+	private explicit_type "JComboBox"
+	init_value " new JComboBox()"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 141445 // controlador (<aggregation>)
+	relation 140549 o---
+	  a role_name "controlador" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 141445 // controlador (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 150533 // <aggregation>
+      end
+
+      attribute 147077 "hora"
+	private explicit_type "JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 147205 "minutos"
+	private explicit_type "JComboBox"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 147333 "datePicker"
+	const_attribute private explicit_type "JXDatePicker"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 147461 "nombre"
+	private explicit_type "JTextField"
+	init_value " new JTextField(10)"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 147589 "comensales"
+	private explicit_type "JSpinner"
+	init_value " new JSpinner()"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 147717 "meses"
+	private explicit_type "String"
+	multiplicity "[]"
+	init_value " {\"Enero\", \"Febrero\", \"Marzo\", \"Abril\", \"Mayo\", \"Junio\", 
+			\"Julio\", \"Agosto\", \"Septiembre\"
+			, \"Octubre\", \"Noviembre\", \"Diciembre\"}"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 148357 // <association>
+	relation_ref 146949 // <association>
+      end
+
+      classrelation 148485 // <unidirectional association>
+	relation 147077 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 148485 // <unidirectional association>
+	  b parent class_ref 146693 // LibroReservas
+      end
+    end
+
+    class 145413 "RestauranteSwing"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      java_annotation "@SuppressWarnings(\"serial\")
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Gestiona las diferentes opciones de la aplicacion, lanzando sus ventanas correspondientes
+@author Jesus"
+      classrelation 141573 // <generalisation>
+	relation 140677 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 141573 // <generalisation>
+	  b parent class_ref 142341 // JPanel
+      end
+
+      operation 155269 "RestauranteSwing"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155397 "RestauranteSwing"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "controlador" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155525 "initializeGUI"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 155653 "createImageIcon"
+	protected explicit_return_type "ImageIcon"
+	nparams 2
+	  param in name "path" explicit_type "String"
+	  param in name "description" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 147845 "botones"
+	private explicit_type "JButton"
+	multiplicity "[]"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 141701 // rest (<unidirectional association>)
+	relation 140805 --->
+	  a role_name "rest" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 141701 // rest (<unidirectional association>)
+	  b parent class_ref 141957 // GUIController
+      end
+    end
+
+    class 145541 "TableReservas"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 155781 "TableReservas"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 148229 // <association>
+	relation 146949 ----
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 148229 // <association>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 148357 // <association>
+      end
+    end
+
+    class 145669 "UserWindow"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      java_annotation "@SuppressWarnings(\"serial\")
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Presenta la ventana de Login, donde el empleado introduce su nombre y contraseña.
+Si es correcta le permite acceder a la instancia RestauranteSwing que desde aquí se crea.
+@author Jesús"
+      classrelation 141829 // <generalisation>
+	relation 140933 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 141829 // <generalisation>
+	  b parent class_ref 145029 // JFrame
+      end
+
+      operation 155909 "initializeGUI"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156037 "UserWindow"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "controller" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156165 "mostrarRestaurante"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156293 "registroCorrecto"
+	private explicit_return_type "boolean"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156421 "passwordCorrecto"
+	private explicit_return_type "boolean"
+	nparams 2
+	  param inout name "p1" explicit_type "char"
+	  param inout name "p2" explicit_type "char"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}, ${t1}[] ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156549 "createImageIcon"
+	protected explicit_return_type "ImageIcon"
+	nparams 2
+	  param in name "path" explicit_type "String"
+	  param in name "description" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 147973 "menuBar"
+	private explicit_type "JMenuBar"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 141957 // controlador (<unidirectional association>)
+	relation 141061 --->
+	  a role_name "controlador" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 141957 // controlador (<unidirectional association>)
+	  b parent class_ref 141957 // GUIController
+      end
+
+      attribute 148101 "user"
+	private explicit_type "JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148229 "password"
+	private explicit_type "JPasswordField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 142085 // usuarios (<unidirectional association>)
+	relation 141189 --->
+	  a role_name "usuarios" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 142085 // usuarios (<unidirectional association>)
+	  b parent class_ref 141701 // Usuario
+      end
+
+      attribute 148357 "logo"
+	private explicit_type "JLabel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 148485 "front"
+	private explicit_type "JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 142213 // rest (<unidirectional association>)
+	relation 141317 --->
+	  a role_name "rest" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142213 // rest (<unidirectional association>)
+	  b parent class_ref 145413 // RestauranteSwing
+      end
+    end
+
+    class 145797 "VerReserva"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Muestra cuatro pesta�as con las reservas de hoy, dentro de una semana, dentro de un mes y todas las reservas.
+@author JaimeDan
+"
+      classrelation 142853 // <realization>
+	relation 141957 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 142853 // <realization>
+	  b parent class_ref 145925 // LibroReservaObserver
+      end
+
+      operation 159493 "VerReserva"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "rest" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"serial\")
+"
+	
+	
+	
+      end
+
+      classrelation 142981 // controlador (<aggregation>)
+	relation 142085 o---
+	  a role_name "controlador" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 142981 // controlador (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 150405 // <aggregation>
+      end
+
+      attribute 149637 "nombreReserva"
+	private explicit_type "JTextField"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 159621 "cambioOcurrido"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+    end
+
+    class 146053 "VistaMesas"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      java_annotation "@SuppressWarnings(\"serial\")
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Muestra todas las mesas
+Al elegir una mesa permite a�adir o eliminar una comanda para esa mesa.
+@author JaimeDan
+@author Villarin"
+      classrelation 143109 // <generalisation>
+	relation 142213 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 143109 // <generalisation>
+	  b parent class_ref 142341 // JPanel
+      end
+
+      operation 159749 "VistaMesas"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "controller" type class_ref 141957 // GUIController
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}final ${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 159877 "setComandasPanel"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "numeroMesa" explicit_type "Integer"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 149765 "comandasContainer"
+	private explicit_type "JPanel"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 143237 // restController (<aggregation>)
+	relation 142341 o---
+	  a role_name "restController" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 143237 // restController (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 151045 // <aggregation>
+      end
+
+      classrelation 143365 // mesas (<aggregation>)
+	relation 142469 o---
+	  a role_name "mesas" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 143365 // mesas (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 151557 // <aggregation>
+      end
+
+      classrelation 143493 // comandas (<unidirectional association>)
+	relation 142597 --->
+	  a role_name "comandas" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	    classrelation_ref 143493 // comandas (<unidirectional association>)
+	  b parent class_ref 144645 // ComandaInfo
+      end
+
+      attribute 149893 "comandasPanel"
+	private explicit_type "JPanel"
+	multiplicity "[]"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150021 "comandaSelected"
+	package explicit_type "int"
+	init_value " -1"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 150149 "numMesa"
+	private explicit_type "int"
+	init_value "-1"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 148741 // <realization>
+	relation 147333 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 148741 // <realization>
+	  b parent class_ref 146949 // MesaObserver
+      end
+    end
+  end
+
+  deploymentview 128133 "gui"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 128645 "CantidadExistencias"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import javax.swing.JPanel;
+import is.restaurante.Menu;
+${definition}"
+      associated_classes
+	class_ref 141829 // CantidadExistencias
+      end
+    end
+
+    artifact 128773 "CeldaPlato"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import is.restaurante.consumicion.Consumicion;
+import is.restaurante.TipoPlatos;
+${definition}"
+      associated_classes
+	class_ref 142213 // CeldaPlato
+      end
+    end
+
+    artifact 128901 "CloseApp"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+${definition}"
+      associated_classes
+	class_ref 142725 // CloseApp
+      end
+    end
+
+    artifact 129029 "ConsumicionSwing"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.gui.spring.SpringUtilities;
+import is.restaurante.Comanda;
+import is.restaurante.TipoPlatos;
+import is.restaurante.consumicion.Bebida;
+import is.restaurante.consumicion.Consumicion;
+import is.restaurante.consumicion.Plato;
+import is.restaurante.consumicion.Postre;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
+import javax.swing.border.Border;
+${definition}"
+      associated_classes
+	class_ref 142981 // ConsumicionSwing
+      end
+    end
+
+    artifact 129157 "GenerarFactura"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.restaurante.Mesa;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+${definition}"
+      associated_classes
+	class_ref 143237 // GenerarFactura
+      end
+    end
+
+    artifact 129285 "GUIController"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import is.Fecha;
+import is.restaurante.ComandaInfo;
+import is.restaurante.ComandaObserver;
+import is.restaurante.Menu;
+import is.restaurante.MenuObserver;
+import is.restaurante.Mesa;
+import is.restaurante.MesaInfo;
+import is.restaurante.Reserva;
+import is.restaurante.ReservaInfo;
+import is.restaurante.Restaurante;
+import is.restaurante.TipoPlatos;
+import is.restaurante.consumicion.Consumicion;
+${definition}"
+      associated_classes
+	class_ref 141957 // GUIController
+      end
+    end
+
+    artifact 129413 "ModificarMenu"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 144133 // ModificarMenu
+      end
+    end
+
+    artifact 129541 "NotificarIncidencias"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 144261 // NotificarIncidencias
+      end
+    end
+
+    artifact 129669 "PlatosPanel"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.restaurante.Menu;
+import is.restaurante.Restaurante;
+import is.restaurante.consumicion.Consumicion;
+import java.awt.GridLayout;
+import java.util.ArrayList;
+import javax.swing.JPanel;
+${definition}"
+      associated_classes
+	class_ref 144389 // PlatosPanel
+      end
+    end
+
+    artifact 129925 "RealizarPedido"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.restaurante.Comanda;
+import is.restaurante.ComandaInfo;
+import is.restaurante.ComandaObserver;
+import is.restaurante.Menu;
+import is.restaurante.Mesa;
+import is.restaurante.Restaurante;
+import is.restaurante.TipoPlatos;
+import is.restaurante.consumicion.Consumicion;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
+${definition}"
+      associated_classes
+	class_ref 144517 // RealizarPedido
+      end
+    end
+
+    artifact 130053 "RealizarReserva"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Vector;
+import is.gui.spring.SpringUtilities;
+import is.restaurante.Reserva;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import org.jdesktop.swingx.JXDatePicker;
+${definition}"
+      associated_classes
+	class_ref 144773 // RealizarReserva
+      end
+    end
+
+    artifact 130181 "RestauranteSwing"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+${definition}"
+      associated_classes
+	class_ref 145413 // RestauranteSwing
+      end
+    end
+
+    artifact 130309 "TableReservas"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 145541 // TableReservas
+      end
+    end
+
+    artifact 130437 "UserWindow"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.Usuario;
+import is.restaurante.Restaurante;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+${definition}"
+      associated_classes
+	class_ref 145669 // UserWindow
+      end
+    end
+
+    artifact 130693 "VerMenu"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import javax.swing.UIManager;
+import is.restaurante.Menu;
+import is.restaurante.MenuObserver;
+import is.restaurante.TipoPlatos;
+import is.restaurante.consumicion.Consumicion;
+${definition}"
+      associated_classes
+	class_ref 143109 // VerMenu
+      end
+    end
+
+    artifact 130949 "VerReserva"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.Fecha;
+import is.restaurante.LibroReservaObserver;
+import is.restaurante.Reserva;
+import is.restaurante.ReservaInfo;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+${definition}"
+      associated_classes
+	class_ref 145797 // VerReserva
+      end
+    end
+
+    artifact 131077 "VistaMesas"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.restaurante.Comanda;
+import is.restaurante.ComandaInfo;
+import is.restaurante.MesaInfo;
+import java.awt.BorderLayout;
+import java.awt.CardLayout;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
+${definition}"
+      associated_classes
+	class_ref 146053 // VistaMesas
+      end
+    end
+  end
+
+  package_ref 135301 // spring
+end

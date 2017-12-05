@@ -1,0 +1,121 @@
+%Documento que incluye DEFINICIONES, ACRONIMOS Y ABREVIATURAS. Es un GLOSARIO
+
+\documentclass[spanish,a4paper,11pt, twoside]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+
+%%% PAQUETES
+\usepackage[spanish,activeacute]{babel}				
+% Babel: Adapta cosas como la tipografia, la fecha, lo de Chapter al español, y activeacute para apóstrofes (') como abreviaciones de acentos: \'{a}
+\usepackage[utf8]{inputenc}					% Codificacion UTF8 (para meter tildes normal: á --> \'{a} )
+\usepackage{multicol}						% Escritura en varias columnas
+\usepackage{graphics}						% Inclusión de imágenes
+\usepackage{graphicx}						% Mas para imagenes
+\usepackage{geometry}						% Distribucion de la pagina: margenes, encabezados, tamaño pagina...
+\usepackage{fancyhdr}						% Paquete para añadir y modificar encabezados y pies de pagina
+\usepackage{hyperref}						% Para hipervínculos, en el indice al menos, GRACIAS A DAVID
+%\usepackage{lastpage}						% Ultima pagina para poner, por ejemplo, 3 de 15
+%%% PAQUETES MATEMATICOS
+\usepackage{amsmath}						% Conjunto de paquetes desarrollados por la Amercian Matematical Society
+\usepackage{amssymb}						% Tipografía mathbb y otros símbolos tambien de la AMS
+\usepackage{amsthm}						% Paquete AMS theorem, de la AMS
+\usepackage{amsfonts}						% Paquete con símbolos y mas, de la AMS
+%\usepackage{nicefrac}						% Fracciones bonitas, LO DEJO COMENTADO PORQUE A VECES DA PROBLEMAS AL COMPILAR
+
+
+%%% DECLARACIONES (sobre la forma de la pagina, encabezado etc.)
+\pagenumbering{roman}						
+% Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
+\pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
+%\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Casos de uso} 		%Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries Casos de uso}				%Encabezado a la derecha
+\cfoot{\thepage}							% Numero de pagina centrado en el pie
+%\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
+\renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
+\renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
+\renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
+\renewcommand*{\thesubsection}{\arabic{subsection}}
+\renewcommand*{\thesubsubsection}{\arabic{subsubsection}}
+\newcommand*{\PKT}{\hbox{P}\kern-2.5pt\lower3.5pt\hbox{\small{K}}\kern-2.8pt\hbox{T}\kern-2pt}	%PiKey Team en bonito
+
+
+%%%%% CUERPO %%%%%
+\begin{document}
+
+\title{\textbf{\huge{Definiciones, acrónimos \\ 
+	y abreviaturas}} \\ 
+	\textit{v4.0.1} \\	\vspace{0.1cm}
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{{\Large{PiKey Team-}} \PKT \ : \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
+	 Enrique Ballesteros Horcajo \\
+	 Jaime Dan Porras Rhee \\
+	 Ignacio Iker Prado Rujas \\
+	 Alejandro Villarín Prieto }
+\date{\Today}
+\maketitle
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+
+\tableofcontents 							%INDICE hipervinculado
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage	
+
+
+
+\subsection{Android:} Sistema operativo basado en Linux, diseñado principalmente para móviles con pantalla táctil como teléfonos inteligentes o tabletas inicialmente desarrollados por Android Inc, empresa propiedad de Google Inc. Las versiones utilizadas serán desde Gingerbread (2.3) a Jellybean (4.2).
+\subsection{Base de datos:} Conjunto de datos pertenecientes a un mismo contexto y almacenados sistemáticamente para su posterior uso.
+\subsection{Benchmark:} Técnica utilizada para medir el rendimiento de un sistema o componente del mismo.
+\subsection{Chef:} Jefe de cocina, en especial de un restaurante.
+\subsection{Comanda:} Pedido que se hace al camarero en un restaurante.
+\subsection{Comensal:} Cada una de las personas que comen en una misma mesa.
+\subsection{CU:} Acrónimo de Casos de Uso.
+\subsection{C.V.:}Acrónimo de Currículum Vítae. Relación de los títulos, honores, cargos, trabajos realizados, datos biográficos, etc., que califican a una persona.
+\subsection{DAA:} Acrónimo de Definiciones, Acrónimos y Abreviaturas.
+\subsection{ECS:} Acrónimo de Elemento de Configuración Software.
+\subsection{EP-PPS:} Acrónimo de Estimación del Proyecto del Plan de Proyecto Software.
+\subsection{GCS:} Acrónimo de Gestión de la Configuración Software.
+\subsection{GR-PPS:} Acrónimo de Gestión de Riesgos del Plan de Proyecto Software.
+\subsection{Hardware:} Conjunto de los componentes que integran la parte material de una computadora.
+\subsection{iOS:} Sistema operativo móvil de la empresa Apple Inc. La versión utilizada para nuestra aplicacion será iOS6.
+\subsection{Java:} Lenguaje de programación para aplicaciones software independiente de la plataforma.
+\subsection{Log in:} Anglicismo que sustituye en el mundo informático a la palabra española “Registrarse”.
+\subsection{Maître:} Jefe de comedor en un restaurante. 
+\subsection{PDF:} Acrónimo de Portable Document Format (en castellano, Formato de Documento Portátil). Formato de almacenamiento de documentos digitales independiente de plataformas de software o hardware.
+\subsection{Pitanza:} Ración de comida que se distribuye a quienes viven en comunidad.
+\subsection{Procesador:} Programa o aparato para el procesamiento de datos.
+\subsection{PPS:} Acrónimo de Plan de Proyecto Software.
+\subsection{PTR-PPS:} Acrónimo de Planificación Temporal y Recursos del Plan de Proyecto Software.
+\subsection{RE-SRS:} Acrónimo que significa Requistos Específicos de la Especificación de Requisitos Software.
+\subsection{Software:} Conjunto de programas, instrucciones y reglas informáticas para ejecutar ciertas tareas en una computadora.
+\subsection{SQA:} Acrónimo de Software Quality Assurance o Garantía de la Calidad Software.
+\subsection{SRS:} Acrónimo de Especificación de Requisitos Software.
+\subsection{Stakeholders:} Persona que puede tener influencia directa o indirecta sobre los requisitos. Esto incluye, por ejemplo, al cliente de nuestro software, a los usuarios de la aplicación o a otros expertos externos.
+\subsection{Tablet:} Computadora portátil de mayor tamaño que un teléfono inteligente o una PDA, integrado en una pantalla táctil con la que se interactúa primariamente con los dedos o una pluma stylus, sin necesidad de teclado físico ni ratón.
+\subsection{Windows:}Familia de sistemas operativos desarrollados y vendidos por Microsoft. Las versiones utilizadas en nuestra aplicación serán Windows 7 y Windows Phone 8.
+\subsection{Wi-Fi:} Mecanismo de conexión de dispositivos electrónicos de forma inalámbrica.
+
+
+
+
+
+
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada, al final del documento
+\newpage
+
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
+
+\end{document}

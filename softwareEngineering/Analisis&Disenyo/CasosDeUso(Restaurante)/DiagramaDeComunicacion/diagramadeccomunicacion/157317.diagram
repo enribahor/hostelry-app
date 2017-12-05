@@ -1,0 +1,78 @@
+format 76
+
+classcanvas 128005 class_ref 148613 // Maître
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 62 149 2000
+end
+note 128133 "En cuanto a las reservas, el maître (o camarero...) puede realizar, eliminar o modificar una reserva, que se guardan en un libro de reservas."
+  color mediumblue  xyzwh 497 248 2000 201 79
+classcanvas 128261 class_ref 146693 // LibroReservas
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 375 169 2000
+end
+classcanvas 128389 class_ref 145285 // Reserva
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 540 171 2000
+end
+classcanvas 128517 class_ref 141317 // Fecha
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 660 170 2006
+end
+classcanvas 128773 class_ref 144773 // RealizarReserva
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 215 78 2006
+end
+classcanvas 129413 class_ref 148741 // ModificarReserva
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 211 166 2012
+end
+classcanvas 130053 class_ref 148869 // EliminarReserva
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 215 252 2000
+end
+textcanvas 130565 "accede"
+  xyzwh 324 112 2000 36 14
+textcanvas 130693 "accede"
+  xyzwh 325 171 2000 43 17
+textcanvas 130821 "accede"
+  xyzwh 326 232 2006 41 17
+textcanvas 130949 "tiene"
+  xyzwh 487 173 2000 26 15
+textcanvas 131077 "incluye"
+  xyzwh 609 174 2012 34 15
+relationcanvas 129029 relation_ref 147077 // <unidirectional association>
+  from ref 128773 z 2007 to ref 128261
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129541 relation_ref 147973 // <unidirectional association>
+  from ref 128005 z 2007 to ref 128773
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129669 relation_ref 148101 // <unidirectional association>
+  from ref 128005 z 2013 to ref 129413
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130181 relation_ref 148229 // <unidirectional association>
+  from ref 128005 z 2001 to ref 130053
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130309 relation_ref 148357 // <unidirectional association>
+  decenter_end 435
+  from ref 129413 z 2013 to ref 128261
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130437 relation_ref 148485 // <unidirectional association>
+  from ref 130053 z 2001 to ref 128261
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129797 -_-_ decenter_end 460
+  from ref 128261 z 2001 to ref 128389
+line 129925 -_-_
+  from ref 128389 z 2007 to ref 128517
+end

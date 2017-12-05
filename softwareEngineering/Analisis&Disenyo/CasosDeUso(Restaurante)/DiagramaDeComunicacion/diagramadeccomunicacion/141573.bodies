@@ -1,0 +1,9 @@
+class Main
+!!!147461.java!!!	Main()
+		
+!!!147589.java!!!	main(inout args : String) : void
+		// TODO Auto-generated method stub
+		Restaurante rest = new Restaurante();
+		GUIController controlador = new GUIController (rest);
+		UserWindow window = new UserWindow(controlador);
+		window.setVisible(true);

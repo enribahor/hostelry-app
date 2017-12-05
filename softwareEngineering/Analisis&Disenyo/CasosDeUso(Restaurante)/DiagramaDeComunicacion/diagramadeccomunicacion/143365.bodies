@@ -1,0 +1,53 @@
+class Mesa
+!!!167429.java!!!	Mesa(in num : int)
+		this.setNumeroMesa(num);
+!!!167557.java!!!	Mesa(in num : int, in cap : int)
+		numeroMesa = num;
+		capacidad = cap;
+!!!167685.java!!!	addPedido(inout comanda : Comanda) : void
+		comandas.add(comanda);
+		// comandas.
+!!!167813.java!!!	getNumeroMesa() : int
+		return numeroMesa;
+!!!167941.java!!!	setNumeroMesa(in numeroMesa : int) : void
+		this.numeroMesa = numeroMesa;
+!!!168069.java!!!	setCapacidad(in c : int) : void
+		capacidad = c;
+!!!168197.java!!!	generarFactura() : String
+		String factura = "";
+		// TODO tenemos que usar la clase Factura, con su metodo estatico;
+		/*
+		 * for (Comanda c : comandas){ factura += c.toString() + LINE_SEPARATOR;
+		 * } //return comandas.toString(); return factura;
+		 */
+		return "";
+!!!168325.java!!!	getListaComandas() : ComandaInfo
+		if (this.comandas != null)
+			return (ComandaInfo[]) this.comandas.toArray();
+		else
+			return null;
+!!!168453.java!!!	avisaComanda(in comandaSelected : int) : void
+		if (comandaActual != -1)
+			// TODO, al dar al boton de generar comanda o elegir comanda en la
+			// vista correspondiente, se añadira el observador (supongo)
+			// comandaActual.removeObserver(obs);
+			// comandas.get(comandaSelected).addObserver(obs);
+			comandaActual = comandaSelected;
+!!!168581.java!!!	eliminaComanda(in comandaSelected : int) : void
+		comandas.remove(comandaSelected);
+		emitirCambios();
+!!!168709.java!!!	addConsumption(in numComanda : int, inout plato : Consumicion, inout tPlato : TipoPlatos) : void
+		// comandas.get(numComanda).addConsumicion(plato);
+		switch (tPlato) {
+		case PRIMERO:
+			comandas.get(numComanda).addPrimero(plato);
+		case SEGUNDO:
+			comandas.get(numComanda).addSegundo(plato);
+		case POSTRE:
+			comandas.get(numComanda).addPostre(plato);
+		case BEBIDA:
+			comandas.get(numComanda).addBebida(plato);
+		}
+!!!168837.java!!!	emitirCambios() : void
+		for (MesaObserver o : obs)
+			o.cambioOcurrido((ComandaInfo[]) comandas.toArray());

@@ -1,0 +1,6 @@
+class Ejemplo1
+!!!169989.java!!!	metodoQueLanzaExcepcion() : void
+		
+		throw new RuntimeException("Esto no se tiene por qué declarar");
+!!!170117.java!!!	main(inout args : String) : void
+		new Ejemplo1().metodoQueLanzaExcepcion();

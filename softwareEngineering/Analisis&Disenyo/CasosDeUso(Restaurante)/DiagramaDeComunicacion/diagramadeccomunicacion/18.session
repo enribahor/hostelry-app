@@ -1,0 +1,26 @@
+window_sizes 1280 962 300 900 682 82
+diagrams
+  collaborationdiagram_ref 128258 // diagramaModificarMenu
+    775 644 100 4 0 0
+  collaborationdiagram_ref 128386 // diagramaGenerarFactura
+    775 644 100 4 0 0
+  collaborationdiagram_ref 128514 // diagramaEditarDistribucion
+    775 644 100 4 0 0
+  collaborationdiagram_ref 128018 // diagramaCancelarReserva
+    878 748 100 4 0 0
+  active  collaborationdiagram_ref 128146 // diagramaRealizarRecuentoDeExistencias
+    775 644 100 4 0 0
+  collaborationdiagram_ref 128642 // diagramaVerMenu
+    775 644 100 4 0 0
+end
+show_stereotypes
+selected collaborationdiagram_ref 128146 // diagramaRealizarRecuentoDeExistencias
+open
+  usecase_ref 128130 // modificarMenu
+  usecase_ref 128258 // generarFactura
+  usecase_ref 128386 // editarDistribucionRestaurante
+  usecase_ref 128514 // verMenu
+  usecase_ref 128018 // cancelarReserva
+  usecase_ref 128146 // realizarRecuentoDeExistencias
+end
+end

@@ -1,0 +1,177 @@
+format 76
+"spring" // is::gui::spring
+  revision 1
+  modified_by 5 "usuario"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  java_dir "C:/Users/usuario/Desktop/Cosas para imprimir y tal/Source/src/is/gui/spring/"
+  java_package "is.gui.spring"
+  classview 156677 "spring"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 146181 "SpringUtilities"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "A 1.4 file that provides utility methods for
+creating form- or grid-style layouts with SpringLayout.
+These utilities are used by several programs, such as
+SpringBox and SpringCompactGrid."
+      operation 160005 "printSizes"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "c" explicit_type "Component"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "A debugging utility that prints to stdout the component's
+minimum, preferred, and maximum sizes."
+      end
+
+      operation 160133 "makeGrid"
+	class_operation public explicit_return_type "void"
+	nparams 7
+	  param inout name "parent" explicit_type "Container"
+	  param in name "rows" explicit_type "int"
+	  param in name "cols" explicit_type "int"
+	  param in name "initialX" explicit_type "int"
+	  param in name "initialY" explicit_type "int"
+	  param in name "xPad" explicit_type "int"
+	  param in name "yPad" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Aligns the first <code>rows</code> * <code>cols</code>
+components of <code>parent</code> in
+a grid. Each component is as big as the maximum
+preferred width and height of the components.
+The parent is made just big enough to fit them all.
+
+@param rows number of rows
+@param cols number of columns
+@param initialX x location to start the grid at
+@param initialY y location to start the grid at
+@param xPad x padding between cells
+@param yPad y padding between cells"
+      end
+
+      operation 160261 "getConstraintsForCell"
+	class_operation private explicit_return_type "SpringLayout.Constraints"
+	nparams 4
+	  param in name "row" explicit_type "int"
+	  param in name "col" explicit_type "int"
+	  param inout name "parent" explicit_type "Container"
+	  param in name "cols" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " Used by makeCompactGrid. "
+      end
+
+      operation 160389 "makeCompactGrid"
+	class_operation public explicit_return_type "void"
+	nparams 7
+	  param inout name "parent" explicit_type "Container"
+	  param in name "rows" explicit_type "int"
+	  param in name "cols" explicit_type "int"
+	  param in name "initialX" explicit_type "int"
+	  param in name "initialY" explicit_type "int"
+	  param in name "xPad" explicit_type "int"
+	  param in name "yPad" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Aligns the first <code>rows</code> * <code>cols</code>
+components of <code>parent</code> in
+a grid. Each component in a column is as wide as the maximum
+preferred width of the components in that column;
+height is similarly determined for each row.
+The parent is made just big enough to fit them all.
+
+@param rows number of rows
+@param cols number of columns
+@param initialX x location to start the grid at
+@param initialY y location to start the grid at
+@param xPad x padding between cells
+@param yPad y padding between cells"
+      end
+    end
+  end
+
+  deploymentview 128389 "spring"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 131205 "SpringUtilities"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import javax.swing.*;
+import javax.swing.SpringLayout;
+import java.awt.*;
+${definition}"
+      associated_classes
+	class_ref 146181 // SpringUtilities
+      end
+    end
+  end
+end

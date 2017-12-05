@@ -1,0 +1,42 @@
+class SeleccionMesas
+!!!155013.java!!!	SeleccionMesas()
+	    	 //Put the check boxes in a column in a panel
+	    	//TODO jesus, villarin o quien sea, mirad esto del grid layout que no se muy bien como va
+	        JPanel checkPanel = new JPanel(new GridLayout(5,5));
+	        
+	        for (int i=0; i<mesasSel.length; i++){
+	        	checkMesas[i] = new JCheckBox("Mesa " + i);
+	        	checkMesas[i].addChangeListener(this);
+	        	checkMesas[i].setSelected(mesasSel[i]);
+	        	//checkMesas[i].setLocation(0, i*10);
+	        	//checkMesas[i].setBounds(0,0,i*10, 50);
+	        	checkPanel.add(checkMesas[i]);
+	        }/*
+	        check1=new JCheckBox("Inglés");
+	        check1.setBounds(10,10,150,30);
+	        check1.addChangeListener(this);
+	        add(check1);
+	        check2=new JCheckBox("Francés");
+	        check2.setBounds(10,50,150,30);
+	        check2.addChangeListener(this);        
+	        add(check2);
+	        check3=new JCheckBox("Alemán");
+	        check3.setBounds(10,90,150,30);
+	        check3.addChangeListener(this);        
+	        add(check3); */  
+	        this.add(checkPanel);
+!!!155141.java!!!	stateChanged(inout e : ChangeEvent) : void
+	        String cad="";
+	        for (int i=0; i< checkMesas.length; i++){
+	        	mesasSel[i] = checkMesas[i].isSelected();
+	        }
+	        /*if (check1.isSelected()==true) {
+	            cad=cad+"Inglés-";
+	        }
+	        if (check2.isSelected()==true) {
+	            cad=cad+"Francés-";
+	        }
+	        if (check3.isSelected()==true) {
+	            cad=cad+"Alemán-";
+	        }*/
+	        setTitle(cad);

@@ -1,0 +1,14 @@
+BeginReservas
+"Jaime Dan"
+5
+"02/06/2013 16:15"
+MesasReserva
+4 2 5 3
+EndMesasReserva
+"Kike"
+2
+"02/06/2013 17:15"
+MesasReserva
+2 2
+EndMesasReserva
+EndReservas

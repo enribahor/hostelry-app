@@ -1,0 +1,70 @@
+format 76
+
+classinstance 128005 class_ref 128011 // RestauranteSwing
+  name ""   xyz 114.7 4 2000 life_line_z 2000
+classinstance 128133 class_ref 128770 // Reserva
+  name ""   xyz 305.8 4.1 2000 life_line_z 2000
+classinstance 128261 class_ref 142466 // Restaurante
+  name ""   xyz 454.2 4 2000 life_line_z 2000
+note 128389 "Caso de uso:
+Reservar mesa
+"
+  color mediumblue  xyzwh 597.4 314.2 2000 103 53
+fragment 130437 "opt"
+  xyzwh 122.5 140.1 0 395 211
+end
+textcanvas 130565 "[reservaPosible]"
+  xyzwh 175 147 2000 86 18
+note 130693 "La información relativa a una reserva es: ListaMesas, Nombre (no obligatorio), fecha, hora y número de comensales"
+  xyzwh 558.3 54.4 2000 181 77
+durationcanvas 128901 classinstance_ref 128005 // :RestauranteSwing
+  xyzwh 161 71 2010 11 303
+end
+durationcanvas 129029 classinstance_ref 128133 // :Reserva
+  xyzwh 327 71 2010 11 61
+end
+durationcanvas 129413 classinstance_ref 128261 // :Restaurante
+  xyzwh 485 177 2010 11 59
+end
+durationcanvas 130053 classinstance_ref 128261 // :Restaurante
+  xyzwh 485 274 2010 11 64
+end
+msg 129157 synchronous
+  from durationcanvas_ref 128901
+  to durationcanvas_ref 129029
+  yz 71 2015 explicitmsg "Reserva(Info)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 259 60
+msg 129285 return
+  from durationcanvas_ref 129029
+  to durationcanvas_ref 128901
+  yz 110 2015 explicitmsg "this"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 179 98
+msg 129541 synchronous
+  from durationcanvas_ref 128901
+  to durationcanvas_ref 129413
+  yz 178 2015 explicitmsg "autorizaReserva(Reserva)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 354 164
+msg 129669 return
+  from durationcanvas_ref 129413
+  to durationcanvas_ref 128901
+  yz 212 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 185 200
+msg 130181 synchronous
+  from durationcanvas_ref 128901
+  to durationcanvas_ref 130053
+  yz 279 2015 explicitmsg "añadeReserva(Reserva)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 365 266
+msg 130309 return
+  from durationcanvas_ref 130053
+  to durationcanvas_ref 128901
+  yz 312 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 177 299
+line 130821 -_-_ decenter_begin 340 decenter_end 134
+  from ref 130693 z 2011 to ref 129029
+end

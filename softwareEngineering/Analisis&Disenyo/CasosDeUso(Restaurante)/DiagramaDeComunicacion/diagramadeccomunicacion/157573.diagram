@@ -1,0 +1,53 @@
+format 76
+
+classcanvas 128005 class_ref 143237 // GenerarFactura
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 166 125 2000
+end
+classcanvas 128133 class_ref 142469 // Consumicion
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 642 120 2000
+end
+classcanvas 128261 class_ref 143365 // Mesa
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 374 126 3005
+end
+classcanvas 128517 class_ref 148613 // Maître
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 40 117 3011
+end
+textcanvas 129029 "relativa a una"
+  xyzwh 282 127 3011 65 14
+textcanvas 129157 "recopilando"
+  xyzwh 424 130 3011 56 14
+note 129285 "A partir de una o varias comandas, el maître puede generar facturas de las mesas del restaurante."
+  color mediumblue  xyzwh 492 199 2000 195 65
+classcanvas 129413 class_ref 146309 // Comanda
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 495 126 2000
+end
+textcanvas 129797 "que acumula"
+  xyzwh 568 130 2006 61 14
+relationcanvas 128645 relation_ref 149637 // <unidirectional association>
+  decenter_begin 372
+  from ref 128517 z 3012 to ref 128005
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128773 relation_ref 149765 // <unidirectional association>
+  from ref 128005 z 3006 to ref 128261
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129541 relation_ref 150021 // <unidirectional association>
+  from ref 128261 z 3006 to ref 129413
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129669 relation_ref 150149 // <unidirectional association>
+  decenter_begin 537
+  from ref 129413 z 2001 to ref 128133
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

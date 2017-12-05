@@ -1,0 +1,43 @@
+\BOOKMARK [-1][-]{part.1}{I Cat\341logo de casos de uso}{}% 1
+\BOOKMARK [0][-]{section.0.1}{Primarios}{part.1}% 2
+\BOOKMARK [1][-]{section.0.2}{Secundarios}{section.0.1}% 3
+\BOOKMARK [-1][-]{part.2}{II Especificaci\363n de los casos de uso}{}% 4
+\BOOKMARK [0][-]{section.0.1}{Primarios}{part.2}% 5
+\BOOKMARK [1][-]{subsection.0.1.1}{Log in}{section.0.1}% 6
+\BOOKMARK [2][-]{subsection.0.1.2}{Ver ficha de empleado}{subsection.0.1.1}% 7
+\BOOKMARK [2][-]{subsection.0.1.3}{Ver ficha de cliente}{subsection.0.1.1}% 8
+\BOOKMARK [2][-]{subsection.0.1.4}{Reservar mesa}{subsection.0.1.1}% 9
+\BOOKMARK [2][-]{subsection.0.1.5}{Anular reserva del restaurante}{subsection.0.1.1}% 10
+\BOOKMARK [2][-]{subsection.0.1.6}{Tomar comanda}{subsection.0.1.1}% 11
+\BOOKMARK [2][-]{subsection.0.1.7}{Editar comanda}{subsection.0.1.1}% 12
+\BOOKMARK [2][-]{subsection.0.1.8}{Generar factura del restaurante}{subsection.0.1.1}% 13
+\BOOKMARK [2][-]{subsection.0.1.9}{Ver men\372}{subsection.0.1.1}% 14
+\BOOKMARK [2][-]{subsection.0.1.10}{Realizar recuento de existencias}{subsection.0.1.1}% 15
+\BOOKMARK [2][-]{subsection.0.1.11}{Ver habitaci\363n}{subsection.0.1.1}% 16
+\BOOKMARK [2][-]{subsection.0.1.12}{Reservar habitaci\363n}{subsection.0.1.1}% 17
+\BOOKMARK [2][-]{subsection.0.1.13}{Anular reserva del hotel}{subsection.0.1.1}% 18
+\BOOKMARK [2][-]{subsection.0.1.14}{Ver reservas del hotel}{subsection.0.1.1}% 19
+\BOOKMARK [2][-]{subsection.0.1.15}{Generar factura del hotel}{subsection.0.1.1}% 20
+\BOOKMARK [2][-]{subsection.0.1.16}{Organizar tareas de limpieza}{subsection.0.1.1}% 21
+\BOOKMARK [2][-]{subsection.0.1.17}{Revisar tareas de limpieza}{subsection.0.1.1}% 22
+\BOOKMARK [2][-]{subsection.0.1.18}{Consultar tareas de limpieza}{subsection.0.1.1}% 23
+\BOOKMARK [2][-]{subsection.0.1.19}{Confirmar tareas de limpieza}{subsection.0.1.1}% 24
+\BOOKMARK [2][-]{subsection.0.1.20}{Anotar incidencias de mantenimiento}{subsection.0.1.1}% 25
+\BOOKMARK [2][-]{subsection.0.1.21}{A\361adir nota}{subsection.0.1.1}% 26
+\BOOKMARK [2][-]{subsection.0.1.22}{Borrar nota}{subsection.0.1.1}% 27
+\BOOKMARK [1][-]{section.0.2}{Secundarios}{section.0.1}% 28
+\BOOKMARK [2][-]{subsection.0.2.1}{A\361adir empleado}{section.0.2}% 29
+\BOOKMARK [2][-]{subsection.0.2.2}{Editar empleado}{section.0.2}% 30
+\BOOKMARK [2][-]{subsection.0.2.3}{Dar de baja empleado}{section.0.2}% 31
+\BOOKMARK [2][-]{subsection.0.2.4}{Ver C.V. empleado}{section.0.2}% 32
+\BOOKMARK [2][-]{subsection.0.2.5}{Editar cliente}{section.0.2}% 33
+\BOOKMARK [2][-]{subsection.0.2.6}{Dar de baja cliente}{section.0.2}% 34
+\BOOKMARK [2][-]{subsection.0.2.7}{Eliminar comanda}{section.0.2}% 35
+\BOOKMARK [2][-]{subsection.0.2.8}{Ver distribuci\363n y n\372mero de mesas del restaurante}{section.0.2}% 36
+\BOOKMARK [2][-]{subsection.0.2.9}{Editar distribuci\363n del restaurante}{section.0.2}% 37
+\BOOKMARK [2][-]{subsection.0.2.10}{Modificar men\372}{section.0.2}% 38
+\BOOKMARK [2][-]{subsection.0.2.11}{Editar habitaciones}{section.0.2}% 39
+\BOOKMARK [2][-]{subsection.0.2.12}{Ver cuenta diaria de la caja de recepci\363n}{section.0.2}% 40
+\BOOKMARK [2][-]{subsection.0.2.13}{Ver cuenta diaria de la caja del restaurante}{section.0.2}% 41
+\BOOKMARK [2][-]{subsection.0.2.14}{Consultar libro diario}{section.0.2}% 42
+\BOOKMARK [2][-]{subsection.0.2.15}{Consultar libro mayor}{section.0.2}% 43

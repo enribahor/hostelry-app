@@ -1,0 +1,394 @@
+%Documento de la Gestion de la configuracion sooftware o GCS, en la teoria el tema 7
+
+
+\documentclass[spanish,a4paper,11pt, twoside]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+
+%%% PAQUETES
+\usepackage[spanish,activeacute]{babel}				
+% Babel: Adapta cosas como la tipografia, la fecha, lo de Chapter al español, y activeacute para apóstrofes (') como abreviaciones de acentos: \'{a}
+\usepackage[utf8]{inputenc}					% Codificacion UTF8 (para meter tildes normal: á --> \'{a} )
+\usepackage{multicol}						% Escritura en varias columnas
+\usepackage{graphics}						% Inclusión de imágenes
+\usepackage{graphicx}						% Mas para imagenes
+\usepackage{geometry}						% Distribucion de la pagina: margenes, encabezados, tamaño pagina...
+\usepackage{fancyhdr}						% Paquete para añadir y modificar encabezados y pies de pagina
+\usepackage{hyperref}						% Para hipervínculos, en el indice al menos, GRACIAS A DAVID
+%\usepackage{lastpage}						% Ultima pagina para poner, por ejemplo, 3 de 15
+%%% PAQUETES MATEMATICOS
+\usepackage{amsmath}						% Conjunto de paquetes desarrollados por la Amercian Matematical Society
+\usepackage{amssymb}						% Tipografía mathbb y otros símbolos tambien de la AMS
+\usepackage{amsthm}						% Paquete AMS theorem, de la AMS
+\usepackage{amsfonts}						% Paquete con símbolos y mas, de la AMS
+%\usepackage{nicefrac}						% Fracciones bonitas, LO DEJO COMENTADO PORQUE A VECES DA PROBLEMAS AL COMPILAR
+
+
+%%% DECLARACIONES (sobre la forma de la pagina, encabezado etc.)
+\pagenumbering{roman}						
+% Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
+\pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
+%\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Gestión de la configuración} %Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries Casos de uso}				%Encabezado a la derecha
+\cfoot{\thepage}							% Numero de pagina centrado en el pie
+%\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
+\renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
+\renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
+\renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
+\newcommand*{\PKT}{\hbox{P}\kern-2.5pt\lower3.5pt\hbox{\small{K}}\kern-2.8pt\hbox{T}\kern-2pt}	%PiKey Team en bonito
+
+
+%%%%% CUERPO %%%%%
+\begin{document}
+
+\title{\textbf{\huge{Gestión de la \\ 
+	configuración Software}} \\ 
+	\textit{v4.0.1} \\	\vspace{0.1cm}
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{{\Large{PiKey Team-}} \PKT \ : \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
+	 Enrique Ballesteros Horcajo \\
+	 Jaime Dan Porras Rhee \\
+	 Ignacio Iker Prado Rujas \\
+	 Alejandro Villarín Prieto }
+\date{\Today}
+\maketitle
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+
+\tableofcontents 							%INDICE hipervinvulado
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
+
+%%% PARTE 1: INTRODUCCIÓN______________________________________________________________________________________________________
+\part{Introducción}
+	\section{Propósito}Este documento se va a encargar de la Gestión de Configuración Software (\textit{Software Configuration Management}). Se centra en el control de cambios, analizándolos y garantizando su correcta implementación. Por tanto, la Gestión de Configuración Software tiene como objetivo facilitar la elaboración de código fuente mediante el seguimiento del estado de las versiones y sus cambios, y la integración de las partes del software en un solo producto.
+	\section{Alcance}Se establecerá un modo de actuación una vez se detecte que algo debe cambiar. Para identificar los errores nos basaremos en las Revisiones Técnicas Formales. En primer lugar, informaremos a todo el grupo del problema que hemos detectado y se asignará a uno o varios componentes la tarea de resolverlo. Para que quede constancia de ello y no haya problemas de versiones usamos el Repositorio \textit{Google Code}, empleado anteriormente en el proyecto. Una vez resuelto el problema se emplearán algunos días en garantizar que todo el equipo  ha asumido el cambio.
+	%\section{Definición de términos clave} NO SE PONE -> GLOSARIO
+	\section{Referencias} A lo largo del presente documento se hará referencia a los siguientes documentos:
+	\begin{itemize}
+		\item Documento \texttt{Definiciones, acrónimos y abreviaturas}.
+		\item Documento \texttt{Garantía de calidad Software}.
+		\item IEEE Std. 828-1998.
+		\item Top ten risk factors for a software development project [Boehm 1989] 
+		\item Pressman, R.S. Ingeniería del Software. Un Enfoque Práctico.
+		\item Apuntes de Clase de la asignatura “Ingeniería del Software" de la Universidad Complutense de Madrid, Curso 2012-2013.
+
+	\end{itemize}
+
+\setcounter{section}{0}
+
+%%% PARTE 2: GESTIÓN DE LA GCS__________________________________________________________________________________________________
+\part{Gestión de la GCS }
+
+	\section{Organización}
+	La GCS se realizará durante el curso 2012-2013 en el grupo Pikey Team- \PKT \  y se aplicará al proyecto de Ingeniería del Software KIKE-Hostelería ®. Se realizarán  los cambios que indique Gonzalo Méndez, sin discusión. Los que nos indiquen
+	los grupos que realicen las revisiones técnicas formales, si son aceptados por los participantes de nuestro grupo en las reuniones. Y a partir de ahí  los cambios indicados por los miembros del propio grupo que sean aceptados por al menos tres miembros del mismo.\\
+	Una vez aceptado un cambio, se gestionará de acuerdo con el plan de gestión de la configuración del software.
+	\section{Responsabilidades GCS}
+	Las responsabilidades en la gestión serán indicadas por el jefe del proyecto, Iker Prado. Una vez conocido el cambio que hay que realizar, éste indicará a cada miembro del grupo su parte del trabajo. En la elaboración del documento,
+	Alejandro Villarín estará al cargo de la introducción y  Kike Ballesteros se ocupará de la gestión. Jesús Aguirre e Iker Prado se encargarán de las actividades,  y Jaime Porras se responsabilizará de la gestión de los recursos, bajo la guía del jefe del proyecto.
+	\section{Políticas, directivas y procedimientos aplicables}
+	Las principales restricciones vienen indicadas por Gonzalo Méndez: principalmente no se realizarán ni el control de la configuración, las auditorías, el control de la interfaz, el control de las subcontrataciones, la planificación, y por ahora 
+	tampoco el mantenimiento.
+
+
+\setcounter{section}{0}
+
+%%% PARTE 3: ACTIVIDADES DE LA GCS_____________________________________________________________________________________________
+\part{Actividades de la GCS}
+	\section{Identificación de la configuración}
+		La totalidad de los documentos del proyecto se encuentra en el repositorio, en \textit{Google Code}. 
+
+		\subsection{Identificación de ECSs}
+			% Lo que va en subsubsection => El NOMBRE del objeto es una cadena de caracteres que identifican al objeto sin ambigüedad
+			% DESCRIPCION => El tipo de ECS (simple vs. compuesta), un identificador de proyecto, la información de la versión y/o cambio
+			% RECURSOS => Entidades que proporciona, procesa, referencia o son, de alguna otra forma requeridas por el objeto
+			% REALIZACION => Una referencia a la unidad de texto para objetos básicos y nulo para objetos compuestos
+			
+			% Jesús, creo que están todos los ECSs, si se te ocurren más añadelos, pero mi duda es a lo mejor quitar los de "introduccion de srs", "descripción de srs" y "introduccion de plan de proyecto" porque son partes un poco chorras, no se... (Los he quitado ya)
+			
+			A lo largo de la realización del proyecto hemos identificado y seleccionado los siguientes Elementos de Configuración Software (ECSs):
+			
+			\subsubsection{\texttt{\underline{Documento de casos de uso}}}
+			\begin{itemize}	
+				\item{Descripción:} En este documento se especifican todos los casos de uso que han aparecido durante el desarrollo del producto.
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto básico. 
+						\item{Identificador de proyecto:} CU.
+						\item{Información de la versión:} Es el primer documento en el que se trabajó, la primera versión fue la 1.0.0 a 12/12/12. La versión actual es la 3.0.1, al tratarse de la tercera entrega y ya que se acaba de realizar la primera RTF.
+					\end{itemize}	
+				\item{Lista de recursos:} El único recurso aquí es la información que hemos recibido por parte del cliente y de los usuarios, que es de donde nacen los casos de uso. Es uno de los documentos vitales para el proyecto, y se cuidarán mucho sus revisiones.
+				\item{Lista de realización:} Todos.
+			\end{itemize}		
+
+			\subsubsection{\underline{Requisitos específicos del \texttt{Documento de especificación de requisitos Software}}}
+			\begin{itemize}	
+				\item{Descripción:} Lista y desarrolla los diversos requisitos específicos que aparecen en el \texttt{Documento de especificación de requisitos Software}.
+					\begin{itemize}	
+						\item{Tipo:} Es una parte de un documento (la SRS), y un objeto básico. 
+						\item{Identificador de proyecto:} RE-SRS.
+						\item{Información de la versión:} Al ser una parte de la SRS, la versión es la misma, la 3.0.1.
+					\end{itemize}	
+				\item{Lista de recursos:} Al igual que el \texttt{Documento de casos de uso}, que además  es un recurso, la información proviene de las exigencias y requerimientos del cliente. También referencia el \texttt{Glosario}.
+				\item{Lista de realización:} Todos.
+			\end{itemize}		
+
+			\subsubsection{\texttt{\underline{Documento de especificación de requisitos Software}}}
+			\begin{itemize}	
+				\item{Descripción:} Descripción completa del comportamiento del sistema KIKE- Hostelería ®.
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto compuesto que incluye a RE-SRS. 
+						\item{Identificador de proyecto:} SRS.
+						\item{Información de la versión:} De igual modo que el documento CU, es de los más antiguos del proyecto del \PKT \ y, junto con ese documento, es la base de todo lo que le sigue. La versión es la 3.0.1.
+					\end{itemize}	
+				\item{Lista de recursos:}Al igual que el \texttt{Documento de casos de uso}, que además  es un recurso, la información proviene de las exigencias y requerimientos del cliente. También referencia el \texttt{Glosario}.
+				\item{Lista de realización:} Todos.
+			\end{itemize}			
+
+			\subsubsection{\underline{Documento de \texttt{Estimación del proyecto Software}}}
+			\begin{itemize}	
+				\item{Descripción:} Estima esfuerzo, coste y duración mediante la técnica de Puntos de Función, un procedimiento de descomposición basado en el problema.
+					\begin{itemize}	
+						\item{Tipo:} Es un documento en sí mismo, pero es una parte del PPS, y un objeto básico. 
+						\item{Identificador de proyecto:} EP-PPS.
+						\item{Información de la versión:} La misma que el \texttt{Plan de proyecto}, la 3.0.1.
+					\end{itemize}	
+				\item{Lista de recursos:} El \texttt{Documento de Casos de Uso}, la herramienta COCOMO II.2000.4.
+				\item{Lista de realización:} Iker Prado.
+			\end{itemize}		
+			
+			\subsubsection{\underline{Documento de \texttt{Gestión de riesgos Software}}}
+			\begin{itemize}	
+				\item{Descripción:} Documento donde se analizan e identifican todos los riesgos que pueden afectar al proyecto.
+					\begin{itemize}	
+						\item{Tipo:} Es un documento en sí mismo, pero es una parte del PPS, y un objeto básico.
+						\item{Identificador de proyecto:} GR-PPS.
+						\item{Información de la versión:} La misma que el PPS, la 3.0.1.
+					\end{itemize}	
+				\item{Lista de recursos:} El propio proyecto software, Top ten risk factors for a software development project [Boehm 1989].
+				\item{Lista de realización:} Jaime Dan Porras y Alejandro Villarín.
+			\end{itemize}		
+
+			\subsubsection{\underline{Planificación temporal y recursos del documento \texttt{Plan de Proyecto Software}}}
+			\begin{itemize}	
+				\item{Descripción:} Documento donde aparece reflejado el reparto de tareas y la planificación del proyecto.
+					\begin{itemize}	
+						\item{Tipo:} Es una parte de un documento (el PPS), y un objeto básico.
+						\item{Identificador de proyecto:} PTR-PPS.
+						\item{Información de la versión:} La misma que el \texttt{Plan de proyecto}, la 3.0.1.
+					\end{itemize}	
+				\item{Lista de recursos:}COCOMO II.2000.4.
+				\item{Lista de realización:} Enrique Ballesteros.
+			\end{itemize}	
+
+			\subsubsection{\underline{\texttt{Plan de Proyecto Software}}}
+			\begin{itemize}	
+				\item{Descripción:} Mediante un modelo sistemático, se ofrece toda la información necesaria para controlar el desarrollo del proyecto.
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto compuesto (por los tres anteriores). 
+						\item{Identificador de proyecto:} PPS.
+						\item{Información de la versión:} De igual forma que antes, al ser la tercera entrega y la primera RTF, 3.0.1.
+					\end{itemize}	
+				\item{Lista de recursos:} El propio proyecto.
+				\item{Lista de realización:} Jesús Aguirre y Enrique Ballesteros.
+			\end{itemize}	
+
+			\subsubsection{\underline{Documento \texttt{Definiciones, acrónimos y abreviaturas}}}
+			\begin{itemize}	
+				\item{Descripción:} Lista y define las palabras de uso poco frecuente utilizadas en los documentos generados por el PiKey Team.
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto básico. 
+						\item{Identificador de proyecto:} DAA.
+						\item{Información de la versión:} 3.0.1. Ha sufrido pocas modificaciones, ya que sólo recoge definiciones de palabras poco comunes.
+					\end{itemize}	
+				\item{Lista de recursos:} Las definiciones provienen del Diccionario de la Real Academia Española y la enciclopedia online Wikipedia.
+				\item{Lista de realización:} Todos.
+			\end{itemize}		
+
+			\subsubsection{\underline{Documento \texttt{Gestión de la configuración Software}}}
+			\begin{itemize}	
+				\item{Descripción:} Se trata del presente documento.
+					\begin{itemize}	
+						\item{Tipo:} Es un documento en sí mismo, pero se puede considerar como una parte del documento de \texttt{Garantía de calidad Software}, y un objeto básico. 
+						\item{Identificador de proyecto:} GCS.
+						\item{Información de la versión:} Como siempre, 3.0.1.
+					\end{itemize}	
+				\item{Lista de recursos:} El resto de documentos, la herramienta Google Code, de Google Inc.
+				\item{Lista de realización:} Todos.
+			\end{itemize}	
+
+			\subsubsection{\underline{Documento \texttt{Garantía de calidad Software}}}
+			\begin{itemize}	
+				\item{Descripción:} Medio de seguimiento de los procesos de ingeniería de software y métodos utilizados para asegurar la calidad del software KIKE- Hostelería ®.
+					\begin{itemize}	
+						\item{Tipo:} Es un documento, y un objeto compuesto (incluye a la GCS). 
+						\item{Identificador de proyecto:} SQA (hemos optado por la versión en inglés, \textit{Software Quality Assurance}, para diferenciarlo del documento de \texttt{Gestión de la configuración Software} GCS).
+						\item{Información de la versión:} 3.0.1.
+					\end{itemize}	
+				\item{Lista de recursos:} IEEE Std. 828-1998, Correcciones de equipos ajenos al proyecto.
+				\item{Lista de realización:} Todos
+			\end{itemize}	
+
+			\subsubsection{\underline{Primera entrega}}
+			\begin{itemize}	
+				\item{Descripción:} Primera entrega del proyecto, a fecha 19/12/2012.
+					\begin{itemize}	
+						\item{Tipo:} Es un conjunto de documentos, y un objeto compuesto. 
+						\item{Identificador de proyecto:} E1.
+						\item{Información de la versión:} 1.1.0.
+					\end{itemize}	
+				\item{Lista de recursos:} La primera entrega consta de los siguientes documentos:
+					\begin{itemize}	
+						\item \texttt{Documento de especificación de requisitos Software} 
+						\item \texttt{Documento de casos de uso} 
+					\end{itemize}
+			\end{itemize}	
+
+			\subsubsection{\underline{Segunda entrega}}
+			\begin{itemize}	
+				\item{Descripción:} Segunda entrega del proyecto, a fecha 18/02/2013.
+					\begin{itemize}	
+						\item{Tipo:} Es un conjunto de documentos, y un objeto compuesto. 
+						\item{Identificador de proyecto:} E2.
+						\item{Información de la versión:} 2.1.0.
+					\end{itemize}	
+				\item{Lista de recursos:} La segunda entrega consta de los siguientes documentos:
+					\begin{itemize}	
+						\item \texttt{Documento de especificación de requisitos Software}
+						\item \texttt{Documento de casos de uso}
+						\item \texttt{Plan de Proyecto Software}
+						\item \texttt{Definiciones, acrónimos y abreviaturas}
+					\end{itemize}
+			\end{itemize}
+
+			\subsubsection{\underline{Tercera entrega}}
+			\begin{itemize}	
+				\item{Descripción:} Tercera entrega del proyecto, a fecha 02/04/2013.
+					\begin{itemize}	
+						\item{Tipo:} Es un conjunto de documentos, y un objeto compuesto.
+						\item{Identificador de proyecto:} E3.
+						\item{Información de la versión:} 3.0.1, ya que aquí introducimos las RTFs.
+					\end{itemize}	
+				\item{Lista de recursos:} La tercera entrega consta de los siguientes documentos:
+					\begin{itemize}	
+						\item \texttt{Documento de especificación de requisitos Software}
+						\item \texttt{Documento de casos de uso}
+						\item \texttt{Plan de Proyecto Software}
+						\item \texttt{Definiciones, acrónimos y abreviaturas}
+						\item \texttt{Gestión de la configuración Software}
+						\item \texttt{Garantía de calidad Software}
+					\end{itemize}
+			\end{itemize}	
+
+			Por el momento no hay más ECSs, pero irán apareciendo más según se avance en el proyecto, como código, manuales de usuario, casos de prueba...
+
+		\subsection{Nombrado de ECSs}
+
+		Para el identificador de proyecto de cada ECS se ha tratado de tomar las iniciales, dando lugar al acrónimo más obvio posible de dos o tres caracteres. En el caso de las entregas, siguen el formato ''$Ex$'', donde x es el número de entrega. De este modo, se consiguen identificadores únicos e independientes para cada elemento de configuración.
+
+		Para identificar la versión, se usan tres dígitos separados por puntos, con el formato ''$x.y.z$'', donde ''$x$'' es el número de entrega, (a día de hoy tres), ''$y$'' es la versión dentro de cada entrega (sin haber sido revisada) y ''$z$'' es el número de versión revisada. Obviamente, una vez revisado un documento, la ''$y$'' queda fija y sólo podrá avanzar la $x$ (por cada entrega) o la ''$z$'' mediante Revisiones Técnicas Formales (RTFs).
+		
+		De este modo, cada documento PDF tendrá un nombre distinto capaz de diferenciar cada escrito y sus versiones. Por ejemplo, a fecha de hoy el \texttt{Documento de casos de uso} se llama \textit{''CU\_v3.0.1''}, donde la ''$v$'' es de versión. Como se ve, el nombre del PDF es distinto del título del documento que aparece en la portada del mismo.
+
+		En el caso de que se produzcan subcontrataciones, el nombre del documento PDF incluirá \textit{''\_sub\_''} para distinguir estos casos. Así, por ejemplo, si se subcontratará a terceros para elaborar un manual preliminar de usuario, cuyo identificador fuera MPU con versión 2.1.0, el fichero pasaría a llamarse \textit{''MPU\_sub\_v2.1.0''}.
+
+		\subsection{Adquisición de ECSs}
+		Para la organizacion de nuestro proyecto software hemos optado por almacenar los documentos generados en el sistema Google Code, propiedad de Google Inc., donde utilizando una cuenta de Google, proporciona un entorno de desarrollo en colaboración gratuito para proyectos de software libre.\\
+
+Las actualizaciones y modificaciones de archivos se realizan utilizando el sistema de control de versiones de Subversion, de software libre, que fomenta la colaboración permitiendo que varias personas puedan modificar y administrar el mismo conjunto de datos desde sus respectivas ubicaciones.\\
+
+La modificacion de archivos require la identificación en los servidores de Google Code a través de nombre de usuario y contraseña, mientras que la visualización de contenidos es pública y puede realizarse desde la dirección url del proyecto: https://code.google.com/p/is-hosteleria/ \\
+
+Para la integración con el entorno de trabajo se usan los programas TortoiseSVN, para Windows; y Subclipse, un complemento para Eclipse.
+
+
+	\section{Contabilidad de estado de configuración}
+
+	Las actividades de contabilidad de estado de configuración graban e informan del estado de los elementos de configuración. Debe incluir lo siguiente:
+
+	\textbf{a) Qué elementos se van a monitorizar e informar de líneas base y cambios:}
+		Cada documento variará conforme se completen iteraciones del Proceso Unificado. Por tanto, en cada revisión del documento puede producirse una modificación que implique una nueva versión. Esto hace que todos los documentos sean monitorizados y se informe de los cambios en el apartado de Identificacion de ECSs, donde se mostrará la versión incluida en cada entrega y la versión actual de los documentos.
+	
+
+	\textbf{b) Qué tipo de contabilidad de estado se va a generar y su frecuencia:}
+En cada Revisión Técnica Formal se generará un Informe de Contabilidad de Estado, y la frecuencia con la que se producirán estas revisiones variará de una iteración a otra dependiendo, entre otros factores, del tiempo y personal dispoonibles, las exigencias del cliente o el flujo de documentos nuevos en esa iteración.	
+
+	\textbf{c) Cómo se va a procesar y a almacenar la información:}
+Como hemos comentado, los documentos estarán almacenados en los servidores de Google Inc., ya que utilizamos el Proyect Hosting que ofrece Google Code. Además, y mediante la herramienta Subversion, cada miembro del proyecto tendrá una copia almacenada en su ordenador.
+	
+
+	\textbf{d) Cómo se controla el acceso al estado de datos}
+Como ya hemos comentado, aunque el proyecto es público, sólo nosotros tenemos acceso a él para editarlo. Cada nueva entrega constituirá una nueva carpeta donde almacenar todos los documentos que el proyecto haya fabricado hasta ese momento. Con esto, podemos trabajar sobre los datos sin eliminar los correspondientes a anteriores entregas, viendo así los fallos entonces producidos y pudiendo establecer una línea evolutiva del proyecto.
+	
+
+	\vspace{0.3cm}
+	No se utilizarán herramientas automáticas para las actividades de contabilidad de estado de configuración.
+
+	Como la primera RTF para todos los elementos de configuración fue el mismo día (8/3/13) y no se han vuelto a producir más RTFs, tras los cambios y mejoras dados por dichas revisiones la primera y última versión aprobada es la 3.0.1. Por el momento no hay más cambios solicitados pendientes de aprobar.
+
+
+\setcounter{section}{0}
+
+%%% PARTE 5: RECURSOS DE LA GCS__by_JAIME_____________________________________________________________________________________________
+\part{Recursos de la GCS}
+			Para la GCS se cuenta con un repositorio SVN, ubicado en Google Code. Aquí se guarda toda la documentación y en el futuro se guardará también el código del producto.
+			Todos los miembros del grupo tienen instalados en sus ordenadores personales clientes de SubVersion, que pueden ser el Tortoise SVN o el plug-in para Eclipse
+			SubClipse. De esta manera, todos pueden editar cualquier documento, y por cada \textit{commit} que se hace se tiene una nueva versión de toda la documentación.
+			Esto nos permite tener un control de versiones. Además, por cada entrega se hace una nueva carpeta con todos los documentos, lo que nos permite tener
+			identificados los cambios más importantes (debido a que hay cambios mayores de una entrega a otra que al elaborar específicamente una entrega).
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada al final del documento
+\newpage
+
+\end{document}
+
+%ALEX
+1. Introducción
+	1.1 Propósito
+	1.2 Alcance
+	1.3 Definición de términos clave 
+	1.4 Referencias
+
+%KIKE
+2. Gestión de la GCS 
+	2.1 Organización
+	2.2 Responsabilidades GCS
+	2.3 Políticas, directivas y procedimientos aplicables
+
+%JESÚS & IKER  (3.1 Y 3.3)
+3. Actividades de la GCS
+	3.1 Identificación de la configuración
+		3.1.1 Identificación de ECSs 
+		3.1.2 Nombrado de ECSs 
+		3.1.3 Adquisición de ECSs
+	3.2 Control de la configuración 					%ESTE NO HAY QUE HACERLO
+		3.2.1 Petición de cambios
+		3.2.2 Evaluación de cambios
+		3.2.3 Aprobación o desaprobación de cambios 
+		3.2.4 Implementación de cambios
+	3.3 Contabilidad de estado de configuración 
+	3.4 Auditorias y revisiones de la configuración		%ESTE NO HAY QUE HACERLO 
+	3.5 Control de interfaz							%ESTE NO HAY QUE HACERLO
+	3.6 Control de la subcontratación/compra			%ESTE NO HAY QUE HACERLO
+
+
+4. Planificaciones de la GCS							%ESTE NO HAY QUE HACERLO
+
+%JAIME
+5. Recursos de la GCS
+
+
+6. Mantenimiento del plan de GCS						%ESTE NO HAY QUE HACERLO

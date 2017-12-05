@@ -1,0 +1,12 @@
+class Usuario
+!!!147717.java!!!	Usuario(in nombre : String, in contrasena : String)
+		this.id = nombre;
+		this.password = contrasena.toCharArray();
+!!!147845.java!!!	getId() : String
+		return id;
+!!!147973.java!!!	setId(in id : String) : void
+		this.id = id;
+!!!148101.java!!!	getPassword() : char
+		return password;
+!!!148229.java!!!	setPassword(inout password : char) : void
+		this.password = password;

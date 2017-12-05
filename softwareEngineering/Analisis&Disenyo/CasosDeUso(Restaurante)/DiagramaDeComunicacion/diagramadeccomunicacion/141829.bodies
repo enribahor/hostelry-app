@@ -1,0 +1,6 @@
+class CantidadExistencias
+!!!148357.java!!!	CantidadExistencias(inout controller : GUIController)
+		this.controlador = controller;
+		JPanel panel = new JPanel();
+		menu = controlador.getMenu();
+		//menu.

@@ -1,0 +1,22 @@
+class MesaLoader
+!!!176901.java!!!	loadMesas(in fileName : String) : Mesa
+		ArrayList<Mesa> mesas = new ArrayList<Mesa>();
+		FileInputStream file;
+		try {
+			file = new FileInputStream(fileName);
+			tokenizer = new StreamTokenizer(new InputStreamReader(file));
+			tokenizer.wordChars('\u0021', '\u007E');
+			tokenizer.quoteChar('"');
+			forceString("BeginMesas");
+			int numMesa = 1;
+			while (!peek().equals("EndMesas")) {
+				forceInt(numMesa);
+				int capacidad = forceInt();
+				Mesa mesa = new Mesa(numMesa, capacidad);
+				mesas.add(mesa);
+			}
+			return mesas;
+		} catch (FileNotFoundException e) {
+			System.err.println("El fichero no existe");
+			return null;
+		}

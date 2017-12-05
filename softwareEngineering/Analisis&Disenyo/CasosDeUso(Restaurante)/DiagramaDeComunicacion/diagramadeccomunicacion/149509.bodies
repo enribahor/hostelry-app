@@ -1,0 +1,9 @@
+class Inventario
+!!!172037.java!!!	Inventario()
+
+!!!172165.java!!!	getNumItems() : int
+		return v.size();
+!!!172293.java!!!	addItem(inout i : GlugluItem) : void
+		v.add(i);
+!!!172421.java!!!	getItem(in i : int) : GlugluItem
+		return v.elementAt(i);

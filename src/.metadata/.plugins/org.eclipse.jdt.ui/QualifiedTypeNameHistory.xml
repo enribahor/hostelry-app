@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="marp.gui.ConfiguraMochilaManual"/>
+<fullyQualifiedTypeName name="marp.gui.ConfiguraMochilaAleatoria"/>
+<fullyQualifiedTypeName name="marp.gui.BateriaPruebas"/>
+<fullyQualifiedTypeName name="marp.gui.entera.MenuMochilaEntera"/>
+<fullyQualifiedTypeName name="marp.ModoObjetos"/>
+<fullyQualifiedTypeName name="marp.entera.ObjetoMochilaEntera"/>
+<fullyQualifiedTypeName name="marp.entera.MochilaEntera"/>
+<fullyQualifiedTypeName name="marp.entera.GestionEntera"/>
+</qualifiedTypeNameHistroy>

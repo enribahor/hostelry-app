@@ -1,0 +1,16 @@
+class MainAntiguo
+!!!172549.java!!!	main(inout args : String) : void
+int[] uno_diez = new int [10];
+		
+		try{
+			uno_diez[12] = 10;
+			
+		}catch (java.lang.ArrayIndexOutOfBoundsException excepcion){
+			System.err.println("Te pille");
+			String command = new String();
+			Scanner comando = new Scanner(System.in);
+			command = comando.nextLine();
+
+			
+		}
+		

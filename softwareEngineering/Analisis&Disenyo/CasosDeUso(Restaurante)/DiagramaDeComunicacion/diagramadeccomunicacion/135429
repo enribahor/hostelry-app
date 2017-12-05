@@ -1,0 +1,331 @@
+format 76
+"restauranteLoader" // ClasesJava::restauranteLoader
+  revision 1
+  modified_by 5 "usuario"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  java_dir "C:/Users/usuario/Desktop/Cosas para imprimir y tal/Source/src/is/restauranteLoader/"
+  java_package "is.restauranteLoader"
+  classview 156805 "restauranteLoader"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 147589 "Loader"
+      abstract visibility public 
+      
+      constraint "Clase padre general para cargar ficheros donde se almacenan datos
+@author Kike"cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 175877 "forceString"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "str" explicit_type "String"
+	nexceptions 1
+	  explicit_exception "IOException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Comprueba que el siguiente token que se lee es un String que coincide con
+la cadena que se pasa. En caso de no coincidir se lanza una excepcion.
+
+@param str
+           - Cadena que se espera leer.
+@throws IOException"
+      end
+
+      operation 176005 "forceString"
+	protected explicit_return_type "Boolean"
+	nparams 2
+	  param in name "str1" explicit_type "String"
+	  param in name "str2" explicit_type "String"
+	nexceptions 1
+	  explicit_exception "IOException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Comprueba que el siguiente token leido es un String. En caso de serlo y
+coincidir con algunos de los parametros se devuelve un booleano. En caso
+contrario se lanza una excepcion.
+
+@param str1
+           - Primer String valido.
+@param str2
+           - Segundo String valido.
+@return True si el token coincide con el primer String y False si
+        coincide con el segundo.
+@throws IOException"
+      end
+
+      operation 176133 "forceInt"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "i" explicit_type "int"
+	nexceptions 1
+	  explicit_exception "IOException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Comprueba que el siguiente token leido es un entero y coincide con el
+parametro que se a pasado.
+
+@param i
+           - Entero que se espera que sea el siguiente token.
+@throws IOException"
+      end
+
+      operation 176261 "forceInt"
+	protected explicit_return_type "int"
+	nparams 0
+	nexceptions 1
+	  explicit_exception "IOException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176389 "forceFloat"
+	protected explicit_return_type "float"
+	nparams 0
+	nexceptions 1
+	  explicit_exception "IOException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176517 "peek"
+	protected explicit_return_type "String"
+	nparams 0
+	nexceptions 1
+	  explicit_exception "IOException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 154501 "tokenizer"
+	protected explicit_type "StreamTokenizer"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+    end
+
+    class 147717 "MenuLoader"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Clase para cargar el menu desde fichero
+@author Villarin"
+      classrelation 146693 // <generalisation>
+	relation 145797 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 146693 // <generalisation>
+	  b parent class_ref 147589 // Loader
+      end
+
+      operation 176645 "forceConsumicion"
+	private return_type class_ref 142469 // Consumicion
+	nparams 1
+	  param in name "tipo" explicit_type "String"
+	nexceptions 1
+	  explicit_exception "IOException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 176773 "loadMenu"
+	public return_type class_ref 142085 // Menu
+	nparams 1
+	  param in name "fileName" explicit_type "String"
+	nexceptions 1
+	  explicit_exception "IOException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 147077 // <association>
+	relation_ref 146053 // <association>
+      end
+    end
+
+    class 147845 "MesaLoader"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Clase para cargar mesas desde fichero
+@author Kike"
+      classrelation 146821 // <generalisation>
+	relation 145925 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 146821 // <generalisation>
+	  b parent class_ref 147589 // Loader
+      end
+
+      operation 176901 "loadMesas"
+	public return_type class_ref 143365 // Mesa
+	nparams 1
+	  param in name "fileName" explicit_type "String"
+	nexceptions 1
+	  explicit_exception "IOException"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+  end
+
+  deploymentview 128645 "restauranteLoader"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 133637 "Loader"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.io.IOException;
+import java.io.StreamTokenizer;
+${definition}"
+      associated_classes
+	class_ref 147589 // Loader
+      end
+    end
+
+    artifact 133765 "MenuLoader"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.restaurante.Menu;
+import is.restaurante.consumicion.Consumicion;
+import is.restaurante.consumicion.Plato;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StreamTokenizer;
+import java.util.ArrayList;
+${definition}"
+      associated_classes
+	class_ref 147717 // MenuLoader
+      end
+    end
+
+    artifact 133893 "MesaLoader"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.restaurante.Mesa;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.StreamTokenizer;
+import java.util.ArrayList;
+${definition}"
+      associated_classes
+	class_ref 147845 // MesaLoader
+      end
+    end
+  end
+end

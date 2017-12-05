@@ -1,0 +1,44 @@
+window_sizes 1366 706 317 1043 682 82
+diagrams
+  collaborationdiagram_ref 135426 // diagramaEliminarComanda
+    830 440 100 4 0 0
+  collaborationdiagram_ref 135298 // diagramaTomarComanda
+    830 440 100 4 0 0
+  collaborationdiagram_ref 141954 // diagramaReservarMesa
+    830 440 100 4 0 0
+  collaborationdiagram_ref 128386 // diagramaGenerarFactura
+    830 440 100 4 0 0
+  collaborationdiagram_ref 128258 // diagramaEditarMenu
+    830 440 100 4 0 0
+  collaborationdiagram_ref 128642 // diagramaVerMenu
+    830 440 100 4 0 0
+  collaborationdiagram_ref 148738 // diagramaAnotarIncidencias
+    830 440 100 4 0 0
+  collaborationdiagram_ref 148866 // diagramaAnyadirPlato
+    830 440 100 4 0 0
+  collaborationdiagram_ref 148994 // diagramaEliminarPlato
+    1039 550 100 4 0 0
+  active  collaborationdiagram_ref 155522 // diagramaEditarReserva
+    830 440 100 4 0 0
+  collaborationdiagram_ref 128018 // diagramaCancelarReserva
+    830 440 100 4 0 0
+end
+show_stereotypes
+selected collaborationdiagram_ref 128018 // diagramaCancelarReserva
+open
+  usecase_ref 128258 // generarFacturaDelRestaurante
+  usecase_ref 141698 // reservarMesa
+  usecase_ref 135042 // tomarComanda
+  usecase_ref 128018 // anularReservaDelRestaurante
+  usecase_ref 128130 // modificarMenu
+  usecase_ref 128514 // verMenu
+  usecase_ref 135170 // eliminarComanda
+  usecase_ref 148482 // anotarIncidenciasDeMantenimiento
+  usecase_ref 155010 // editarReserva
+  classview_ref 156037 // is
+  deploymentview_ref 128005 // is
+  classview_ref 156165 // gui
+  classview_ref 156293 // restaurante
+  classview_ref 156549 // consumicion
+end
+end

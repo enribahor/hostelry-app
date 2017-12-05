@@ -1,0 +1,38 @@
+format 76
+
+classcanvas 128005 class_ref 142469 // Consumicion
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 320 26 2000
+end
+classcanvas 128133 class_ref 146437 // Bebida
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 310 194 2006
+end
+classcanvas 128389 class_ref 147333 // Plato
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 141 169 2012
+end
+classcanvas 128645 class_ref 147461 // Postre
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  hidden_attributes
+    attribute_ref 153989 // descripciÃ³n
+  xyz 488 194 2006
+end
+note 129029 "Interfaz Consumición y las clases que la implementan"
+  color mediumblue  xyzwh 475 74 2000 155 49
+relationcanvas 128261 relation_ref 145413 // <realization>
+  from ref 128133 z 2007 to ref 128005
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128517 relation_ref 145541 // <realization>
+  from ref 128389 z 2013 to ref 128005
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128773 relation_ref 145669 // <realization>
+  from ref 128645 z 2007 to ref 128005
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,0 +1,84 @@
+format 76
+
+classinstance 128005 class_ref 134661 // GUIController
+  name ""   xyz 258.4 4.5 2000 life_line_z 2000
+classinstance 128133 class_ref 128011 // RestauranteSwing
+  name ""   xyz 4.9 4.8 2000 life_line_z 2000
+classinstance 128261 class_ref 142594 // Mesa
+  name ""   xyz 666.8 4 2000 life_line_z 2000
+classinstance 128389 class_ref 142466 // Restaurante
+  name ""   xyz 501.6 4.5 2000 life_line_z 2000
+note 128517 "Caso de uso:
+Tomar comanda"
+  color mediumblue  xyzwh 555.6 369.6 2000 111 49
+classinstance 129541 class_ref 149122 // Comanda
+  name ""   xyz 746.3 4 2000 life_line_z 2000
+note 130437 "Para crear una nueva comanda se necesita una mesa y una lista de pares (consumición, cantidad)."
+  xyzwh 103.6 355.8 2000 150 79
+durationcanvas 128645 classinstance_ref 128133 // :RestauranteSwing
+  xyzwh 51 87 2010 11 207
+end
+durationcanvas 128773 classinstance_ref 128005 // :GUIController
+  xyzwh 291 89 2010 11 193
+end
+durationcanvas 129029 classinstance_ref 128389 // :Restaurante
+  xyzwh 532 99 2010 11 165
+end
+durationcanvas 129285 classinstance_ref 128261 // :Mesa
+  xyzwh 685 191 2010 11 47
+end
+durationcanvas 129669 classinstance_ref 129541 // :Comanda
+  xyzwh 770 108 2010 11 42
+end
+msg 128901 synchronous
+  from durationcanvas_ref 128645
+  to durationcanvas_ref 128773
+  yz 90 2015 explicitmsg "crearComanda(Mesa, ListaConsumiciones)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 71 79
+msg 129157 synchronous
+  from durationcanvas_ref 128773
+  to durationcanvas_ref 129029
+  yz 100 2020 explicitmsg "crearComanda(Mesa, ListaConsumiciones)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 320 88
+msg 129413 synchronous
+  from durationcanvas_ref 129029
+  to durationcanvas_ref 129285
+  yz 194 2015 explicitmsg "addPedido(Comanda)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 581 182
+msg 129797 synchronous
+  from durationcanvas_ref 129029
+  to durationcanvas_ref 129669
+  yz 110 2015 explicitmsg "Comanda(ListaConsumiciones)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 617 96
+msg 129925 return
+  from durationcanvas_ref 129669
+  to durationcanvas_ref 129029
+  yz 136 2015 explicitmsg "this"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 550 126
+msg 130053 return
+  from durationcanvas_ref 129285
+  to durationcanvas_ref 129029
+  yz 228 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 551 217
+msg 130181 return
+  from durationcanvas_ref 129029
+  to durationcanvas_ref 128773
+  yz 253 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 309 241
+msg 130309 return
+  from durationcanvas_ref 128773
+  to durationcanvas_ref 128645
+  yz 268 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 68 257
+line 130565 -_-_ decenter_begin 259 decenter_end 962
+  from ref 130437 z 2016 to point 140 330
+  line 130693 z 2016 to ref 128901
+end

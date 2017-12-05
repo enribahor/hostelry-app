@@ -1,0 +1,52 @@
+format 76
+
+classcanvas 132869 class_ref 144773 // RealizarReserva
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 67 110 2006
+end
+classcanvas 133765 class_ref 143621 // ReservaInfo
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 368 288 2000
+end
+classcanvas 133893 class_ref 145285 // Reserva
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 340 388 3005
+end
+classcanvas 134533 class_ref 146693 // LibroReservas
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 331 15 3010
+end
+classcanvas 134917 class_ref 141317 // Fecha
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 578 22 3011
+end
+note 135301 "Clase Reserva 
+(lógica y atributos)"
+  color mediumblue  xyzwh 581 511 2000 111 51
+relationcanvas 134021 relation_ref 144517 // <realization>
+  from ref 133893 z 3006 to ref 133765
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134149 relation_ref 140421 // <aggregation>
+  decenter_begin 683
+  decenter_end 335
+  from ref 132869 z 3006 to ref 133893
+  role_a_pos 291 440 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134789 relation_ref 147077 // <unidirectional association>
+  decenter_begin 307
+  decenter_end 490
+  from ref 132869 z 3011 to ref 134533
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135045 relation_ref 144773 // <aggregation>
+  decenter_begin 319
+  decenter_end 745
+  from ref 133893 z 3012 to ref 134917
+  role_a_pos 539 339 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

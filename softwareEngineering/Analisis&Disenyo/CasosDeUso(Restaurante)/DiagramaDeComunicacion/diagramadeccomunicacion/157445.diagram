@@ -1,0 +1,80 @@
+format 76
+
+classcanvas 128005 class_ref 148229 // Camarero
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 27 153 2000
+end
+classcanvas 128133 class_ref 143365 // Mesa
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 311 168 2000
+end
+classcanvas 128261 class_ref 146309 // Comanda
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 418 167 3005
+end
+classcanvas 128517 class_ref 142085 // Menu
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 680 162 2000
+end
+classcanvas 128645 class_ref 144517 // RealizarPedido
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 166 100 2006
+end
+classcanvas 128901 class_ref 148997 // ModificarPedido
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 166 233 2012
+end
+textcanvas 129541 "de una"
+  xyzwh 267 138 2000 33 14
+textcanvas 129669 "de una"
+  xyzwh 273 219 2000 33 14
+textcanvas 129925 "que lleva"
+  xyzwh 363 171 2000 43 14
+classcanvas 130053 class_ref 142469 // Consumicion
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 542 161 2000
+end
+textcanvas 130309 "con"
+  xyzwh 495 170 3011 24 15
+textcanvas 130565 "del"
+  xyzwh 641 166 2006 16 21
+note 130693 "Para una mesa, el camarero puede añadir o modificar comandas, añadiendo consumiciones de la carta."
+  color mediumblue  xyzwh 484 227 2000 155 77
+relationcanvas 129029 relation_ref 148613 // <unidirectional association>
+  from ref 128005 z 2007 to ref 128645
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129157 relation_ref 148741 // <unidirectional association>
+  from ref 128005 z 2013 to ref 128901
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129285 relation_ref 148869 // <unidirectional association>
+  from ref 128645 z 2007 to ref 128133
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129413 relation_ref 148997 // <unidirectional association>
+  from ref 128901 z 2013 to ref 128133
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129797 relation_ref 149125 // <unidirectional association>
+  from ref 128133 z 3006 to ref 128261
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130181 relation_ref 149381 // <unidirectional association>
+  decenter_end 472
+  from ref 128261 z 3006 to ref 130053
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130437 relation_ref 149509 // <unidirectional association>
+  decenter_begin 381
+  from ref 130053 z 2001 to ref 128517
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

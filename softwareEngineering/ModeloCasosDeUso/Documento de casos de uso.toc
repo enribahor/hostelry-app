@@ -1,0 +1,44 @@
+\select@language {spanish}
+\contentsline {part}{I\hspace {1em}Cat\IeC {\'a}logo de casos de uso}{1}{part.1}
+\contentsline {section}{\numberline {1}Primarios}{2}{section.0.1}
+\contentsline {section}{\numberline {2}Secundarios}{3}{section.0.2}
+\contentsline {part}{II\hspace {1em}Especificaci\IeC {\'o}n de los casos de uso}{5}{part.2}
+\contentsline {section}{\numberline {1}Primarios}{6}{section.0.1}
+\contentsline {subsection}{\numberline {1.1}Log in}{6}{subsection.0.1.1}
+\contentsline {subsection}{\numberline {1.2}Ver ficha de empleado}{7}{subsection.0.1.2}
+\contentsline {subsection}{\numberline {1.3}Ver ficha de cliente}{8}{subsection.0.1.3}
+\contentsline {subsection}{\numberline {1.4}Reservar mesa}{10}{subsection.0.1.4}
+\contentsline {subsection}{\numberline {1.5}Anular reserva del restaurante}{11}{subsection.0.1.5}
+\contentsline {subsection}{\numberline {1.6}Tomar comanda}{12}{subsection.0.1.6}
+\contentsline {subsection}{\numberline {1.7}Editar comanda}{12}{subsection.0.1.7}
+\contentsline {subsection}{\numberline {1.8}Generar factura del restaurante}{13}{subsection.0.1.8}
+\contentsline {subsection}{\numberline {1.9}Ver men\IeC {\'u}}{14}{subsection.0.1.9}
+\contentsline {subsection}{\numberline {1.10}Realizar recuento de existencias}{14}{subsection.0.1.10}
+\contentsline {subsection}{\numberline {1.11}Ver habitaci\IeC {\'o}n}{16}{subsection.0.1.11}
+\contentsline {subsection}{\numberline {1.12}Reservar habitaci\IeC {\'o}n}{16}{subsection.0.1.12}
+\contentsline {subsection}{\numberline {1.13}Anular reserva del hotel}{17}{subsection.0.1.13}
+\contentsline {subsection}{\numberline {1.14}Ver reservas del hotel}{17}{subsection.0.1.14}
+\contentsline {subsection}{\numberline {1.15}Generar factura del hotel}{18}{subsection.0.1.15}
+\contentsline {subsection}{\numberline {1.16}Organizar tareas de limpieza}{18}{subsection.0.1.16}
+\contentsline {subsection}{\numberline {1.17}Revisar tareas de limpieza}{19}{subsection.0.1.17}
+\contentsline {subsection}{\numberline {1.18}Consultar tareas de limpieza}{20}{subsection.0.1.18}
+\contentsline {subsection}{\numberline {1.19}Confirmar tareas de limpieza}{21}{subsection.0.1.19}
+\contentsline {subsection}{\numberline {1.20}Anotar incidencias de mantenimiento}{22}{subsection.0.1.20}
+\contentsline {subsection}{\numberline {1.21}A\IeC {\~n}adir nota}{23}{subsection.0.1.21}
+\contentsline {subsection}{\numberline {1.22}Borrar nota}{24}{subsection.0.1.22}
+\contentsline {section}{\numberline {2}Secundarios}{25}{section.0.2}
+\contentsline {subsection}{\numberline {2.1}A\IeC {\~n}adir empleado}{25}{subsection.0.2.1}
+\contentsline {subsection}{\numberline {2.2}Editar empleado}{25}{subsection.0.2.2}
+\contentsline {subsection}{\numberline {2.3}Dar de baja empleado}{26}{subsection.0.2.3}
+\contentsline {subsection}{\numberline {2.4}Ver C.V. empleado}{27}{subsection.0.2.4}
+\contentsline {subsection}{\numberline {2.5}Editar cliente}{27}{subsection.0.2.5}
+\contentsline {subsection}{\numberline {2.6}Dar de baja cliente}{28}{subsection.0.2.6}
+\contentsline {subsection}{\numberline {2.7}Eliminar comanda}{28}{subsection.0.2.7}
+\contentsline {subsection}{\numberline {2.8}Ver distribuci\IeC {\'o}n y n\IeC {\'u}mero de mesas del restaurante}{29}{subsection.0.2.8}
+\contentsline {subsection}{\numberline {2.9}Editar distribuci\IeC {\'o}n del restaurante}{29}{subsection.0.2.9}
+\contentsline {subsection}{\numberline {2.10}Modificar men\IeC {\'u}}{30}{subsection.0.2.10}
+\contentsline {subsection}{\numberline {2.11}Editar habitaciones}{31}{subsection.0.2.11}
+\contentsline {subsection}{\numberline {2.12}Ver cuenta diaria de la caja de recepci\IeC {\'o}n}{31}{subsection.0.2.12}
+\contentsline {subsection}{\numberline {2.13}Ver cuenta diaria de la caja del restaurante}{31}{subsection.0.2.13}
+\contentsline {subsection}{\numberline {2.14}Consultar libro diario}{32}{subsection.0.2.14}
+\contentsline {subsection}{\numberline {2.15}Consultar libro mayor}{32}{subsection.0.2.15}

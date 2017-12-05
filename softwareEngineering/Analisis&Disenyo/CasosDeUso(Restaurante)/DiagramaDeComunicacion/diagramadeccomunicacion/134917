@@ -1,0 +1,2418 @@
+format 76
+"restaurante" // ClasesJava::restaurante
+  revision 2
+  modified_by 2 "enrique ballesteros"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  java_dir "C:/Users/usuario/Desktop/Cosas para imprimir y tal/Source/src/is/restaurante/"
+  java_package "is.restaurante"
+  classview 156293 "restaurante"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 142085 "Menu"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Clase que guarda el menu, clasificando las consumiciones segun sean bebidas, primeros, segundos o postres
+@author JaimeDan
+"
+      classrelation 144133 // <realization>
+	relation 143237 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 144133 // <realization>
+	  b parent class_ref 146821 // MenuInfo
+      end
+
+      operation 164869 "Menu"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164997 "Menu"
+	public explicit_return_type ""
+	nparams 4
+	  param inout name "listaPrimeros" explicit_type "ArrayList<Consumicion>"
+	  param inout name "listaSegundos" explicit_type "ArrayList<Consumicion>"
+	  param inout name "listaBebidas" explicit_type "ArrayList<Consumicion>"
+	  param inout name "listaPostres" explicit_type "ArrayList<Consumicion>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 165125 "getPlatos"
+	public return_type class_ref 142469 // Consumicion
+	nparams 1
+	  param inout name "tipoPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " Devuelve una lista de los tipos de consumiciones que existen *
+
+public Consumiciones[] verMenu(){ return tipoConsumiciones; }
+
+ Devuelve un string con los platos correspondientes *"
+      end
+
+      operation 165253 "deleteConsumicion"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Añade un plato al array del tipo"
+      end
+
+      operation 165381 "dondeEsta"
+	private return_type class_ref 142469 // Consumicion
+	nparams 1
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " Devuelve el array list donde está el elemento buscado "
+      end
+
+      operation 165509 "tipoPlato"
+	public return_type class_ref 142597 // TipoPlatos
+	nparams 1
+	  param in name "name" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " Devuelve el array list donde está el elemento buscado "
+      end
+
+      operation 165637 "actualizaConsumicion"
+	public explicit_return_type "void"
+	nparams 3
+	  param inout name "consAntigua" type class_ref 142469 // Consumicion
+	  param inout name "consNueva" type class_ref 142469 // Consumicion
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Actualiza un plato al array del tipo"
+      end
+
+      operation 165765 "addConsumicion"
+	public explicit_return_type "void"
+	nparams 2
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Añade un plato al array del tipo"
+      end
+
+      operation 165893 "mostrarConsumiciones"
+	private explicit_return_type "String"
+	nparams 1
+	  param inout name "consumiciones" explicit_type "ArrayList<Consumicion>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type}[] ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166021 "getBebidas"
+	public return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166149 "getPrimeros"
+	public return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166277 "getSegundos"
+	public return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166405 "getPostres"
+	public return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166533 "stringConsumiciones"
+	private explicit_return_type "String"
+	nparams 1
+	  param inout name "listaConsumiciones" explicit_type "ArrayList<Consumicion>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166661 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166789 "saveMenu"
+	public explicit_return_type "boolean"
+	nparams 1
+	  param in name "fileName" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 166917 "getConsumicion"
+	public return_type class_ref 142469 // Consumicion
+	nparams 1
+	  param in name "name" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167045 "addObserver"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "verMenu" type class_ref 144005 // MenuObserver
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 150661 "LINE_SEPARATOR"
+	class_attribute const_attribute package explicit_type "String"
+	init_value " System.getProperty(\"line.separator\")"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 144261 // observers (<aggregation>)
+	relation 143365 o---
+	  a role_name "observers" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 144261 // observers (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 149637 // <aggregation>
+      end
+
+      classrelation 144389 // bebidas (<aggregation>)
+	relation 143493 o---
+	  a role_name "bebidas" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 144389 // bebidas (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 149509 // <aggregation>
+      end
+
+      classrelation 144517 // primeros (<aggregation>)
+	relation 143621 o---
+	  a role_name "primeros" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 144517 // primeros (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 149765 // <aggregation>
+      end
+
+      classrelation 144645 // segundos (<aggregation>)
+	relation 143749 o---
+	  a role_name "segundos" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 144645 // segundos (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 149893 // <aggregation>
+      end
+
+      classrelation 144773 // postre (<aggregation>)
+	relation 143877 o---
+	  a role_name "postre" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 144773 // postre (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 150021 // <aggregation>
+      end
+
+      classrelation 147205 // <association>
+	relation 146181 ----
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 147205 // <association>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 147333 // <association>
+      end
+
+      classrelation 152069 // <aggregation>
+	relation_ref 147461 // <aggregation>
+      end
+
+      classrelation 153861 // <unidirectional association>
+	relation 149253 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 153861 // <unidirectional association>
+	  b parent class_ref 142469 // Consumicion
+      end
+    end
+
+    class 142597 "TipoPlatos"
+      visibility public stereotype "enum"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Enumerado con los diferentes tipos de plato
+@author Kike"
+      attribute 151941 "PRIMERO"
+	public type class_ref 142597 // TipoPlatos
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152069 "SEGUNDO"
+	public type class_ref 142597 // TipoPlatos
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152197 "POSTRE"
+	public type class_ref 142597 // TipoPlatos
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 152325 "BEBIDA"
+	public type class_ref 142597 // TipoPlatos
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 172549 "toInt"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 142210 "values"
+	public return_type class_ref 142597 // TipoPlatos
+	multiplicity "1..*"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 143365 "Mesa"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Contiene la informacion relativa a la mesa, con la lista de comandas y el
+numero de identificacion de la mesa. Permite a�adir comandas y generar la
+factura correspondiente a la mesa.
+
+@author Villarin"
+      classrelation 144901 // <realization>
+	relation 144005 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 144901 // <realization>
+	  b parent class_ref 143749 // MesaInfo
+      end
+
+      operation 167429 "Mesa"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "num" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167557 "Mesa"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "num" explicit_type "int"
+	  param in name "cap" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167685 "addPedido"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "comanda" type class_ref 146309 // Comanda
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167813 "getNumeroMesa"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+	comment " TODO editComanda, selectComanda delete Comanda"
+      end
+
+      operation 167941 "setNumeroMesa"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "numeroMesa" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168069 "setCapacidad"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "c" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168197 "generarFactura"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168325 "getListaComandas"
+	public return_type class_ref 144645 // ComandaInfo
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type}[] ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+	comment " TODO igual habria que crear un metodo que pasara del vector a un array[]"
+      end
+
+      operation 168453 "avisaComanda"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "comandaSelected" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Escoge una comanda como actual, para realizar acciones sobre ella
+
+@param comandaSelected"
+      end
+
+      operation 168581 "eliminaComanda"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "comandaSelected" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 168709 "addConsumption"
+	public explicit_return_type "void"
+	nparams 3
+	  param in name "numComanda" explicit_type "int"
+	  param inout name "plato" type class_ref 142469 // Consumicion
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 150789 "LINE_SEPARATOR"
+	class_attribute const_attribute package explicit_type "String"
+	init_value " System.getProperty(\"line.separator\")"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 168837 "emitirCambios"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 145029 // obs (<aggregation>)
+	relation 144133 o---
+	  a role_name "obs" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 145029 // obs (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 151429 // <aggregation>
+      end
+
+      classrelation 145157 // comandas (<unidirectional association>)
+	relation 144261 --->
+	  stereotype "Vector"
+	  a role_name "comandas" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 145157 // comandas (<unidirectional association>)
+	  b parent class_ref 146309 // Comanda
+      end
+
+      attribute 150917 "numeroMesa"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151045 "capacidad"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 151173 "comandaActual"
+	private explicit_type "int"
+	init_value " -1"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 151301 // <aggregation>
+	relation_ref 144901 // <aggregation>
+      end
+
+      classrelation 151813 // <aggregation>
+	relation_ref 137605 // <aggregation>
+      end
+
+      classrelation 153733 // <unidirectional association>
+	relation 149125 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 153733 // <unidirectional association>
+	  b parent class_ref 146309 // Comanda
+      end
+
+      classrelation 154501 // <unidirectional association>
+	relation 149893 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 154501 // <unidirectional association>
+	  b parent class_ref 142469 // Consumicion
+      end
+
+      classrelation 154629 // <unidirectional association>
+	relation 150021 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 154629 // <unidirectional association>
+	  b parent class_ref 146309 // Comanda
+      end
+
+      operation 142082 "addNewComanda"
+	public explicit_return_type ""
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 143493 "Restaurante"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Clase principal del proyecto, contiene la lista de mesas, el menu y el libro de reservas.
+Permite a�adir y buscar reservas en el libro de reservas, asi como gestionar consumiciones.
+@author Jesus
+@author JaimeDan
+@author Kike
+
+TODO añadir resreva, quitar reserva, edit reserva, añadir mesa quitar mesa editar mesa
+TODO añadir comanda, editar comanda, (Borrar comanda?)"
+      operation 170117 "Restaurante"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170245 "a�adirReserva"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "reserva" type class_ref 145285 // Reserva
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170373 "buscarReservas"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param in name "nombre" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170501 "buscarReservas"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param in name "i" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170629 "getMenu"
+	public return_type class_ref 142085 // Menu
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170757 "getMenu"
+	public return_type class_ref 142469 // Consumicion
+	nparams 1
+	  param in name "n" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 170885 "setMenu"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "menu" type class_ref 142085 // Menu
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171013 "buscarMesa"
+	public return_type class_ref 143365 // Mesa
+	nparams 1
+	  param in name "i" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171141 "avisaComanda"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "numMesa" explicit_type "int"
+	  param in name "comandaSelected" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171269 "eliminaComanda"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "numMesa" explicit_type "int"
+	  param in name "comandaSelected" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171397 "addNewConsumption"
+	public explicit_return_type "void"
+	nparams 4
+	  param in name "numComanda" explicit_type "int"
+	  param in name "numMesa" explicit_type "int"
+	  param inout name "plato" type class_ref 142469 // Consumicion
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171525 "getMesas"
+	public return_type class_ref 143749 // MesaInfo
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type}[] ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171653 "actualizaConsumicion"
+	public explicit_return_type "void"
+	nparams 3
+	  param inout name "consAntigua" type class_ref 142469 // Consumicion
+	  param inout name "consNueva" type class_ref 142469 // Consumicion
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171781 "deleteConsumicion"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 171909 "addConsumicion"
+	public explicit_return_type "void"
+	nparams 2
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	  param inout name "tPlato" type class_ref 142597 // TipoPlatos
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 172037 "registerMenuObserver"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "verMenu" type class_ref 144005 // MenuObserver
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 172165 "addComandaObserver"
+	public explicit_return_type "void"
+	nparams 2
+	  param inout name "observer" type class_ref 143877 // ComandaObserver
+	  param in name "numeroMesa" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 151685 "mesaActual"
+	private explicit_type "int"
+	init_value " -1"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 145797 // mesas (<aggregation>)
+	relation 144901 o---
+	  a role_name "mesas" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 145797 // mesas (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 151301 // <aggregation>
+      end
+
+      classrelation 145925 // reservas (<unidirectional association>)
+	relation 145029 --->
+	  a role_name "reservas" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 145925 // reservas (<unidirectional association>)
+	  b parent class_ref 146693 // LibroReservas
+      end
+
+      classrelation 146053 // menu (<unidirectional association>)
+	relation 145157 --->
+	  a role_name "menu" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 146053 // menu (<unidirectional association>)
+	  b parent class_ref 142085 // Menu
+      end
+
+      classrelation 146181 // tablon (<unidirectional association>)
+	relation 145285 --->
+	  a role_name "tablon" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 146181 // tablon (<unidirectional association>)
+	  b parent class_ref 147205 // Tablon
+      end
+
+      classrelation 151173 // <aggregation>
+	relation_ref 137861 // <aggregation>
+      end
+
+      operation 141570 "deleteReserva"
+	public explicit_return_type ""
+	nparams 4
+	  param in name "name" explicit_type "string"
+	  param in name "fecha" explicit_type "string"
+	  param in name "comensales" explicit_type "string"
+	  param in name "mesas" explicit_type "string"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141954 "addNewCommand"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "numMesa" explicit_type "int"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 143621 "ReservaInfo"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 169093 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 143749 "MesaInfo"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 167173 "getNumeroMesa"
+	public explicit_return_type "int"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 167301 "getListaComandas"
+	public return_type class_ref 144645 // ComandaInfo
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type}[] ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 151557 // <aggregation>
+	relation_ref 142469 // <aggregation>
+      end
+    end
+
+    class 143877 "ComandaObserver"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 153733 "comandaHaCambiado"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "comanda" explicit_type "String"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 150789 // <aggregation>
+	relation_ref 142981 // <aggregation>
+      end
+    end
+
+    class 144005 "MenuObserver"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 156677 "addConsumption"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "consId" explicit_type "String"
+	  param in name "tipo" explicit_type "String"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "
+@param consId"
+      end
+
+      operation 156805 "deleteConsumption"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "consId" explicit_type "String"
+	  param in name "tipo" explicit_type "String"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 156933 "editConsumption"
+	public explicit_return_type "void"
+	nparams 4
+	  param in name "nameAnt" explicit_type "String"
+	  param in name "nameNuevo" explicit_type "String"
+	  param in name "tipoAnt" explicit_type "String"
+	  param in name "tipoNuevo" explicit_type "String"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 149637 // <aggregation>
+	relation_ref 143365 // <aggregation>
+      end
+    end
+
+    class 144645 "ComandaInfo"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 150917 // <aggregation>
+	relation_ref 139781 // <aggregation>
+      end
+    end
+
+    class 145285 "Reserva"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Contiene la informacion relativa a la reserva, que se rellena en la clase RealizarReserva, esto es: Fecha, nombre, numero de comensales y la lista de las mesas reservadas.
+Permite devolver un string con toda esta informacion mediante el metodo toString().
+@author Jesus"
+      classrelation 145285 // <realization>
+	relation 144389 -_-|>
+	  a public
+	    java "${type}<Reserva>"
+	    classrelation_ref 145285 // <realization>
+	  b parent class_ref 147077 // Comparable
+      end
+
+      classrelation 145413 // <realization>
+	relation 144517 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 145413 // <realization>
+	  b parent class_ref 143621 // ReservaInfo
+      end
+
+      operation 169221 "Reserva"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169349 "Reserva"
+	public explicit_return_type ""
+	nparams 4
+	  param inout name "date" type class_ref 141317 // Fecha
+	  param in name "name" explicit_type "String"
+	  param in name "numComensales" explicit_type "int"
+	  param inout name "listaMesas" explicit_type "ArrayList<Mesa>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "
+@param date
+@param hour
+@param min
+@param name
+@param number
+@param listaMesas"
+      end
+
+      operation 169477 "getNombre"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "
+@return nombre del cliente que reserva"
+      end
+
+      operation 169605 "getFecha"
+	public return_type class_ref 141317 // Fecha
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 169733 "compareTo"
+	public explicit_return_type "int"
+	nparams 1
+	  param inout name "o" type class_ref 145285 // Reserva
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+      end
+
+      operation 169861 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 151301 "LINE_SEPARATOR"
+	class_attribute const_attribute package explicit_type "String"
+	init_value " System.getProperty(\"line.separator\")"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 145541 // mesas (<unidirectional association>)
+	relation 144645 --->
+	  stereotype "ArrayList"
+	  a role_name "mesas" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 145541 // mesas (<unidirectional association>)
+	  b parent class_ref 143365 // Mesa
+      end
+
+      classrelation 145669 // fecha (<aggregation>)
+	relation 144773 o---
+	  a role_name "fecha" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 145669 // fecha (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 150277 // <aggregation>
+      end
+
+      attribute 151429 "nombre"
+	private explicit_type "String"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment "int hora;
+int minutos;"
+      end
+
+      attribute 151557 "numeroDeComensales"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 169989 "crearPanel"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 150149 // <aggregation>
+	relation_ref 140421 // <aggregation>
+      end
+    end
+
+    class 145925 "LibroReservaObserver"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 159365 "cambioOcurrido"
+	public explicit_return_type "void"
+	nparams 0
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 146309 "Comanda"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Clase que guarda una comanda, guardando todas las bebidas, primeros, segundos y postres que se han elegido
+y la cantidad de cada uno de ellos
+@author JaimeDan
+"
+      classrelation 143621 // <realization>
+	relation 142725 -_-|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 143621 // <realization>
+	  b parent class_ref 144645 // ComandaInfo
+      end
+
+      operation 160517 "Comanda"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@SuppressWarnings(\"unchecked\")
+"
+	
+	
+	
+      end
+
+      operation 160645 "addObserver"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "obs" type class_ref 143877 // ComandaObserver
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 160773 "addConsumicion"
+	private explicit_return_type "void"
+	nparams 2
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	  param in name "index" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 160901 "deleteConsumicion"
+	private explicit_return_type "void"
+	nparams 2
+	  param inout name "consumicion" type class_ref 142469 // Consumicion
+	  param in name "index" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161029 "addPrimero"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "primero" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161157 "deletePrimero"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "primero" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161285 "setVecesPrimero"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "primero" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161413 "addSegundo"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "segundo" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161541 "deleteSegundo"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "segundo" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161669 "setVecesSegundo"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "segundo" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161797 "addPostre"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "postre" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 161925 "deletePostre"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "postre" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162053 "setVecesPostre"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "postre" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162181 "addBebida"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "bebida" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162309 "deleteBebida"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "bebida" type class_ref 142469 // Consumicion
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162437 "setVecesBebidas"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "drinking" type class_ref 146437 // Bebida
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162565 "append"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "other" type class_ref 146309 // Comanda
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162693 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162821 "lista"
+	public return_type class_ref 142469 // Consumicion
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 162949 "emitirCambio"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 150277 "LINE_SEPARATOR"
+	class_attribute const_attribute package explicit_type "String"
+	init_value " System.getProperty(\"line.separator\")"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 143749 // comanda (<unidirectional association>)
+	relation 142853 --->
+	  stereotype "HashMap"
+	  a role_name "comanda" multiplicity "[]" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}, Integer>${multiplicity} ${name}${value};
+"
+	    classrelation_ref 143749 // comanda (<unidirectional association>)
+	  b parent class_ref 142469 // Consumicion
+      end
+
+      attribute 150405 "precio"
+	private explicit_type "double"
+	init_value " 0"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 143877 // observers (<aggregation>)
+	relation 142981 o---
+	  a role_name "observers" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 143877 // observers (<aggregation>)
+	  b role_name "" private
+	    classrelation_ref 150789 // <aggregation>
+      end
+
+      classrelation 153989 // <unidirectional association>
+	relation 149381 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 153989 // <unidirectional association>
+	  b parent class_ref 142469 // Consumicion
+      end
+
+      classrelation 154757 // <unidirectional association>
+	relation 150149 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 154757 // <unidirectional association>
+	  b parent class_ref 142469 // Consumicion
+      end
+    end
+
+    class 146565 "Factura"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Clase que genera una factura a partir de una lista de comandas
+@author JaimeDan
+"
+      operation 163077 "generarFactura"
+	class_operation public return_type class_ref 146309 // Comanda
+	nparams 1
+	  param inout name "listaComandas" explicit_type "List<Comanda>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 147589 // <association>
+	relation_ref 146309 // <association>
+      end
+
+      classrelation 147717 // <unidirectional association>
+	relation 146437 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 147717 // <unidirectional association>
+	  b parent class_ref 142469 // Consumicion
+      end
+    end
+
+    class 146693 "LibroReservas"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Clase que guarda todas las reservas
+@author JaimeDan
+"
+      operation 163205 "LibroReservas"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Constructor"
+      end
+
+      operation 163333 "addReserva"
+	public explicit_return_type "boolean"
+	nparams 1
+	  param inout name "res" type class_ref 145285 // Reserva
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163461 "reservasHoy"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163589 "reservasSemana"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163717 "reservasMes"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163845 "eliminarReserva"
+	public explicit_return_type "boolean"
+	nparams 1
+	  param inout name "res" type class_ref 145285 // Reserva
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 163973 "buscarReserva"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param in name "nombre" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "
+Ya me parecia a mi que esta puta  mierda no iba a funcionar xD
+jajajaj xD
+public ArrayList<Reserva> buscarReserva(String nombre){
+ArrayList<Reserva> reservas = new ArrayList<Reserva>();
+for (int i = 0; i <numeroReservas; i++){
+reservas.add(listaReservas.get(new Reserva(null, 0, 59, nombre, 0, null)));
+}
+return reservas;
+}
+Por que coño ahora esto es con integers? De donde sacas entonces la reserva para poder mostrarla en verReserva??"
+      end
+
+      operation 164101 "todasReservas"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164229 "buscarReserva"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param in name "j" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164357 "buscarReservaHoy"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param inout name "date" type class_ref 141317 // Fecha
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164485 "buscarReservaSemana"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param inout name "dateInicial" type class_ref 141317 // Fecha
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 164613 "buscarReservaMes"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param inout name "dateInicial" type class_ref 141317 // Fecha
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 144005 // listaReservas (<unidirectional association>)
+	relation 143109 --->
+	  a role_name "listaReservas" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}<Reserva> ${name}${value};
+"
+	    classrelation_ref 144005 // listaReservas (<unidirectional association>)
+	  b parent class_ref 141445 // List
+      end
+
+      attribute 150533 "numeroReservas"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment "TODO creo que numero reservas se puede ver con listaReservas.size();"
+      end
+
+      operation 164741 "buscarReserva"
+	public return_type class_ref 143621 // ReservaInfo
+	nparams 1
+	  param inout name "fecha" type class_ref 141317 // Fecha
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}ArrayList<${type}> ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 141698 "deleteReserva"
+	public explicit_return_type ""
+	nparams 4
+	  param in name "name" explicit_type "string"
+	  param in name "fecha" explicit_type "string"
+	  param in name "comensales" explicit_type "string"
+	  param in name "mesas" explicit_type "string"
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 146821 "MenuInfo"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+    end
+
+    class 146949 "MesaObserver"
+      visibility public stereotype "interface"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}interface ${name}${extends} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      operation 168965 "cambioOcurrido"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "comandas" type class_ref 144645 // ComandaInfo
+	
+	java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 151429 // <aggregation>
+	relation_ref 144133 // <aggregation>
+      end
+    end
+
+    class 147205 "Tablon"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Permite crear notas y mostrarlas en el tablon. En esta version no sera implementado.
+@author Jesus"
+      operation 172293 "Tablon"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 172421 "crearNota"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "nota" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      attribute 151813 "notas"
+	private explicit_type "String"
+	stereotype "ArrayList"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+    end
+  end
+
+  package_ref 135173 // consumicion
+
+  deploymentview 128261 "restaurante"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 129797 "ComandaObserver"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 143877 // ComandaObserver
+      end
+    end
+
+    artifact 130565 "MenuObserver"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 144005 // MenuObserver
+      end
+    end
+
+    artifact 130821 "LibroReservaObserver"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 145925 // LibroReservaObserver
+      end
+    end
+
+    artifact 131333 "ComandaInfo"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 144645 // ComandaInfo
+      end
+    end
+
+    artifact 131461 "Comanda"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.restaurante.consumicion.Bebida;
+import is.restaurante.consumicion.Consumicion;
+import is.restaurante.consumicion.Plato;
+import is.restaurante.consumicion.Postre;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
+${definition}"
+      associated_classes
+	class_ref 146309 // Comanda
+      end
+    end
+
+    artifact 131589 "Factura"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.List;
+${definition}"
+      associated_classes
+	class_ref 146565 // Factura
+      end
+    end
+
+    artifact 131717 "LibroReservas"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import is.Fecha;
+import is.List;
+${definition}"
+      associated_classes
+	class_ref 146693 // LibroReservas
+      end
+    end
+
+    artifact 131845 "MenuInfo"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 146821 // MenuInfo
+      end
+    end
+
+    artifact 131973 "Menu"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.restaurante.consumicion.Bebida;
+import is.restaurante.consumicion.Consumicion;
+import is.restaurante.consumicion.Plato;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+${definition}"
+      associated_classes
+	class_ref 142085 // Menu
+      end
+    end
+
+    artifact 132101 "MesaInfo"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 143749 // MesaInfo
+      end
+    end
+
+    artifact 132229 "Mesa"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.restaurante.consumicion.Consumicion;
+import java.util.ArrayList;
+import java.util.Vector;
+${definition}"
+      associated_classes
+	class_ref 143365 // Mesa
+      end
+    end
+
+    artifact 132357 "MesaObserver"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 146949 // MesaObserver
+      end
+    end
+
+    artifact 132485 "ReservaInfo"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 143621 // ReservaInfo
+      end
+    end
+
+    artifact 132613 "Reserva"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.Cliente;
+import is.Fecha;
+import java.util.ArrayList;
+import java.util.Date;
+${definition}"
+      associated_classes
+	class_ref 145285 // Reserva
+      end
+    end
+
+    artifact 132741 "Restaurante"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import is.Fecha;
+import is.restaurante.consumicion.Consumicion;
+import java.util.ArrayList;
+import java.util.List;
+${definition}"
+      associated_classes
+	class_ref 143493 // Restaurante
+      end
+    end
+
+    artifact 132869 "Tablon"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.ArrayList;
+${definition}"
+      associated_classes
+	class_ref 147205 // Tablon
+      end
+    end
+
+    artifact 132997 "TipoPlatos"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 142597 // TipoPlatos
+      end
+    end
+  end
+end

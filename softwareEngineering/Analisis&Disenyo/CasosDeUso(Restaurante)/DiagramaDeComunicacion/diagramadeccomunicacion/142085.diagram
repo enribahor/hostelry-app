@@ -1,0 +1,68 @@
+format 76
+
+note 128005 "Caso de uso:
+Modificar menu
+(añadir consumición)"
+  color mediumblue  xyzwh 614.2 231.1 2000 126 63
+classinstance 128133 class_ref 134661 // GUIController
+  name ""   xyz 154.6 4 2000 life_line_z 2000
+classinstance 128261 class_ref 128514 // Menu
+  name ""   xyz 320.8 4 2000 life_line_z 2000
+classinstance 128389 class_ref 128130 // Consumicion
+  name ""   xyz 440.6 4 2000 life_line_z 2000
+note 128901 "La información relativa a una consumición es: TipodeConsumicion, Nombre, Descripcion (no obligatoria) y Precio"
+  xyzwh 572.5 19.3 2000 208 77
+classinstance 129797 class_ref 128011 // RestauranteSwing
+  name ""   xyz 8.7 4 2000 life_line_z 2000
+durationcanvas 130693 classinstance_ref 129797 // :RestauranteSwing
+  xyzwh 55 82 2010 11 123
+end
+durationcanvas 130821 classinstance_ref 128133 // :GUIController
+  xyzwh 187 86 2010 11 109
+end
+durationcanvas 131077 classinstance_ref 128261 // :Menu
+  xyzwh 339 111 2010 11 69
+end
+durationcanvas 131333 classinstance_ref 128389 // :Consumicion
+  xyzwh 472 120 2010 11 41
+end
+msg 130949 synchronous
+  from durationcanvas_ref 130693
+  to durationcanvas_ref 130821
+  yz 86 2015 explicitmsg "añadirConsumicion(Info)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 73 71
+msg 131205 synchronous
+  from durationcanvas_ref 130821
+  to durationcanvas_ref 131077
+  yz 112 2015 explicitmsg "añadirConsumicion(Info)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 217 100
+msg 131461 synchronous
+  from durationcanvas_ref 131077
+  to durationcanvas_ref 131333
+  yz 120 2018 explicitmsg "Consumicion(Info)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 386 108
+msg 131589 return
+  from durationcanvas_ref 131333
+  to durationcanvas_ref 131077
+  yz 150 2023 explicitmsg "this"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 357 138
+msg 131717 return
+  from durationcanvas_ref 131077
+  to durationcanvas_ref 130821
+  yz 162 2015 explicitmsg "consumicion"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 212 152
+msg 131845 return
+  from durationcanvas_ref 130821
+  to durationcanvas_ref 130693
+  yz 182 2015 explicitmsg "consumicion"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 75 172
+line 132357 -_-_ decenter_begin 810 decenter_end 200
+  from ref 128901 z 2011 to point 516 79
+  line 132485 z 2011 to ref 131333
+end

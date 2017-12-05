@@ -1,0 +1,31 @@
+class CloseApp
+!!!148869.java!!!	actionPerformed(inout e : ActionEvent) : void
+
+		int seleccion = JOptionPane.showOptionDialog(null, "Selecciona una opción",
+				"Salir de la aplicacion", JOptionPane.YES_NO_CANCEL_OPTION,
+				JOptionPane.QUESTION_MESSAGE, null, // null para icono por
+													// defecto.
+				null, // null para YES, NO y CANCEL, si no: new Object[] {
+						// "opcion 1", "opcion 2", "opcion 3" }
+				"null");
+
+		if (seleccion == -1 || seleccion == 0)
+			System.exit(0);
+
+		else
+			System.out.println("seleccionada opcion " + (seleccion + 1));
+
+!!!148997.java!!!	requestQuit(in quitReason : String) : void
+		JOptionPane.showMessageDialog(null, quitReason, "End of the game",
+				JOptionPane.OK_OPTION,
+				null);
+		System.exit(0);
+
+!!!149125.java!!!	quitApp() : void
+		int seleccion = JOptionPane.showOptionDialog(null,
+				null, "Desea salir de la aplicación KIKE HOSTELERIA?",
+				JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
+				null, 
+					new Object[] { "YES", "NO"},"null");
+
+		if (seleccion == -1 || seleccion == 0) System.exit(0);

@@ -1,0 +1,54 @@
+format 76
+
+classinstance 128005 class_ref 128011 // RestauranteSwing
+  name ""   xyz 85.3 4 2000 life_line_z 2000
+classinstance 128133 class_ref 142466 // Restaurante
+  name ""   xyz 436.3 4 2000 life_line_z 2000
+note 129157 "Caso de uso:
+Ver reservas restaurante
+(anular reserva)"
+  color mediumblue  xyzwh 524.5 236.7 2000 145 63
+classinstance 129285 class_ref 134661 // GUIController
+  name ""   xyz 262.6 4 2000 life_line_z 2000
+durationcanvas 129413 classinstance_ref 128005 // :RestauranteSwing
+  xyzwh 132 77 2010 11 135
+end
+durationcanvas 129541 classinstance_ref 129285 // :GUIController
+  xyzwh 295 74 2010 11 125
+end
+durationcanvas 129797 classinstance_ref 128133 // :Restaurante
+  xyzwh 467 84 2010 11 101
+  overlappingdurationcanvas 130053
+    xyzwh 473 119 2020 11 25
+  end
+end
+msg 129669 synchronous
+  from durationcanvas_ref 129413
+  to durationcanvas_ref 129541
+  yz 76 2015 explicitmsg "eliminarReserva(Reserva)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 171 62
+msg 129925 synchronous
+  from durationcanvas_ref 129541
+  to durationcanvas_ref 129797
+  yz 87 2015 explicitmsg "eliminarReserva(Reserva)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 337 76
+reflexivemsg 130181 synchronous
+  to durationcanvas_ref 130053
+  yz 119 2025 explicitmsg "buscaReserva(Reserva)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 482 105
+msg 130309 return
+  from durationcanvas_ref 129797
+  to durationcanvas_ref 129541
+  yz 160 2025 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 319 149
+msg 130437 return
+  from durationcanvas_ref 129541
+  to durationcanvas_ref 129413
+  yz 180 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 152 170
+end

@@ -1,0 +1,101 @@
+class LibroReservas
+!!!163205.java!!!	LibroReservas()
+		listaReservas = new List<Reserva>();
+		numeroReservas = 0;
+!!!163333.java!!!	addReserva(inout res : Reserva) : boolean
+		numeroReservas++;
+		return listaReservas.add(res);
+
+!!!163461.java!!!	reservasHoy() : ReservaInfo
+		Date date = new Date();
+		Fecha fecha = new Fecha(0,0,0,0,0);
+		fecha.parse(date.toString(), 0, 0);
+		ArrayList<ReservaInfo> reservasDeHoy = new ArrayList<ReservaInfo>();
+		reservasDeHoy = buscarReservaHoy(fecha);
+		return reservasDeHoy;
+		
+!!!163589.java!!!	reservasSemana() : ReservaInfo
+		Date date = new Date();
+		
+		Fecha fecha = new Fecha(0,0,0,0,0); //new Date (hoy) o algo asi
+		fecha.parse(date.toString(), 0, 0);
+		ArrayList<ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
+		reservasSemana = buscarReservaSemana(fecha);
+		return reservasSemana;
+		
+!!!163717.java!!!	reservasMes() : ReservaInfo
+		Date date = new Date();
+		Fecha fecha = new Fecha(0,0,0,0,0); //new Date (hoy) o algo asi
+		fecha.parse(date.toString(), 0, 0);
+		ArrayList<ReservaInfo> reservasMes = new ArrayList<ReservaInfo>();
+		reservasMes = buscarReservaMes(fecha);
+		return reservasMes;
+		
+!!!163845.java!!!	eliminarReserva(inout res : Reserva) : boolean
+		numeroReservas--;
+		return listaReservas.erase(res);
+!!!163973.java!!!	buscarReserva(in nombre : String) : ReservaInfo
+		ArrayList<ReservaInfo> listaRes = new ArrayList<ReservaInfo>();
+		int i=0;
+		while (i<listaReservas.size()){
+			if (listaReservas.get(i).getNombre().equals(nombre)) ;
+			//i++;
+			listaRes.add(listaReservas.get(i));
+		}
+		//if (i < listaReservas.size()) return i;
+		/*else*/ return listaRes;
+!!!164101.java!!!	todasReservas() : ReservaInfo
+		ArrayList<ReservaInfo> listaRes = new ArrayList<ReservaInfo>();
+		for (int i = 0; i < this.numeroReservas; i++)
+			listaRes.add(this.listaReservas.get(i));
+			return listaRes;
+!!!164229.java!!!	buscarReserva(in j : int) : ReservaInfo
+		if (j == -1) return todasReservas();	
+		if (j == 0) return reservasHoy();
+		else if (j == 1) return reservasSemana();
+		else if (j == 2) return reservasMes();		
+		return null;
+		/*int i=0;
+		while (i<listaReservas.size()){
+			if (listaReservas.get(i).getNombre().equals(nombre)) ;
+			//i++;
+			listaRes.add(listaReservas.get(i));
+		}
+		//if (i < listaReservas.size()) return i;
+		//else return listaRes;*/
+!!!164357.java!!!	buscarReservaHoy(inout date : Fecha) : ReservaInfo
+		ArrayList <ReservaInfo> reservasHoy = new ArrayList<ReservaInfo>();
+		for ( int i = 0; i < listaReservas.size(); i++){
+			if (listaReservas.get(i).getFecha().mismoDia(date)) reservasHoy.add(listaReservas.get(i));
+		}
+		return reservasHoy;
+!!!164485.java!!!	buscarReservaSemana(inout dateInicial : Fecha) : ReservaInfo
+		ArrayList <ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
+		//Fecha dateTope = new Fecha(dateInicial.getAño(), dateInicial.getMes(), dateInicial.getDia(), dateInicial.getHora(), dateInicial.getMinutos());
+		//dateTope = dateTope.siguienteSemana();//
+		Fecha dateTope = dateInicial.siguienteSemana();
+		for ( int i = 0; i < listaReservas.size(); i++){
+			if (!listaReservas.get(i).getFecha().esMayorQue(dateTope) && (listaReservas.get(i).getFecha().esMayorQue(dateInicial) ||
+					listaReservas.get(i).getFecha().mismoDia(dateInicial)))
+					reservasSemana.add(listaReservas.get(i));
+		}
+		return reservasSemana;
+!!!164613.java!!!	buscarReservaMes(inout dateInicial : Fecha) : ReservaInfo
+		ArrayList<ReservaInfo> reservasSemana = new ArrayList<ReservaInfo>();
+		Fecha dateTope = dateInicial.siguienteMes();
+		for (int j = 0; j < 4; j++) {
+			for (int i = 0; i < listaReservas.size(); i++) {
+				if (!listaReservas.get(i).getFecha().esMayorQue(dateTope)
+						&& (listaReservas.get(i).getFecha()
+								.esMayorQue(dateInicial) || listaReservas
+								.get(i).getFecha().equals(dateInicial)))
+					reservasSemana.add(listaReservas.get(i));
+				dateInicial = dateInicial.siguienteSemana();
+				dateTope = dateTope.siguienteSemana();
+
+			}
+		}
+		return reservasSemana;
+!!!164741.java!!!	buscarReserva(inout fecha : Fecha) : ReservaInfo
+		// TODO Auto-generated method stub
+		return null;

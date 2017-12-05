@@ -1,0 +1,27 @@
+class Bebida
+!!!173189.java!!!	Bebida(in name : String, in price : float, inout disp : boolean, in desc : String)
+		this.descripcion = desc;
+		this.precio = price;
+		this.nombre = name;
+		this.disponible = disp;
+!!!173317.java!!!	getPrecio() : float
+		// TODO Auto-generated method stub
+		return this.precio;
+!!!173445.java!!!	getNombre() : String
+		// TODO Auto-generated method stub
+		return this.nombre;
+!!!173573.java!!!	getDescripcion() : String
+		// TODO Auto-generated method stub
+		return this.descripcion;
+!!!173701.java!!!	isDisponible() : boolean
+		// TODO Auto-generated method stub
+		return this.disponible;
+!!!173829.java!!!	toString() : String
+		String str = "";
+		str += "\"" + nombre + "\" \"" + descripcion + "\" " + precio + " ";
+		if (disponible)
+			str += "Disponible";
+		else
+			str += "NoDisponible";
+		str += LINE_SEPARATOR;
+		return str;

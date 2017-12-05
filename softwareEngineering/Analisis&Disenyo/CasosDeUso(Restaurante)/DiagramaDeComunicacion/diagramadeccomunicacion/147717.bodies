@@ -1,0 +1,38 @@
+class MenuLoader
+!!!176645.java!!!	forceConsumicion(in tipo : String) : Consumicion
+		ArrayList<Consumicion> platos = new ArrayList<Consumicion>();
+		while (!peek().equals(tipo)) {
+			tokenizer.pushBack();
+			tokenizer.nextToken();
+			String name = tokenizer.sval;
+			tokenizer.nextToken();
+			String descripcion = tokenizer.sval;
+			float precio = forceFloat();
+			boolean disponible = forceString("Disponible", "NoDisponible");
+			Plato plato = new Plato(name, precio, disponible, descripcion);
+			platos.add(plato);
+		}
+		return platos;
+!!!176773.java!!!	loadMenu(in fileName : String) : Menu
+		FileInputStream file;
+		try {
+			file = new FileInputStream(fileName);
+			tokenizer = new StreamTokenizer(new InputStreamReader(file));
+			tokenizer.wordChars('\u0021', '\u007E');
+			tokenizer.quoteChar('"');
+			forceString("BeginMenu");
+			forceString("BeginPrimeros");
+			ArrayList<Consumicion> listaPrimeros = forceConsumicion("EndPrimeros");
+			forceString("BeginSegundos");
+			ArrayList<Consumicion> listaSegundos = forceConsumicion("EndSegundos");
+			forceString("BeginBebidas");
+			ArrayList<Consumicion> listaBebidas = forceConsumicion("EndBebidas");
+			forceString("BeginPostres");
+			ArrayList<Consumicion> listaPostres = forceConsumicion("EndPostres");
+			forceString("EndMenu");
+			return new Menu(listaPrimeros, listaSegundos, listaBebidas,
+					listaPostres);
+		} catch (FileNotFoundException e) {
+			System.err.println("El fichero no existe");
+			return null;
+		}

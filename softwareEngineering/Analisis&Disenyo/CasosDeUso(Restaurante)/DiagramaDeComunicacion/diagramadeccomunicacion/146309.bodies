@@ -1,0 +1,91 @@
+class Comanda
+!!!160517.java!!!	Comanda()
+		observers = new ArrayList<ComandaObserver>();
+		comanda = new HashMap[4];
+		for (int i = 0; i < 4; i++)
+			comanda[i] = new HashMap<Consumicion, Integer>();
+!!!160645.java!!!	addObserver(inout obs : ComandaObserver) : void
+		this.observers.add(obs);
+!!!160773.java!!!	addConsumicion(inout consumicion : Consumicion, in index : int) : void
+		if (comanda[index].containsKey(consumicion)) {
+			comanda[index]
+					.put(consumicion, comanda[index].get(consumicion) + 1);
+		} else
+			comanda[index].put(consumicion, 1);
+		this.precio += consumicion.getPrecio();
+		emitirCambio();
+!!!160901.java!!!	deleteConsumicion(inout consumicion : Consumicion, in index : int) : void
+		if (comanda[index].containsKey(consumicion)) {
+			comanda[index]
+					.put(consumicion, comanda[index].get(consumicion) - 1);
+			if (comanda[index].get(consumicion) == 0)
+				comanda[index].remove(consumicion);
+			this.precio -= consumicion.getPrecio();
+			emitirCambio();
+		} else
+			// Emitir un error
+			;
+!!!161029.java!!!	addPrimero(inout primero : Consumicion) : void
+		addConsumicion(primero, 0);
+		emitirCambio();
+!!!161157.java!!!	deletePrimero(inout primero : Consumicion) : void
+		deleteConsumicion(primero, 0);
+		emitirCambio();
+!!!161285.java!!!	setVecesPrimero(inout primero : Consumicion) : void
+
+!!!161413.java!!!	addSegundo(inout segundo : Consumicion) : void
+		addConsumicion(segundo, 1);
+		emitirCambio();
+!!!161541.java!!!	deleteSegundo(inout segundo : Consumicion) : void
+		deleteConsumicion(segundo, 1);
+		emitirCambio();
+!!!161669.java!!!	setVecesSegundo(inout segundo : Consumicion) : void
+
+!!!161797.java!!!	addPostre(inout postre : Consumicion) : void
+		addConsumicion(postre, 2);
+		emitirCambio();
+!!!161925.java!!!	deletePostre(inout postre : Consumicion) : void
+		deleteConsumicion(postre, 2);
+		emitirCambio();
+!!!162053.java!!!	setVecesPostre(inout postre : Consumicion) : void
+
+!!!162181.java!!!	addBebida(inout bebida : Consumicion) : void
+		addConsumicion(bebida, 3);
+		emitirCambio();
+!!!162309.java!!!	deleteBebida(inout bebida : Consumicion) : void
+		deleteConsumicion(bebida, 3);
+		emitirCambio();
+!!!162437.java!!!	setVecesBebidas(inout drinking : Bebida) : void
+
+!!!162565.java!!!	append(inout other : Comanda) : void
+		for (int tipoPlato = 0; tipoPlato < 4; tipoPlato++) {
+			Set<Consumicion> claveOther = other.comanda[tipoPlato].keySet();
+			// Obtenemos un vector con los elementos de la otra Comanda del tipo
+			// de plato i
+			Consumicion[] consumicionesOther = claveOther
+					.toArray(new Consumicion[claveOther.size()]);
+			// Para cada elemento del vector, los añadimos tanta veces como
+			// existira en la otra comanda
+			for (int pos = 0; pos < consumicionesOther.length; pos++) {
+				int veces = other.comanda[tipoPlato]
+						.get(consumicionesOther[pos]);
+				for (int num = 0; num < veces; num++)
+					addConsumicion(consumicionesOther[pos], tipoPlato);
+			}
+		}
+!!!162693.java!!!	toString() : String
+		String pedido = "";
+		for (int i = 0; i < 4; i++)
+			for (Entry<Consumicion, Integer> entry : comanda[i].entrySet()) {
+				pedido = pedido + entry.getKey().getNombre() + " "
+						+ entry.getKey().getPrecio() + " Cantidad: "
+						+ comanda[i].get(entry.getKey()) + LINE_SEPARATOR;
+			}
+		pedido += "TOTAL: " + this.precio;
+		return pedido;
+!!!162821.java!!!	lista() : Consumicion
+		return null;
+
+!!!162949.java!!!	emitirCambio() : void
+		for (ComandaObserver obs : observers)
+			obs.comandaHaCambiado(this.toString());

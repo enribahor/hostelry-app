@@ -1,0 +1,20 @@
+BeginMenu
+BeginPrimeros
+"Lentejas" "Po si quiere te las come o si no las deja" 5 Disponible
+"Canelones" "Mu buenos, son la especialidad del chef" 5 Disponible
+EndPrimeros
+BeginSegundos
+"Filetes de Caballo" "Digo hamburguesas" 5 Disponible
+"Almondigas" "Con tomate" 5 NoDisponible
+EndSegundos
+BeginBebidas
+"Vodka-Limón" "Vaya pedo te vas a coger" 1 Disponible
+"Anticongelante" "Ya hemos matao a todo el mundo" 5 NoDisponible
+"Ron-Cola" "No podia faltar" 0.1 Disponible
+EndBebidas
+BeginPostres
+"Helado de Gordaco" "Scrig no deja ni uno" 5 Disponible
+"Manzana de Newton" "Esta pocha del tiempo que lleva aqui" 5 Disponible
+EndPostres
+EndMenu
+

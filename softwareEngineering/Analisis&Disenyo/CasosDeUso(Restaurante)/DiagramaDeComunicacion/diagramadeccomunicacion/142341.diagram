@@ -1,0 +1,144 @@
+format 76
+
+note 128005 "Caso de uso:
+Modificar menu
+(modificar consumición)"
+  color mediumblue  xyzwh 633.6 410.6 2000 141 63
+classinstance 128133 class_ref 128011 // RestauranteSwing
+  name ""   xyz 40 4 2000 life_line_z 2000
+classinstance 128261 class_ref 128130 // Consumicion
+  name ""   xyz 450.8 4 2000 life_line_z 2000
+classinstance 128389 class_ref 128514 // Menu
+  name ""   xyz 271 4 2000 life_line_z 2000
+fragment 132357 "alt"
+  xyzwh 45 148.7 0 497 367
+  separator 621
+  separator 3545
+  separator 6824
+end
+textcanvas 132485 "[nombre]"
+  xyzwh 89 -139 2000 45 14
+textcanvas 132613 "[descripcion]"
+  xyzwh 104 285 2000 64 14
+textcanvas 132741 "[precio]
+"
+  xyzwh 103 402 2000 36 27
+textcanvas 132869 "[nombre]"
+  xyzwh 105 175 2000 45 14
+durationcanvas 128517 classinstance_ref 128133 // :RestauranteSwing
+  xyzwh 87 69 2010 11 459
+end
+durationcanvas 128645 classinstance_ref 128389 // :Menu
+  xyzwh 290 64 2010 11 70
+  overlappingdurationcanvas 128901
+    xyzwh 296 87 2020 11 25
+  end
+end
+durationcanvas 129285 classinstance_ref 128389 // :Menu
+  xyzwh 290 206 2010 11 70
+end
+durationcanvas 129541 classinstance_ref 128261 // :Consumicion
+  xyzwh 482 221 2010 11 45
+end
+durationcanvas 130821 classinstance_ref 128389 // :Menu
+  xyzwh 290 330 2010 11 65
+end
+durationcanvas 131077 classinstance_ref 128261 // :Consumicion
+  xyzwh 482 348 2010 11 38
+end
+durationcanvas 131589 classinstance_ref 128389 // :Menu
+  xyzwh 290 438 2010 11 65
+end
+durationcanvas 131845 classinstance_ref 128261 // :Consumicion
+  xyzwh 482 454 2010 11 38
+end
+msg 128773 synchronous
+  from durationcanvas_ref 128517
+  to durationcanvas_ref 128645
+  yz 69 2015 explicitmsg "modificarConsumicion(Nombre)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 129 58
+reflexivemsg 129029 synchronous
+  to durationcanvas_ref 128901
+  yz 87 2025 explicitmsg "buscarConsumicion(Nombre)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 313 73
+msg 129157 return
+  from durationcanvas_ref 128645
+  to durationcanvas_ref 128517
+  yz 123 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 106 114
+msg 129413 synchronous
+  from durationcanvas_ref 128517
+  to durationcanvas_ref 129285
+  yz 210 2015 explicitmsg "modificarNombre(Nombre)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 160 199
+msg 129669 synchronous
+  from durationcanvas_ref 129285
+  to durationcanvas_ref 129541
+  yz 220 2020 explicitmsg "setNombre(Nombre)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 385 209
+msg 129797 return
+  from durationcanvas_ref 129541
+  to durationcanvas_ref 129285
+  yz 250 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 310 239
+msg 129925 return
+  from durationcanvas_ref 129285
+  to durationcanvas_ref 128517
+  yz 263 2020 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 107 253
+msg 130949 synchronous
+  from durationcanvas_ref 128517
+  to durationcanvas_ref 130821
+  yz 332 2015 explicitmsg "modificarDescripcion(Descripcion)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 124 320
+msg 131205 synchronous
+  from durationcanvas_ref 130821
+  to durationcanvas_ref 131077
+  yz 350 2020 explicitmsg "setDescripcion(Descripcion)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 347 339
+msg 131333 return
+  from durationcanvas_ref 131077
+  to durationcanvas_ref 130821
+  yz 372 2025 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 307 361
+msg 131461 return
+  from durationcanvas_ref 130821
+  to durationcanvas_ref 128517
+  yz 381 2030 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 106 370
+msg 131717 synchronous
+  from durationcanvas_ref 128517
+  to durationcanvas_ref 131589
+  yz 443 2015 explicitmsg "modificarPrecio(Precio)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 176 430
+msg 131973 synchronous
+  from durationcanvas_ref 131589
+  to durationcanvas_ref 131845
+  yz 453 2020 explicitmsg "setPrecio(Precio)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 398 441
+msg 132101 return
+  from durationcanvas_ref 131845
+  to durationcanvas_ref 131589
+  yz 479 2025 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 310 469
+msg 132229 return
+  from durationcanvas_ref 131589
+  to durationcanvas_ref 128517
+  yz 491 2030 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 104 481
+end

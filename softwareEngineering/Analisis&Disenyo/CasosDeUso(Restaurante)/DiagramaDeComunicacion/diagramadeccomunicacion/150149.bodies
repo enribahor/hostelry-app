@@ -1,0 +1,30 @@
+class PruebaJSpinner
+!!!173317.java!!!	main(inout args : String) : void
+		new PruebaJSpinner();
+!!!173445.java!!!	PruebaJSpinner()
+		// Creacion del JTextField
+		tf = new JTextField(20);
+		
+		// Creacion del JSpinner y valor incial.
+		spinner = new JSpinner();
+		spinner.setValue(30);
+		
+		// Nos suscribimos a cambios en el JSpinner
+		spinner.addChangeListener(new ChangeListener() {
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				// Ponemos el valor del JSpinner en el JTextField
+				tf.setText(spinner.getValue().toString());
+			}
+		
+		});
+		
+
+		// Creacion de la ventana con los componentes
+		v = new JFrame();
+		v.getContentPane().setLayout(new FlowLayout());
+		v.getContentPane().add(spinner);
+		v.getContentPane().add(tf);
+		v.pack();
+		v.setVisible(true);
+		v.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

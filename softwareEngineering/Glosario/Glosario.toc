@@ -1,0 +1,32 @@
+\select@language {spanish}
+\contentsline {subsection}{\numberline {1}Android:}{\es@scroman {v}}{subsection.0.0.1}
+\contentsline {subsection}{\numberline {2}Base de datos:}{\es@scroman {v}}{subsection.0.0.2}
+\contentsline {subsection}{\numberline {3}Benchmark:}{\es@scroman {v}}{subsection.0.0.3}
+\contentsline {subsection}{\numberline {4}Chef:}{\es@scroman {v}}{subsection.0.0.4}
+\contentsline {subsection}{\numberline {5}Comanda:}{\es@scroman {v}}{subsection.0.0.5}
+\contentsline {subsection}{\numberline {6}Comensal:}{\es@scroman {v}}{subsection.0.0.6}
+\contentsline {subsection}{\numberline {7}CU:}{\es@scroman {v}}{subsection.0.0.7}
+\contentsline {subsection}{\numberline {8}C.V.:}{\es@scroman {v}}{subsection.0.0.8}
+\contentsline {subsection}{\numberline {9}DAA:}{\es@scroman {v}}{subsection.0.0.9}
+\contentsline {subsection}{\numberline {10}ECS:}{\es@scroman {v}}{subsection.0.0.10}
+\contentsline {subsection}{\numberline {11}EP-PPS:}{\es@scroman {vi}}{subsection.0.0.11}
+\contentsline {subsection}{\numberline {12}GCS:}{\es@scroman {vi}}{subsection.0.0.12}
+\contentsline {subsection}{\numberline {13}GR-PPS:}{\es@scroman {vi}}{subsection.0.0.13}
+\contentsline {subsection}{\numberline {14}Hardware:}{\es@scroman {vi}}{subsection.0.0.14}
+\contentsline {subsection}{\numberline {15}iOS:}{\es@scroman {vi}}{subsection.0.0.15}
+\contentsline {subsection}{\numberline {16}Java:}{\es@scroman {vi}}{subsection.0.0.16}
+\contentsline {subsection}{\numberline {17}Log in:}{\es@scroman {vi}}{subsection.0.0.17}
+\contentsline {subsection}{\numberline {18}Ma\IeC {\^\i }tre:}{\es@scroman {vi}}{subsection.0.0.18}
+\contentsline {subsection}{\numberline {19}PDF:}{\es@scroman {vi}}{subsection.0.0.19}
+\contentsline {subsection}{\numberline {20}Pitanza:}{\es@scroman {vi}}{subsection.0.0.20}
+\contentsline {subsection}{\numberline {21}Procesador:}{\es@scroman {vi}}{subsection.0.0.21}
+\contentsline {subsection}{\numberline {22}PPS:}{\es@scroman {vii}}{subsection.0.0.22}
+\contentsline {subsection}{\numberline {23}PTR-PPS:}{\es@scroman {vii}}{subsection.0.0.23}
+\contentsline {subsection}{\numberline {24}RE-SRS:}{\es@scroman {vii}}{subsection.0.0.24}
+\contentsline {subsection}{\numberline {25}Software:}{\es@scroman {vii}}{subsection.0.0.25}
+\contentsline {subsection}{\numberline {26}SQA:}{\es@scroman {vii}}{subsection.0.0.26}
+\contentsline {subsection}{\numberline {27}SRS:}{\es@scroman {vii}}{subsection.0.0.27}
+\contentsline {subsection}{\numberline {28}Stakeholders:}{\es@scroman {vii}}{subsection.0.0.28}
+\contentsline {subsection}{\numberline {29}Tablet:}{\es@scroman {vii}}{subsection.0.0.29}
+\contentsline {subsection}{\numberline {30}Windows:}{\es@scroman {vii}}{subsection.0.0.30}
+\contentsline {subsection}{\numberline {31}Wi-Fi:}{\es@scroman {vii}}{subsection.0.0.31}

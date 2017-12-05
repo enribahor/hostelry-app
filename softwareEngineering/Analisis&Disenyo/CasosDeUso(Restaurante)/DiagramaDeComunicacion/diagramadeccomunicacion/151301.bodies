@@ -1,0 +1,13 @@
+class VentanaPrincipal
+!!!177029.java!!!	VentanaPrincipal()
+   
+		setSize(400,400);
+		setTitle("ventana principal");        
+		setLayout(new BorderLayout());
+		add(Box.createHorizontalStrut(100),BorderLayout.WEST);
+		add(new JLabel("Ventana principal del proyecto "),BorderLayout.CENTER);       
+
+		setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+!!!177157.java!!!	mostrar() : void
+		setVisible(true);

@@ -1,0 +1,63 @@
+format 76
+
+classcanvas 129029 class_ref 141957 // GUIController
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 37 154 2000
+end
+classcanvas 129157 class_ref 144517 // RealizarPedido
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 319 11 3005
+end
+classcanvas 129797 class_ref 142085 // Menu
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 576 181 3011
+end
+classcanvas 130309 class_ref 143877 // ComandaObserver
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 218 255 3011
+end
+classcanvas 130565 class_ref 144645 // ComandaInfo
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 441 266 3011
+end
+classcanvas 130821 class_ref 146309 // Comanda
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  xyz 327 385 3017
+end
+note 131845 "Clases para la toma de comandas. RealizarPedido es un observador de la comanda y Comanda implementa ComandaInfo"
+  color mediumblue  xyzwh 573 580 2000 147 93
+relationcanvas 129285 relation_ref 139653 // <aggregation>
+  decenter_begin 592
+  decenter_end 140
+  from ref 129157 z 3006 to ref 129029
+  role_a_pos 201 189 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130437 relation_ref 138885 // <realization>
+  from ref 129157 z 3012 to ref 130309
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130693 relation_ref 139781 // <aggregation>
+  from ref 129157 z 3012 to ref 130565
+  role_a_pos 472 247 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130949 relation_ref 142725 // <realization>
+  from ref 130821 z 3018 to ref 130565
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131077 relation_ref 142981 // <aggregation>
+  from ref 130821 z 3018 to ref 130309
+  role_a_pos 307 326 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131205 relation_ref 147205 // <unidirectional association>
+  decenter_begin 592
+  decenter_end 81
+  from ref 129157 z 3012 to ref 129797
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,0 +1,12 @@
+class Ejemplo
+!!!171781.java!!!	mostrar() : void
+		System.out.println("Ejemplo");
+!!!171909.java!!!	main(inout args : String) : void
+		Hija hija = new Ejemplo();
+		Padre2 padre2 = hija;
+		Padre1 padre1 = hija;
+		Padre padre = hija;
+		hija.mostrar();
+		padre2.mostrar();
+		padre1.mostrar();
+		padre.mostrar();

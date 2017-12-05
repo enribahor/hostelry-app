@@ -1,0 +1,30 @@
+class ElCombo
+!!!170245.java!!!	main(inout args : String) : void
+		new ElCombo();
+!!!170373.java!!!	ElCombo()
+		// Creacion del JTextField
+		tf = new JTextField(20);
+		
+		// Creacion del JComboBox y añadir los items.
+		combo = new JComboBox();
+		combo.addItem("uno");
+		combo.addItem("dos");
+		combo.addItem("tres");
+		
+		// Accion a realizar cuando el JComboBox cambia de item seleccionado.
+		combo.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tf.setText(combo.getSelectedItem().toString());
+			}
+		});
+
+		// Creacion de la ventana con los componentes
+		v = new JFrame();
+		v.getContentPane().setLayout(new FlowLayout());
+		v.getContentPane().add(combo);
+		v.getContentPane().add(tf);
+		v.pack();
+		v.setVisible(true);
+		v.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+	

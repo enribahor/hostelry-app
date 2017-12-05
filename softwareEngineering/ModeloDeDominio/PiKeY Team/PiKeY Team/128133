@@ -1,0 +1,795 @@
+format 76
+"Requisitos" // Requisitos
+  revision 4
+  modified_by 2 "hlocal"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  usecaseview 128005 "ModeloDominio"
+    //use case diagram settings
+    package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    classdiagram 128005 "ModeloDeDominio"
+      draw_all_relations no hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+      size A4
+    end
+
+    class 128005 "Restaurante"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      attribute 128005 "direccion"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 128645 // trabaja
+	relation_ref 128261 // trabaja
+      end
+    end
+
+    class 128261 "Empleado"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 128517 // (trabaja)
+	relation 128261 ---- name "trabaja"
+	  a role_name "" multiplicity "1" private
+	    classrelation_ref 128517 // (trabaja)
+	  b role_name "" multiplicity "1..*" private
+	    classrelation_ref 128645 // trabaja
+      end
+
+      attribute 128517 "NIF"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment "Número de identifiación fiscal"
+      end
+
+      attribute 128645 "Nombre"
+	private explicit_type ""
+	cpp_decl ""
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	comment "Nombre del empleado"
+      end
+
+      classrelation 129285 // <aggregation>
+	relation 128645 o---
+	  a role_name "" private
+	    classrelation_ref 129285 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 129413 // <aggregation>
+      end
+
+      classrelation 129541 // <association>
+	relation 128773 ----
+	  a role_name "" private
+	    classrelation_ref 129541 // <association>
+	  b role_name "" private
+	    classrelation_ref 129669 // <association>
+      end
+
+      classrelation 129797 // <aggregation>
+	relation 128901 o---
+	  a role_name "" private
+	    classrelation_ref 129797 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 129925 // <aggregation>
+      end
+
+      classrelation 130053 // <aggregation>
+	relation 129029 o---
+	  a role_name "" private
+	    classrelation_ref 130053 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 130181 // <aggregation>
+      end
+
+      classrelation 130309 // <aggregation>
+	relation 129157 o---
+	  a role_name "" private
+	    classrelation_ref 130309 // <aggregation>
+	  b role_name "" private
+	    classrelation_ref 130437 // <aggregation>
+      end
+    end
+
+    class 128517 "EncargadoLimpieza"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 129413 // <aggregation>
+	relation_ref 128645 // <aggregation>
+      end
+
+      classrelation 132354 // <association>
+	relation 130306 ----
+	  a role_name "" private
+	    classrelation_ref 132354 // <association>
+	  b role_name "" private
+	    classrelation_ref 132482 // <association>
+      end
+
+      classrelation 132610 // revisa (<association>)
+	relation 130434 ----
+	  a role_name "revisa" private
+	    classrelation_ref 132610 // revisa (<association>)
+	  b role_name "" private
+	    classrelation_ref 132738 // <association>
+      end
+    end
+
+    class 128645 "PersonalLimpieza"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 129669 // <association>
+	relation_ref 128773 // <association>
+      end
+
+      classrelation 131842 // <association>
+	relation 130050 ----
+	  a role_name "" private
+	    classrelation_ref 131842 // <association>
+	  b role_name "" private
+	    classrelation_ref 131970 // <association>
+      end
+
+      classrelation 132226 // <association>
+	relation_ref 130178 // <association>
+      end
+    end
+
+    class 128773 "Maître"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 129925 // <aggregation>
+	relation_ref 128901 // <aggregation>
+      end
+    end
+
+    class 128901 "Camarero"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 130181 // <aggregation>
+	relation_ref 129029 // <aggregation>
+      end
+
+      classrelation 128002 // accede (<association>)
+	relation 128002 ----
+	  a role_name "accede" private
+	    classrelation_ref 128002 // accede (<association>)
+	  b role_name "" private
+	    classrelation_ref 128130 // <association>
+      end
+
+      classrelation 128258 // actualiza (<association>)
+	relation 128130 ----
+	  a role_name "actualiza" private
+	    classrelation_ref 128258 // actualiza (<association>)
+	  b role_name "" private
+	    classrelation_ref 128386 // <association>
+      end
+
+      classrelation 128514 // <association>
+	relation 128258 ----
+	  a role_name "" private
+	    classrelation_ref 128514 // <association>
+	  b role_name "" private
+	    classrelation_ref 128642 // <association>
+      end
+
+      classrelation 128770 // <association>
+	relation 128386 ----
+	  a role_name "" private
+	    classrelation_ref 128770 // <association>
+	  b role_name "" private
+	    classrelation_ref 128898 // <association>
+      end
+
+      classrelation 129026 // <association>
+	relation 128514 ----
+	  a role_name "" private
+	    classrelation_ref 129026 // <association>
+	  b role_name "" private
+	    classrelation_ref 129154 // <association>
+      end
+
+      classrelation 129282 // <association>
+	relation 128642 ----
+	  a role_name "" private
+	    classrelation_ref 129282 // <association>
+	  b role_name "" private
+	    classrelation_ref 129410 // <association>
+      end
+    end
+
+    class 129029 "Chef"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 130437 // <aggregation>
+	relation_ref 129157 // <aggregation>
+      end
+    end
+
+    class 128002 "DistribucionRestaurante"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 128130 // <association>
+	relation_ref 128002 // <association>
+      end
+    end
+
+    class 128130 "ReservaRestaurante"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 128642 // <association>
+	relation_ref 128258 // <association>
+      end
+
+      classrelation 130050 // <association>
+	relation 129154 ----
+	  a role_name "" private
+	    classrelation_ref 130050 // <association>
+	  b role_name "" private
+	    classrelation_ref 130178 // <association>
+      end
+
+      classrelation 131202 // <association>
+	relation_ref 129666 // <association>
+      end
+    end
+
+    class 128258 "Factura"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 130178 // <association>
+	relation_ref 129154 // <association>
+      end
+
+      classrelation 130818 // <association>
+	relation 129538 ----
+	  a role_name "" private
+	    classrelation_ref 130818 // <association>
+	  b role_name "" private
+	    classrelation_ref 130946 // <association>
+      end
+
+      classrelation 141826 // <association>
+	relation_ref 138498 // <association>
+      end
+    end
+
+    class 128386 "Comanda"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 128898 // <association>
+	relation_ref 128386 // <association>
+      end
+
+      classrelation 129154 // <association>
+	relation_ref 128514 // <association>
+      end
+
+      classrelation 129538 // <association>
+	relation 128770 ----
+	  a role_name "" private
+	    classrelation_ref 129538 // <association>
+	  b role_name "" private
+	    classrelation_ref 129666 // <association>
+      end
+
+      classrelation 129666 // <association>
+	relation_ref 128770 // <association>
+      end
+
+      classrelation 129794 // <dependency>
+	relation 128898 -_->
+	  a default
+	    classrelation_ref 129794 // <dependency>
+	  b parent class_ref 128514 // Menu
+      end
+
+      classrelation 130434 // <association>
+	relation_ref 129282 // <association>
+      end
+    end
+
+    class 128514 "Menu"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 129410 // <association>
+	relation_ref 128642 // <association>
+      end
+
+      classrelation 129922 // <dependency>
+	relation 129026 -_->
+	  a default
+	    classrelation_ref 129922 // <dependency>
+	  b parent class_ref 128642 // Existencias
+      end
+    end
+
+    class 128642 "Existencias"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 128386 // <association>
+	relation_ref 128130 // <association>
+      end
+
+      classrelation 130690 // <association>
+	relation_ref 129410 // <association>
+      end
+    end
+
+    class 128770 "Cocinero"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 130306 // <association>
+	relation 129282 ----
+	  a role_name "" private
+	    classrelation_ref 130306 // <association>
+	  b role_name "" private
+	    classrelation_ref 130434 // <association>
+      end
+
+      classrelation 130562 // actualiza (<association>)
+	relation 129410 ----
+	  a role_name "actualiza" private
+	    classrelation_ref 130562 // actualiza (<association>)
+	  b role_name "" private
+	    classrelation_ref 130690 // <association>
+      end
+    end
+
+    class 128898 "Cliente"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 131074 // <association>
+	relation 129666 ----
+	  a role_name "" private
+	    classrelation_ref 131074 // <association>
+	  b role_name "" private
+	    classrelation_ref 131202 // <association>
+      end
+
+      classrelation 131330 // <association>
+	relation 129794 ----
+	  a role_name "" private
+	    classrelation_ref 131330 // <association>
+	  b role_name "" private
+	    classrelation_ref 131458 // <association>
+      end
+
+      classrelation 131714 // <association>
+	relation_ref 129922 // <association>
+      end
+    end
+
+    class 129026 "Habitacion"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 131586 // <association>
+	relation 129922 ----
+	  a role_name "" private
+	    classrelation_ref 131586 // <association>
+	  b role_name "" private
+	    classrelation_ref 131714 // <association>
+      end
+
+      classrelation 131970 // <association>
+	relation_ref 130050 // <association>
+      end
+
+      classrelation 132738 // <association>
+	relation_ref 130434 // <association>
+      end
+    end
+
+    class 129154 "ReservaHabitacion"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 130946 // <association>
+	relation_ref 129538 // <association>
+      end
+
+      classrelation 131458 // <association>
+	relation_ref 129794 // <association>
+      end
+
+      classrelation 141698 // <association>
+	relation 138498 ----
+	  a role_name "" private
+	    classrelation_ref 141698 // <association>
+	  b role_name "" private
+	    classrelation_ref 141826 // <association>
+      end
+    end
+
+    class 129282 "EncargosDeLimpieza"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 132098 // <association>
+	relation 130178 ----
+	  a role_name "" private
+	    classrelation_ref 132098 // <association>
+	  b role_name "" private
+	    classrelation_ref 132226 // <association>
+      end
+
+      classrelation 132482 // <association>
+	relation_ref 130306 // <association>
+      end
+    end
+
+    class 129410 "TareasMantenimiento"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 132994 // <association>
+	relation_ref 130562 // <association>
+      end
+
+      classrelation 135170 // <association>
+	relation_ref 131970 // <association>
+      end
+    end
+
+    class 129538 "EncargadoDeMantenimiento"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 132866 // <association>
+	relation 130562 ----
+	  a role_name "" private
+	    classrelation_ref 132866 // <association>
+	  b role_name "" private
+	    classrelation_ref 132994 // <association>
+      end
+    end
+
+    class 129666 "Notas"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 148482 // <association>
+	relation_ref 145026 // <association>
+      end
+    end
+
+    class 129794 "LibroMayor"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 134274 // <association>
+	relation_ref 131202 // <association>
+      end
+
+      classrelation 134914 // <dependency>
+	relation 131842 -_->
+	  a default
+	    classrelation_ref 134914 // <dependency>
+	  b parent class_ref 129922 // LibroDiario
+      end
+    end
+
+    class 129922 "LibroDiario"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 133762 // <association>
+	relation_ref 130946 // <association>
+      end
+
+      classrelation 134018 // <association>
+	relation_ref 131074 // <association>
+      end
+
+      classrelation 134146 // <association>
+	relation 131202 ----
+	  a role_name "" private
+	    classrelation_ref 134146 // <association>
+	  b role_name "" private
+	    classrelation_ref 134274 // <association>
+      end
+
+      classrelation 134402 // <dependency>
+	relation 131330 -_->
+	  a default
+	    classrelation_ref 134402 // <dependency>
+	  b parent class_ref 130050 // CuentaCajaRecepcion
+      end
+
+      classrelation 134658 // <dependency>
+	relation 131586 -_->
+	  a default
+	    classrelation_ref 134658 // <dependency>
+	  b parent class_ref 130050 // CuentaCajaRecepcion
+      end
+
+      classrelation 134786 // <dependency>
+	relation 131714 -_->
+	  a default
+	    classrelation_ref 134786 // <dependency>
+	  b parent class_ref 130178 // CuentaCajaRestaurante
+      end
+    end
+
+    class 130050 "CuentaCajaRecepcion"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 133506 // <association>
+	relation_ref 130818 // <association>
+      end
+
+      classrelation 133634 // <association>
+	relation 130946 ----
+	  a role_name "" private
+	    classrelation_ref 133634 // <association>
+	  b role_name "" private
+	    classrelation_ref 133762 // <association>
+      end
+
+      classrelation 134530 // <dependency>
+	relation 131458 -_->
+	  a default
+	    classrelation_ref 134530 // <dependency>
+	  b parent class_ref 129922 // LibroDiario
+      end
+    end
+
+    class 130178 "CuentaCajaRestaurante"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 133250 // <association>
+	relation_ref 130690 // <association>
+      end
+
+      classrelation 133890 // <association>
+	relation 131074 ----
+	  a role_name "" private
+	    classrelation_ref 133890 // <association>
+	  b role_name "" private
+	    classrelation_ref 134018 // <association>
+      end
+    end
+
+    class 130306 "Jefe"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 133122 // <association>
+	relation 130690 ----
+	  a role_name "" private
+	    classrelation_ref 133122 // <association>
+	  b role_name "" private
+	    classrelation_ref 133250 // <association>
+      end
+
+      classrelation 133378 // <association>
+	relation 130818 ----
+	  a role_name "" private
+	    classrelation_ref 133378 // <association>
+	  b role_name "" private
+	    classrelation_ref 133506 // <association>
+      end
+    end
+
+    class 130434 "Empleados"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 135042 // notifican (<association>)
+	relation 131970 ----
+	  a role_name "notifican" private
+	    classrelation_ref 135042 // notifican (<association>)
+	  b role_name "" private
+	    classrelation_ref 135170 // <association>
+      end
+
+      classrelation 148354 // <association>
+	relation 145026 ----
+	  a role_name "" private
+	    classrelation_ref 148354 // <association>
+	  b role_name "" private
+	    classrelation_ref 148482 // <association>
+      end
+    end
+  end
+end

@@ -1,0 +1,10 @@
+class DrawingPane
+!!!173701.java!!!	paintComponent(inout g : Graphics) : void
+            super.paintComponent(g);
+
+            Rectangle rect;
+            for (int i = 0; i < circles.size(); i++) {
+                rect = circles.elementAt(i);
+                g.setColor(colors[(i % color_n)]);
+                g.fillOval(rect.x, rect.y, rect.width, rect.height);
+            }

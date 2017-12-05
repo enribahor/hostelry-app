@@ -1,0 +1,18 @@
+class Alumno
+!!!167301.java!!!	Alumno()
+		numMatricula = -1;
+		creditosAprobados = 0;
+!!!167429.java!!!	getNumMatricula() : long
+		return numMatricula;
+!!!167557.java!!!	getCreditosAprobados() : long
+		return creditosAprobados;
+!!!167685.java!!!	setNumMatricula(in m : int) : void
+		numMatricula = m;
+!!!167813.java!!!	setCreditosAprobados(in c : int) : void
+		creditosAprobados = c;
+!!!167941.java!!!	finalize() : void
+		
+!!!168069.java!!!	main(inout args : String) : void
+
+		
+		

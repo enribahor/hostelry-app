@@ -1,0 +1,1005 @@
+%Documento que incluye la gestion de riesgos segun el modelo BOEHM
+
+\documentclass[spanish,a4paper,11pt, twoside]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+
+%%% PAQUETES
+\usepackage[spanish,activeacute]{babel}				
+% Babel: Adapta cosas como la tipografia, la fecha, lo de Chapter al español, y activeacute para apóstrofes (') como abreviaciones de acentos: \'{a}
+\usepackage[utf8]{inputenc}					% Codificacion UTF8 (para meter tildes normal: á --> \'{a} )
+\usepackage{multicol}						% Escritura en varias columnas
+\usepackage{graphics}						% Inclusión de imágenes
+\usepackage{graphicx}						% Mas para imagenes
+\usepackage{geometry}						% Distribucion de la pagina: margenes, encabezados, tamaño pagina...
+\usepackage{fancyhdr}						% Paquete para añadir y modificar encabezados y pies de pagina
+\usepackage{hyperref}						% Para hipervínculos, en el indice al menos, GRACIAS A DAVID
+%\usepackage{lastpage}						% Ultima pagina para poner, por ejemplo, 3 de 15
+%%% PAQUETES MATEMATICOS
+\usepackage{amsmath}						% Conjunto de paquetes desarrollados por la Amercian Matematical Society
+\usepackage{amssymb}						% Tipografía mathbb y otros símbolos tambien de la AMS
+\usepackage{amsthm}						% Paquete AMS theorem, de la AMS
+\usepackage{amsfonts}						% Paquete con símbolos y mas, de la AMS
+%\usepackage{nicefrac}						% Fracciones bonitas, LO DEJO COMENTADO PORQUE A VECES DA PROBLEMAS AL COMPILAR
+ 
+
+%%% DECLARACIONES (sobre la forma de la pagina, encabezado etc.)
+\pagenumbering{roman}						
+% Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
+\pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
+%\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Gestión de riesgos} 	%Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries Casos de uso}				%Encabezado a la derecha
+\cfoot{\thepage}							% Numero de pagina centrado en el pie
+%\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
+\renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
+\renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
+\renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
+\newcommand*{\PKT}{\hbox{P}\kern-2.5pt\lower3.5pt\hbox{\small{K}}\kern-2.8pt\hbox{T}\kern-2pt}	%PiKey Team en bonito
+
+
+%%%%% CUERPO %%%%%
+\begin{document}
+
+\title{\textbf{\huge{Gestión de \\ 
+	riesgos Software}} \\ 
+	\textit{v4.0.1} \\	\vspace{0.1cm}
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{{\Large{PiKey Team-}} \PKT \ : \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
+	 Enrique Ballesteros Horcajo \\
+	 Jaime Dan Porras Rhee \\
+	 Ignacio Iker Prado Rujas \\
+	 Alejandro Villarín Prieto }
+\date{\Today}
+\maketitle
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+%Problemas con SVN por mantenimiento
+%Pelea dentro del equipo
+%Falta de tiempo por 
+
+\tableofcontents 							%INDICE hipervinculado
+
+\setcounter{section}{0}
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
+
+\part{Identificación de los riesgos}
+En esta parte se identificarán todos los riesgos que pueden afectar a nuestro proyecto.
+\begin{itemize}
+\item \textbf {Deficiencias del personal}
+	\begin{itemize}
+		\item {Baja temporal de algún miembro del equipo por enfermedad}
+		\item {Baja definitiva de algún miembro del equipo por enfermedad}
+		\item {Abandono de la asignatura por parte de algún miembro del equipo}
+		\item {Abandono del proyecto por algún miembro del equipo}
+		\item {Abandono de la carrera por algún miembro del equipo}
+		\item {Baja del supervisor del proyecto}
+	\end{itemize}
+\item \textbf {Planificaciones poco realistas}
+	\begin{itemize}
+		\item {Retraso en las entregas por mala planificacion}
+		\item {No entregar todo lo acordado en la planificacion por falta de tiempo}
+
+	\end{itemize}
+\item \textbf {Desarrollo de las funciones y propiedades erróneas}
+	\begin{itemize}
+		\item {Las funciones son ineficientes}
+		\item {Poca calidad de las funciones y propiedades realizadas}
+		\item {Las distintas partes del proyecto no cumplen con su cometido}
+		\item {Dificultad para hacer que las distintas funciones del proyecto se coordinen entre ellas}
+		\item {El producto no se ajusta a lo que el cliente necesita por falta de comunicación}
+		\item {El cliente rechaza las funciones que hemos desarrollado}
+		\item {El cliente no sabe que funciones debe desarrollar el producto}
+		\item {El producto no funciona debidamente en la plataforma en que se quiere usar}
+		\item {El lenguaje no permite realizar todas las funciones}
+		\item {Los programas desarrollados son muy difíciles de usar y poco efectivos}	
+	\end{itemize}
+\item \textbf {Desarrollo erróneo del interfaz de usuario}
+	\begin{itemize}
+		\item {La interfaz de usuario es demasiado difícil de construir}
+		\item {Falta de recursos para el desarrollo de la interfaz}
+		\item {El cliente considera que la interfaz es difícil de usar}
+		\item {Al cliente no le resulta atractiva la interfaz de usuario}
+		\item {El cliente decide cambiar por completo la interfaz de usuario}
+	\end{itemize}
+\item \textbf {Chapado}
+	\begin{itemize}
+		\item {Abandono del proyecto}
+	\end{itemize}
+\item \textbf {Continua corriente de cambios en los requisitos}
+	\begin{itemize}
+		\item {El cliente cambia de opinión acerca de lo que debe hacer el proyecto}
+		\item {El cliente no sabe que espera que haga el producto}
+		\item {Los distintos clientes aportan visiones muy distintas del producto}
+
+	\end{itemize}
+\item \textbf {Deficiencias en componentes proporcionados externamente}
+	\begin{itemize}
+		\item {Las librerías de Java no son eficientes para nuestro proyecto}
+		\item {Los programas proporcionados son muy difíciles de usar y poco efectivos}
+		\item {Los recursos son proporcionados demasiado tarde}
+
+	\end{itemize}
+\item \textbf {Deficiencias en tareas desarrolladas externamente}
+	\begin{itemize}
+		\item {Poco tiempo para realizar correciones}
+		\item {Poco tiempo para asimilar los pasos a seguir}
+		\item {Poco tiempo para realizar el proyecto}
+	\end{itemize}
+\item \textbf {Deficiencias en rendimiento en tiempo real}
+	\begin{itemize}
+		\item {Falta de recursos para realizar el proyecto}
+		\item {Nuestro producto no cumple con los requisitos de rendimiento}
+		\item {Nuestro producto no garantiza la calidad de uso}
+	\end{itemize}
+\item \textbf {Exprimir las capacidades informáticas}
+	\begin{itemize}
+		\item {Falta de conocimiento por parte de los componentes del equipo}
+	\end{itemize}
+\end{itemize}
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\part{Análisis del riesgo}
+
+%		\subsection*{Nombre del riesgo}			% Hay que rellenar los siguientes campos de cada riesgo
+%			\begin{itemize}
+%				\item \textbf {Prioridad: }
+%				\item \textbf {Probabilidad: }
+%				\item \textbf {Consecuencia: }
+%				\item \textbf {Indicios de que se produzca: }
+%				\item \textbf {Prevención: }
+%				\item \textbf {Mitigación: }
+%				\item \textbf {Contigencia: }
+%			\end{itemize}
+En esta parte se analizan todos los riesgos identificados, exponiendo cuál es la probabilidad de que se produzcan y 
+explicando la consecuencia que tendrían si llegaran a producirse.
+
+\section{Deficiencias del personal}
+%
+
+	\subsection*{Baja temporal de algún miembro del equipo por enfermedad}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Frecuente.
+			\item \textbf {Consecuencia: }Crítica. Aumento de la carga de trabajo entre los
+				restantes miembros, disminución de la calidad del producto, retraso en las
+				entregas.
+		\end{itemize}
+	
+\subsection*{Baja definitiva de algún miembro del equipo por enfermedad}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Improbable
+			\item \textbf {Consecuencia: }Catastrófica. Aumento de la carga de trabajo entre
+							los restantes miembros, disminución de la calidad del producto, retraso en las
+							entregas.
+		\end{itemize}
+	
+	\subsection*{Abandono de la asignatura por parte de algún miembro del equipo}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Improbable.
+			\item \textbf {Consecuencia: }Catastrófica. Aumento de la carga de trabajo entre los restantes miembros, disminución de la calidad del producto, retraso en las entregas.
+		\end{itemize}
+	
+	\subsection*{Abandono del proyecto por algún miembro del equipo}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Improbable.
+			\item \textbf {Consecuencia: }Catastrófica. Aumento de la carga de trabajo entre los restantes miembros, disminución de la calidad del producto, retraso en las entregas.
+		\end{itemize}
+	
+	\subsection*{Abandono de la carrera por algún miembro del equipo}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Improbable.
+			\item \textbf {Consecuencia: }Catastrófica. Aumento de la carga de trabajo entre los restantes miembros, disminución de la calidad del producto, retraso en las entregas.
+		\end{itemize}
+	
+	\subsection*{Baja del supervisor del proyecto}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Remota.
+			\item \textbf {Consecuencia: }Seria. Cambio en la organización del proyecto y en su desarrollo.
+		\end{itemize}
+
+%
+\section{Planificaciones y presupuestos poco realistas}
+
+	\subsection*{Retraso en las entregas por mala planificación}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Ocasional.
+			\item \textbf {Consecuencia: }Crítica. Cambio en la planificación del proyecto y empeoramiento de los resultados.
+		\end{itemize}
+	
+	\subsection*{No entregar todo lo acordado en la planificación por falta de tiempo}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Ocasional.
+			\item \textbf {Consecuencia: }Crítica. Cambio en la planificación del proyecto y empeoramiento de los resultados.
+		\end{itemize}
+
+%
+\section{Desarrollo de las funciones y propiedades erróneas}
+
+	\subsection*{Las funciones son ineficientes}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Menor. Empeoramiento de la calidad del software.
+		\end{itemize}
+	
+	\subsection*{Poca calidad de las funciones y propiedades realizadas}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Menor. Empeoramiento de la calidad del software.
+		\end{itemize}
+	
+	\subsection*{Las distintas partes del proyecto no cumplen con su cometido}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Remota
+			\item \textbf {Consecuencia: }Crítica. Necesidad de volver a desarrollar las partes del proyecto que no funcionan correctamente.
+		\end{itemize}
+	
+	\subsection*{Dificultad para hacer que las distintas funciones del proyecto se coordinen entre ellas}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Menor. Aumento del esfuerzo.
+		\end{itemize}
+	
+	\subsection*{El producto no se ajusta a lo que el cliente necesita por falta de comunicación}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Ocasional.
+			\item \textbf {Consecuencia: }Crítica.  Habría que rehacer gran parte del proyecto, con todo el coste que esto supone.
+		\end{itemize}
+	
+	\subsection*{El cliente rechaza las funciones que hemos desarrollado}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Crítica. Necesidad de cambiar enormemente el desarrollo del proyecto.
+		\end{itemize}
+	
+	\subsection*{El cliente no sabe qué funciones debe desarrollar el producto}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Seria. Aumento del tiempo necesario para desarrollar el producto.
+		\end{itemize}
+	
+	\subsection*{El producto no funciona debidamente en la plataforma en que se quiere usar}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Improbable.
+			\item \textbf {Consecuencia: }Catastrófica. Es necesario desarrollar de nuevo el producto.
+		\end{itemize}
+	
+	\subsection*{El lenguaje no permite realizar todas las funciones}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Remota.
+			\item \textbf {Consecuencia: }Seria. Será necesario buscar soluciones alternativas.
+		\end{itemize}
+		
+	\subsection*{Los programas desarrollados son muy difíciles de usar y poco efectivos}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Crítica. El cliente rechaza el producto y habría que rehacerlo de nuevo, 
+										  con todo el esfuerzo y costes que esto supone.
+		\end{itemize}
+	
+
+
+%
+\section{Desarrollo erróneo del interfaz de usuario}
+
+	\subsection*{La interfaz de usuario es demasiado difícil de construir}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Seria. Aumento del esfuerzo, el coste y gran disminución de la calidad.
+		\end{itemize}
+	
+	\subsection*{Falta de recursos para el desarrollo de la interfaz}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Remota.
+			\item \textbf {Consecuencia: }Crítica. Gran aumento del esfuerzo y el coste, y gran disminución de la calidad.
+		\end{itemize}
+	
+	\subsection*{El cliente considera que la interfaz es difícil de usar}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Seria. Volver a realizar la interfaz de usuario.
+		\end{itemize}
+	
+	\subsection*{Al cliente no le resulta atractiva la interfaz de usuario}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Seria. Volver a realizar la interfaz de usuario o modificarla en su mayor parte.
+		\end{itemize}
+	
+	\subsection*{El cliente decide cambiar por completo la interfaz de usuario}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Ocasional.
+			\item \textbf {Consecuencia: }Crítica. Desarrollo de una nueva interfaz de usuario aumentando coste y esfuerzo.
+		\end{itemize}
+
+%
+\section{Chapado}
+
+	\subsection*{Abandono del proyecto}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Improbable.
+			\item \textbf {Consecuencia: }Catastrófica. Suspenso en IS 	% Se parece mucho a otra, se podria considerar quitarla.
+		\end{itemize}
+
+%
+\section{Continua corriente de cambios en los requisitos}
+
+	\subsection*{El cliente cambia de opinión acerca de lo que debe hacer el proyecto}
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Improbable.
+			\item \textbf {Consecuencia: }Catastrófica. cambio total en el desarrollo del proyecto. Sería necesario empezar de nuevo.
+		\end{itemize}
+	
+	\subsection*{El cliente no sabe que espera que haga el producto}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Seria. Supondría tener que estar rediseñando requisitos, reescribiendo código y rehaciendo el producto según le pareciera al cliente.
+		\end{itemize}
+	
+	\subsection*{Los distintos clientes aportan visiones muy distintas del producto}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Seria. Es muy difícil avanzar en el proyecto.
+		\end{itemize}
+
+%
+\section{Deficiencias en componentes proporcionados externamente}
+
+	\subsection*{Las librerías de Java no son eficientes para nuestro proyecto}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Improbable.
+			\item \textbf {Consecuencia: }Crítica. Sería necesario implementar funciones que pueden llegar a ser muy complejas.
+		\end{itemize}
+	
+	\subsection*{Los programas proporcionados son muy difíciles de usar y poco efectivos}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Crítica. Falta de información, aumento del esfuerzo y necesidad de buscar otras alternativas.
+		\end{itemize}
+	
+	\subsection*{Los recursos son proporcionados demasiado tarde}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Ocasional.
+			\item \textbf {Consecuencia: }Crítica. Aumento del esfuerzo, necesidad de buscar otras alternativas, disminución de la calidad y posibles retrasos.
+		\end{itemize}
+
+%
+\section{Deficiencias en tareas desarrolladas externamente}
+
+	\subsection*{Poco tiempo para realizar correciones}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Ocasional.
+			\item \textbf {Consecuencia: }Crítica. Los errores son corregidos muy tarde y se propagan mucho.
+		\end{itemize}
+
+	\subsection*{Poco tiempo para asimilar los pasos a seguir}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Probable.
+			\item \textbf {Consecuencia: }Crítica. Aumento desmesurado de la dificultad del proyecto.
+		\end{itemize}
+	
+	\subsection*{Poco tiempo para realizar el proyecto}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Ocasional.
+			\item \textbf {Consecuencia: }Crítica. Disminución de la calidad del producto.
+		\end{itemize}
+
+%
+\section{Deficiencias en rendimiento en tiempo real}
+
+	\subsection*{Falta de recursos para realizar el proyecto}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Remota.
+			\item \textbf {Consecuencia: }Crítica. Empeoramiento de la calidad software.
+		\end{itemize}
+	
+	\subsection*{Nuestro producto no cumple con los requisitos de rendimiento}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Ocasional.
+			\item \textbf {Consecuencia: }Crítica. Necesidad de realizar de nuevo el trabajo para que cumpla con los requisitos mínimos.
+		\end{itemize}
+	
+	\subsection*{Nuestro producto no garantiza la calidad de uso}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Ocasional.
+			\item \textbf {Consecuencia: }Crítica. Es necesario realizar de nuevo el producto.
+		\end{itemize}
+		
+
+
+%
+\section{Exprimir las capacidades informáticas}
+
+	\subsection*{Falta de conocimiento por parte de los componentes del equipo}	
+		\begin{itemize}
+			\item \textbf {Probabilidad: }Frecuente.
+			\item \textbf {Consecuencia: }Crítica. Empeoramiento enorme de la calidad, aumento de la dificultad de desarrollo, retraso en las entregas.
+		\end{itemize}
+	
+
+
+	% MONITORIZACION DEL RIESGO?
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+	% Priorizacion del riesgo --> Diapositiva 34
+\part{Priorización del riesgo}
+%<<<<<<< .mine
+
+%
+\setcounter{section}{0}
+A continuación se exponen las prioridades de cada riesgo, calculadas según su probabilidad y consecuencia. En la siguiente
+sección serán ordenados según su prioridad.
+\section{Deficiencias del personal}
+	\begin{itemize}
+		\item \textbf{Baja temporal de algún miembro del equipo por enfermedad}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alto.		
+			\end{itemize}
+		
+		\item \textbf{Baja definitiva de algún miembro del equipo por enfermedad}	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+		
+		\item \textbf{Abandono de la asignatura por parte de algún miembro del equipo}	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+		
+		\item \textbf{Abandono del proyecto por algún miembro del equipo}	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+		
+		\item \textbf{Abandono de la carrera por algún miembro del equipo}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+		
+		\item \textbf{Baja del supervisor del proyecto}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Baja.
+			\end{itemize}
+	\end{itemize}
+%
+\section{Planificaciones y presupuestos poco realistas}
+	\begin{itemize}
+		\item \textbf{Retraso en las entregas por mala planificación}%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+		
+		\item \textbf{No entregar todo lo acordado en la planificación por falta de tiempo}%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+	\end{itemize}
+%
+\section{Desarrollo de las funciones y propiedades erróneas}
+	\begin{itemize}
+
+		\item \textbf{El cliente rechaza las funciones que hemos desarrollado}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Intolerable.
+			\end{itemize}
+
+		\item \textbf{Los programas desarrollados son muy difíciles de usar y poco efectivos}	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Intolerable.
+			\end{itemize}
+
+		\item \textbf{El producto no se ajusta a lo que el cliente necesita por falta de comunicación}%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+			
+		\item \textbf{El cliente no sabe qué funciones debe desarrollar el producto}%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+		
+		\item \textbf{Las funciones son ineficientes}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+		
+		\item \textbf{Poca calidad de las funciones y propiedades realizadas}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+		
+		\item \textbf{Las distintas partes del proyecto no cumplen con su cometido}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+		
+		\item \textbf{Dificultad para hacer que las distintas funciones del proyecto se coordinen entre ellas}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+		
+
+		\item \textbf{El producto no funciona debidamente en la plataforma en que se quiere usar}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+		
+		\item \textbf{El lenguaje no permite realizar todas las funciones}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Baja.
+			\end{itemize}
+
+	\end{itemize}
+
+%
+\section{Desarrollo erróneo del interfaz de usuario}
+	\begin{itemize}
+		\item \textbf{La interfaz de usuario es demasiado difícil de construir}%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta
+			\end{itemize}
+				
+		\item \textbf{El cliente considera que la interfaz es difícil de usar}%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+		
+		\item \textbf{Al cliente no le resulta atractiva la interfaz de usuario}%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+		
+		\item \textbf{El cliente decide cambiar por completo la interfaz de usuario}%%%No se parece un poco con el anterior?
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+
+		\item \textbf{Falta de recursos para el desarrollo de la interfaz}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+
+	\end{itemize}
+%
+\section{Chapado}
+	\begin{itemize}
+		\item \textbf{Abandono del proyecto}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.			% Se parece mucho a otra, se podria considerar quitarla.
+			\end{itemize}
+	\end{itemize}
+%
+\section{Continua corriente de cambios en los requisitos}
+	\begin{itemize}
+		
+		\item \textbf{El cliente no sabe qué espera que haga el producto}	%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+		
+		\item \textbf{Los distintos clientes aportan visiones muy distintas del producto}	%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+
+		\item \textbf{El cliente cambia de opinión acerca de lo que debe hacer el proyecto}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+	\end{itemize}
+%
+\section{Deficiencias en componentes proporcionados externamente}
+	\begin{itemize}
+		
+		\item \textbf{Los programas proporcionados son muy difíciles de usar y poco efectivos}	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+		
+		\item \textbf{Los recursos son proporcionados demasiado tarde}	%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+
+		\item \textbf{Las librerías de Java no son eficientes para nuestro proyecto}	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Baja.
+			\end{itemize}
+	\end{itemize}
+%
+\section{Deficiencias en tareas desarrolladas externamente}
+	\begin{itemize}
+		\item \textbf{Poco tiempo para asimilar los pasos a seguir}	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Intolerable.
+			\end{itemize}
+
+		\item \textbf{Poco tiempo para realizar correciones}	%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+
+\item \textbf{Poco tiempo para realizar el proyecto}
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+		
+	\end{itemize}
+%
+\section{Deficiencias en rendimiento en tiempo real}
+	\begin{itemize}
+		\item \textbf{Nuestro producto no cumple con los requisitos de rendimiento}	%%%
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+		
+		\item \textbf{Nuestro producto no garantiza la calidad de uso}%%%	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Alta.
+			\end{itemize}
+
+		\item \textbf{Falta de recursos para realizar el proyecto}	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+			\end{itemize}
+	\end{itemize}
+%
+\section{Exprimir las capacidades informáticas}
+	\begin{itemize}
+		\item \textbf{Falta de conocimiento por parte de los componentes del equipo}	
+			\begin{itemize}
+				\item \textbf{Prioridad: }Intolerable.
+			\end{itemize}
+	\end{itemize}
+	
+\section{Prioridad de los riesgos}
+		En esta sección se ordenan los riesgos según su prioridad y se eligen aquellos riesgos que van a ser tratados.\\ \ \\ 
+
+			%\textbf{Intolerable}\\
+			\begin{tabular}{|p{12cm}|}
+				\hline
+				\textbf{Riesgos con prioridad Intolerable}\\ \hline \hline
+				\textbf{1.} Baja temporal de algún miembro del equipo por enfermedad.\\ \hline 
+				\textbf{2.} El cliente rechaza las funciones que hemos desarrollado.\\ \hline
+				\textbf{3.} Los programas desarrollados son muy difíciles de usar y poco efectivos. \\ \hline
+				\textbf{4.} Poco tiempo para asimilar los pasos a seguir. \\ \hline
+				\textbf{5.} Falta de conocimiento por parte de los componentes del equipo.\\ \hline
+			\end{tabular}
+			
+				\ \\
+				\ \\
+			%\textbf{Alta}\\
+			
+			\begin{tabular}{|p{12cm}|}
+				\hline
+				\textbf{Riesgos con prioridad Alta}\\ \hline \hline
+				\textbf{6.} Retraso en las entregas por mala planificación.\\ \hline 
+				\textbf{7.} El producto no se ajusta a lo que el cliente necesita por falta de comunicación. \\ \hline
+				\textbf{8.}  No entregar todo lo acordado en la planificación por falta de tiempo.\\ \hline
+				\textbf{9.} El cliente no sabe qué funciones debe desarrollar el producto. \\ \hline
+				\textbf{10.} Los programas proporcionados son muy difíciles de usar y poco efectivos. \\ \hline
+				\textbf{11.} La interfaz de usuario es demasiado difícil de construir. \\ \hline
+				\textbf{12.} El cliente considera que la interfaz es difícil de usar.		\\ \hline
+				\textbf{13.} Al cliente no le resulta atractiva la interfaz de usuario.			\\ \hline
+				\textbf{14.} El cliente decide cambiar por completo la interfaz de usuario.			\\ \hline
+				\textbf{15.} El cliente no sabe qué espera que haga el producto.			\\ \hline
+				\textbf{16. }Los recursos son proporcionados demasiado tarde. 				\\ \hline
+				\textbf{17. }Poco tiempo para realizar correciones. \\ \hline
+				\textbf{18. }Nuestro producto no cumple con los requisitos de rendimiento. \\ \hline
+				\textbf{19. }Nuestro producto no garantiza la calidad de uso. \\ \hline
+				\textbf{20. }Poco tiempo para realizar el proyecto. \\ \hline
+
+			\end{tabular}
+				\ \\
+				\ \\
+			%\textbf{Media}\\
+			
+			\begin{tabular}{|p{12cm}|}
+				\hline
+				\textbf{Riesgos con prioridad Media}\\ \hline \hline
+				\textbf{21.} Baja definitiva de algún miembro del equipo por enfermedad.\\ \hline 
+				\textbf{22.} Abandono de la asignatura por parte de algún miembro del equipo.\\ \hline
+				\textbf{23.} Abandono del proyecto por algún miembro del equipo. \\ \hline
+				\textbf{24.} Abandono de la carrera por algún miembro del equipo. \\ \hline
+				\textbf{25.} Las funciones son ineficientes.\\ \hline
+				\textbf{26.} Poca calidad de las funciones y propiedades realizadas. \\ \hline
+				\textbf{27.} Las distintas partes del proyecto no cumplen con su cometido \\ \hline
+				\textbf{28.} Dificultad para hacer que las distintas funciones del proyecto se coordinen entre ellas. \\ \hline
+				\textbf{29.} El producto no funciona debidamente en la plataforma en que se quiere usar. \\ \hline
+				\textbf{30.} Falta de recursos para el desarrollo de la interfaz. \\ \hline
+				\textbf{31.} El cliente cambia de opinión acerca de lo que debe hacer el proyecto. \\ \hline
+				\textbf{32.} Falta de recursos para realizar el proyecto \\ \hline
+			\end{tabular}
+			
+				\ \\
+				\ \\
+			%\textbf{Baja}\\
+			
+			\begin{tabular}{|p{12cm}|} 
+				\hline
+				\textbf{Riesgos con prioridad Baja}\\ \hline \hline
+				\textbf{33.} Baja del supervisor del proyecto.\\ \hline 
+				\textbf{34.} El lenguaje no permite realizar todas las funciones.\\ \hline
+				\textbf{35.} Las librerías de Java no son eficientes para nuestro proyecto. \\ \hline
+				%\textbf{34.} Poco tiempo para asimilar los pasos a seguir. \\ \hline
+				%\textbf{35.} Falta de conocimiento por parte de los componentes del equipo.\\ \hline
+			\end{tabular}
+			\ \\
+			\ \\
+			\ \\
+			\ \\
+			Por lo tanto, los riesgos que serán tratados son los siguientes:
+			\begin{itemize}
+			  \item Baja temporal de algún miembro del equipo por enfermedad.
+			  \item El cliente rechaza las funciones que hemos desarrollado.
+			  \item Los programas desarrollados son muy difíciles de usar y poco efectivos.
+			  \item Poco tiempo para asimilar los pasos a seguir. 
+			  \item Falta de conocimiento por parte de los componentes del equipo. 
+			  \item Retraso en las entregas por mala planificación. 
+			  \item El producto no se ajusta a lo que el cliente necesita por falta de comunicación. 
+			\end{itemize}
+			
+
+%El producto no funciona debidamente en la plataforma en que se quiere usar
+ 
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+ 
+\part{Gestión del riesgo}
+%\setcounter{section}{0}
+
+	En esta parte se tratarán los riesgos que han sido elegidos por su prioridad en la sección anterior.\\
+	Para ello, se analizarán diversos aspectos, que se muestran a continuación.
+	%\section*{Baja temporal de algún miembro del equipo por enfermedad}
+	%\begin{itemize}
+	%\item \textbf{Nombre del riesgo}			% Hay que rellenar los siguientes campos de cada riesgo
+		\begin{itemize}
+			\item \textbf {Indicios de que se produzca: }Hechos que nos pueden llevar a pensar que es posible que ocurra
+							el riesgo.
+			\item \textbf {Mitigación: }En este momento el riesgo ya se ha producido. Aquí se describen las acciones
+							que se deben llevar a cabo para minimizar las consecuencias, desde el momento en el que
+							se produce el riesgo hasta el momento en el que se pone en marcha la acción de contingencia.
+			\item \textbf {Acción de contingencia: }Acciones que se deben llevar a cabo una vez que el riesgo haya
+							ocurrido, para que pueda ser resuelto.
+			\item \textbf {Prevención: }Acciones que se deben realizar para evitar que el riesgo se produzca.
+			
+		\end{itemize}
+	%\end{itemize}
+	A continuación se exponen todos los riesgos:\\ \ \\ \ \\
+	\setcounter{section}{0}
+	\section{Baja temporal de algún miembro del equipo por enfermedad}
+		\begin{itemize}
+			\item \textbf {Indicios de que se produzca: }
+				\begin{itemize}
+				  \item  Periodos de gripe.
+				  \item  Los miembros del equipo se encuentran cansados por sobrecarga de trabajo.
+				  \item  Desmotivación en el trabajo, cansancio frecuente.
+				\end{itemize} 
+			\item \textbf {Mitigación: }
+				\begin{itemize}
+					\item Repartir el trabajo de forma equitativa entre los restantes miembros del grupo.
+					\item En caso de que esté de baja por una enfermedad contagiosa, comprobar que el resto de el equipo no ha sido contagiado.
+					%\item 
+				\end{itemize} 
+			\item \textbf {Acción de contingencia: }
+				\begin{itemize}
+					\item Suplir la baja contratando a otro trabajador.
+				\end{itemize}
+			\item \textbf {Prevención: }
+				\begin{itemize}
+				  \item La enfermedad puede ser imprevisible. 
+				  \item No sobrecargar a los trabajadores. Tener cuidado en temporadas de gripe. 
+				\end{itemize} 
+			\end{itemize}
+		
+	\section{El cliente rechaza las funciones que hemos desarrollado}
+		\begin{itemize}
+			\item \textbf {Indicios de que se produzca: }
+				\begin{itemize}
+				  \item El cliente discute todas las
+						propuestas que le ofrecemos y ninguna de nuestras posibles soluciones le parece
+						adecuada.
+				\end{itemize}
+			\item \textbf {Acción de contingencia: }
+				\begin{itemize}
+				  \item Reunirnos de nuevo con el cliente,
+						analizar lo que nos pide y llegar a un acuerdo para hacer una síntesis entre las
+						funciones que ya hemos desarrollado y lo que el cliente pide.
+				\end{itemize}
+			\item \textbf {Prevencion: }
+				\begin{itemize}
+				  \item Hacer más reuniones con el cliente para conocer
+						mejor su idea, es decir, qué quiere y cómo lo quiere, para conocer todos los
+						detalles que debe cumplir el producto. 
+				  \item Una vez conocidos los detalles a fondo
+						comenzar algunas funciones y a medida que se van desarrollando mostrárselas al
+						cliente para que de su opinión y así realizar un trabajo que sea de su agrado.
+				\end{itemize}
+			\item \textbf {Mitigacion: }
+				\begin{itemize}
+			  			\item Modificar las funciones hasta que sean del gusto del
+							cliente.
+				\end{itemize}
+		\end{itemize}
+	
+	%
+	\section{Los programas desarrollados son muy difíciles de usar y poco efectivos}
+		\begin{itemize}
+			\item \textbf {Indicios de que se produzca: }
+				\begin{itemize}
+				  \item Hay poca visibilidad del producto.
+				  \item Los requisitos son poco claros. 
+				  \item El equipo no tiene claro lo que hay que hacer.
+				  \item El equipo no sabe qué es exactamente lo que el cliente desea. 
+				  \item No se sabe qué pasos hay que seguir debido a una mala planificación y un mal diseño.
+				\end{itemize} 
+			\item \textbf {Mitigación: }
+				\begin{itemize}
+				  \item Hablar con el cliente para saber dónde está el problema.
+				  \item Probar, monitorizar y depurar el programa, para ver qué partes son problemáticas y qué partes son 
+				  		poco efectivas.
+				\end{itemize}
+			\item \textbf {Acción de contingencia: }
+				\begin{itemize}
+				  \item Rehacer las partes problemáticas.
+				  \item Comprobar que los problemas se han resuelto.
+				  \item Entregar al cliente la nueva versión del programa. 
+				\end{itemize} 
+			\item \textbf {Prevención: }
+				\begin{itemize}
+				  \item Elaborar prototipos para que el programa pueda ser probado y corregido.
+				  \item Mejorar la planificación, aumentar la claridad de los requisitos.
+				  \item Hablar más con el cliente, para tener claro qué es lo que él quiere.
+				\end{itemize}
+			\end{itemize}
+		
+	\section{Poco tiempo para asimilar los pasos a seguir}
+		\begin{itemize}
+			\item \textbf {Indicios de que se produzca: }Vamos retrasados en las clases y el
+			profesor tiene que explicar más rápido, o se aproxima una época de mucho trabajo
+			y exámenes por lo que no podemos dedicar tanto tiempo a la asignatura y al
+			proyecto.
+			\item \textbf {Acción de contingencia: }
+				\begin{itemize}
+				  \item Repartir bien el trabajo.
+				  \item Marcarnos fechas para realizar cada parte muy cortas y ser muy estrictos. 
+				  \item Para ello debemos dedicar más tiempo al proyecto. De este modo llevaremos una información
+						muy actualizada de que debemos llevar hecho, cómo hacerlo y todo el grupo
+						conocerá el estado del proyecto. 
+				  \item También podríamos dedicar un tiempo a ayudarnos
+						a comprender mejor lo que debemos saber de la asignatura.
+				\end{itemize}
+			\item \textbf {Prevención: }
+				\begin{itemize}
+				  \item Llevar las clases de Ingeniería del Software al día, incluso estudiar por adelantado. 
+				  \item Comprender todo antes de comenzar con el
+						proyecto y dedicarnos a éste desde el principio, cuidando no dejarlo todo para
+						cuando se aproxime la fecha de entrega.  % No me lo creo ni yo
+				\end{itemize}
+			\item \textbf {Mitigación: }Dedicar nuestro tiempo únicamente a estudiar la
+			asignatura y a realizar el proyecto.
+		\end{itemize}
+
+	
+	\section{Falta de conocimiento por parte de los componentes del equipo}
+		\begin{itemize}
+			\item \textbf {Indicios de que se produzca: }%los miembros del equipo se encuentran desorientados, no saben qué hacer, avanzes torpes,
+				\begin{itemize}
+					\item Los miembros del equipo no saben qué hacer.
+					\item Se hacen avanzes torpes e inseguros.
+					\item Poca organización. 
+					\item En determinados momentos parece que el proyecto se va a detener.
+					%\item 
+				\end{itemize}
+			\item \textbf {Mitigación: }Recordemos que si el riesgo ocurre, esto nos llevaría a un empeoramiento de la calidad
+										del producto, aumento de la dificultad del desarrollo y retrasos en las entregas.
+				\begin{itemize}
+				  \item Contratar o conseguir la colaboración de alguien con experiencia.
+				  \item Analizar qué aspectos son los desconocidos. 
+				  \item Corrección de errores por fallos de concepto.
+				  \item Reorganizar las partes incorrectas del proyecto, esta vez teniendo conocimiento de cómo se deben
+				  		de hacer las cosas.
+				  \item Hablar con el cliente para acordar nuevas fechas. 
+				\end{itemize} 
+			\item \textbf {Acción de contingencia: }
+				\begin{itemize}
+				  \item Rehacer las partes incorrectas del proyecto.
+				  \item Mejorar la calidad del producto.
+				\end{itemize}
+			\item \textbf {Prevención: }%
+				\begin{itemize}
+					\item Tener claros los conceptos de la IS.
+					\item En caso de duda, consultar con gente
+						con experiencia, para saber cómo actuar.
+					\item En caso de que el equipo se encuentre desorientado o algún miembro del equipo no sepa qué hacer,
+							pedir ayuda y consultar a alguien con experiencia en la IS. 
+				\end{itemize} 
+			\end{itemize}
+	
+	\section{Retraso en las entregas por mala planificación}
+		\begin{itemize}
+			\item \textbf {Indicios de que se produzca: }
+				\begin{itemize}
+				  \item Conforme avanza el proyecto la
+						relacion entre esfuerzo real y planificación no se cumple, por tanto se necesita
+						mas tiempo para realizar la misma tarea. Esto es lo que lleva a los retrasos.
+				\end{itemize}
+			\item \textbf {Mitigacion: }
+				\begin{itemize}
+				  \item Dedicar mas tiempo a la entrega hasta que se acabe,
+					aunque eso implique menor calidad.
+				\end{itemize}
+			\item \textbf {Acción de contingencia: }
+				\begin{itemize}
+				  \item Volver a realizar una nueva
+						planificación basándonos en la experiencia de los últimos hechos y con más
+						cuidado que la última vez. 
+				  \item Para cumplir con las entregas también será necesario
+						aumentar la cantidad de horas dedicadas.
+				\end{itemize}
+			\item \textbf {Prevencion: }Realizar una planificación más extensa que indique
+				en qué momento debemos tener cada parte, sin necesidad de que exista una
+				entrega.
+		
+		\end{itemize}
+	
+	\section{El producto no se ajusta a lo que el cliente necesita por falta de comunicación}
+		\begin{itemize}
+			\item \textbf {Indicios de que se produzca: }
+				\begin{itemize}
+					\item En determinadas ocasiones, el equipo se encuentra desorientado acerca de lo que tiene que hacer.
+					\item Existen diferentes posturas dentro del equipo acerca de lo que se tiene que hacer. 
+					\item Hay poca comunicación con el cliente.
+					\item En las reuniones con el cliente no se saca nada en claro. Hay ambigüedades.
+					%\item 
+				\end{itemize}
+			\item \textbf {Mitigación: }
+				\begin{itemize}
+				  \item Detectar qué partes del programa son las que fallan.  
+				  \item Hablar con el cliente para saber por qué el programa no se ajusta a sus necesidades. 
+				  \item Estudiar a fondo aquellas características que no son necesarias en el programa, y aquellas
+				  		que lo son y que no están presentes.
+				\end{itemize} 
+			\item \textbf {Acción de contingencia: }
+				\begin{itemize}
+				  \item  Mostrar al cliente qué características se cambiarán, para obtener el visto bueno.
+				  \item Rehacer el programa, teniendo en cuenta la opinión del cliente, y haciendo los cambios necesarios.
+				\end{itemize} 
+			\item \textbf {Prevención: }
+				\begin{itemize}
+				  \item Evitar ambigüedades en la especificación.
+				  \item Al hablar con el cliente, dejar claras todas las características que ha de tener el programa.  
+				\end{itemize} 
+			
+		\end{itemize}
+	
+	
+		
+	%=======
+%>>>>>>> .r75
+	% En la diapositiva 29 hay un modelo para rellenar los campos de cada riesgo
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada, al final del documento
+\newpage
+
+\end{document}
+

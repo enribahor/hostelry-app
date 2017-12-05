@@ -1,0 +1,915 @@
+ %El objetivo de este documento es identificar, detallar y documentar los requisitos de software de nuestra aplicación, es decir, determinar las CARACTERISTICAS 
+%que debera tener el sistema o las RESTRICCIONES que debera cumplir para que sea aceptado por el cliente y los futuros usuarios del sistema de software.
+%El tema de requisitos de IS es el TEMA 3
+%Cuando acabemos la SRS hacemos la matriz de traza, creo que seria bueno porque es muy visual (TEMA 3, diapositiva 29)
+
+
+\documentclass[spanish,a4paper,11pt, twoside]{report}	% Idioma, tamaño del papel, tamaño letra, documento (book, report, article, letter)
+
+%%% PAQUETES
+\usepackage[spanish,activeacute]{babel}				
+% Babel: Adapta cosas como la tipografia, la fecha, lo de Chapter al español, y activeacute para apóstrofes (') como abreviaciones de acentos: \'{a}
+\usepackage[utf8]{inputenc}					% Codificacion UTF8 (para meter tildes normal: á --> \'{a} )
+\usepackage{multicol}						% Escritura en varias columnas
+\usepackage{graphics}						% Inclusión de imágenes
+\usepackage{graphicx}						% Mas para imagenes
+\usepackage{geometry}						% Distribucion de la pagina: margenes, encabezados, tamaño pagina...
+\usepackage{fancyhdr}						% Paquete para añadir y modificar encabezados y pies de pagina
+\usepackage{hyperref}						% Para hipervínculos, en el indice al menos, GRACIAS A DAVID
+%\usepackage{lastpage}						% Ultima pagina para poner, por ejemplo, 3 de 15
+%%% PAQUETES MATEMATICOS
+\usepackage{amsmath}						% Conjunto de paquetes desarrollados por la Amercian Matematical Society
+\usepackage{amssymb}						% Tipografía mathbb y otros símbolos tambien de la AMS
+\usepackage{amsthm}						% Paquete AMS theorem, de la AMS
+\usepackage{amsfonts}						% Paquete con símbolos y mas, de la AMS
+%\usepackage{nicefrac}						% Fracciones bonitas, LO DEJO COMENTADO PORQUE A VECES DA PROBLEMAS AL COMPILAR
+
+
+%%% DECLARACIONES (sobre la forma de la pagina, encabezado etc.)
+\pagenumbering{roman}						
+% Para numerar las paginas en numeros romanos hasta que empiece el texto (tambien alph, Alph, roman, Roman...)
+\pagestyle{fancy}							% Utiliza el paquete fancyhdr para encabezados y pies de pagina
+%\thispagestyle{empty}  						% Para poner UNA pagina sin encabezados ni numero, "plain" CON numero, "fancy" normal
+%\lhead{\section}							% Encabezado a la izquierda
+%\fancyhead[RO,LE]{\bfseries Encabezado} 		%Encabezado de las páginas impares a la derecha y de las pares a la izquierda
+\fancyhead[LO,RE]{\bfseries Especificación de requisitos} %Encabezado de las páginas impares a la izquierda y de las pares a la derecha
+%\rhead{\bfseries Casos de uso}				%Encabezado a la derecha
+\cfoot{\thepage}							% Numero de pagina centrado en el pie
+%\cfoot{\thepage\ de \pageref{LastPage}}		% Numero de pagina centrado en el pie asi: n de m
+\renewcommand{\headrulewidth}{0.4pt}			% Linea debajo del encabezado
+\renewcommand{\footrulewidth}{0.4pt}			% Linea encima del pie de pagina
+\renewcommand*{\thesection}{\arabic{section}}	% Hace que no apareca el indice de capitulos y que comience en section, GRACIAS A RUBEN
+\newcommand*{\PKT}{\hbox{P}\kern-2.5pt\lower3.5pt\hbox{\small{K}}\kern-2.8pt\hbox{T}\kern-2pt}	%PiKey Team en bonito
+
+
+%%%%% CUERPO %%%%%
+\begin{document}
+
+\title{\textbf{\huge{Especificación de \\ 
+	requisitos Software}} \\ 
+	\textit{v4.0.1} \\	\vspace{0.1cm}
+	\Large{Ingeniería del Software} \\
+	\includegraphics[scale=0.3]{ucm.pdf}}
+\author{{\Large{PiKey Team-}} \PKT \ : \vspace{0.2cm} \\
+	Jesús Aguirre Pemán \\
+	 Enrique Ballesteros Horcajo \\
+	 Jaime Dan Porras Rhee \\
+	 Ignacio Iker Prado Rujas \\
+	 Alejandro Villarín Prieto }
+\date{\Today}
+\maketitle
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+
+\tableofcontents 							%INDICE hipervinculado
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\pagenumbering{arabic}						% Pone el contador de paginas a 1 y ahora en numeros normales
+
+\part{Introducción}
+\section{Propósito}
+ 	Este documento trata sobre la especificación de los requisitos de la aplicación KIKE- Hostelería ®.
+		\subsection{Propósito} El propósito de esta aplicación es gestionar el funcionamiento de un hotel con restaurante- bar. \\
+
+KIKE- Hostelería ® opera sobre bases de datos tanto de empleados como de clientes (que se gestionarán con ficheros). Ya que la aplicación está pensada para todos los empleados del negocio, presenta una interfaz diferente según sea el puesto de trabajo del usuario.\\
+
+La comunicación entre usuarios mediante la aplicación se hará con un sistema de tablón de notas, común a todos los usuarios.\\
+
+Cada empleado tendrá su nombre de usuario y su contraseña, que le permitirán hacer Log in en la aplicación y así comenzar a usarla. El nombre de usuario es personal e instransferible.\\
+
+El jefe del negocio tendrá acceso a todas las características principales de la aplicación, pudiendo acceder tanto a la contabilidad de la empresa, como a las bases de datos anteriormente mencionadas. \\
+
+
+
+		\subsection{Audiencia} La aplicación está pensada para hoteles y/o restaurantes de capacidad media/baja, pero podría ampliarse para capacidades mayores sin dificultad. \\
+
+No obstante, el negocio debe poseer la capacidad económica suficiente para sufragar los gastos del hardware que necesita la aplicación, pues para que reporte un beneficio se deberían usar varios dispositivos.
+
+\section{Alcance}
+
+Para que la aplicación pueda funcionar en todos sus ámbitos debemos disponer de un cierto hardware para que varios usuarios puedan acceder a la misma y a la vez.\\
+
+ El jefe y cada empleado deberá disponer de un dispositivo móvil (preferiblemente tablet) con sistema operativo Android o IOS para poder acceder a la aplicación y asi ver sus horarios, tareas... En su defecto, puede haber varios de estos dispositivos comunes en el área de trabajo, al menos uno por cada tres empleados para un uso adecuado. \\
+
+Todos estos dispositivos serán controlados a través de un servidor interno, el cual debe contar con suficiente capacidad y rapidez de actuación como para que los dispositivos puedan funcionar sin esperas.\\
+
+Los camareros podrán realizar pedidos a través de sus dispositivos sin necesidad de hablar con los cocineros, los cuales veran las comandas a través de una pantalla situada en la cocina, ganandose así velocidad y evitando confusiones. También permite generar facturas y poder añadirlas a la cuenta de la habitación pues los clientes están vinculados.
+
+
+\section{Definiciones, acrónimos y abreviaturas}
+
+Todo lo referente a esta sección se encuentra en el documento anexo \texttt{Definiciones, acrónimos y abreviaturas}. Ahí se detallan las palabras poco comunes, los anglicísmos y abreviaturas que se emplean.
+
+\section{Referencias}
+	\begin{itemize}
+		\item Nuestro propio documento de \texttt{Documento de casos de uso}, así como \\ \texttt{Definiciones, acrónimos y abreviaturas}
+		\item  IEEE standard 830-1998
+		\item IEEE standard 1074-2006
+		\item Apuntes de Clase de la asignatura “Ingeniería del Software" de la Universidad Complutense de Madrid, Curso 2012-2013
+
+	\end{itemize}
+
+\section{Resumen}
+
+En este documento veremos las funciones de las que dispone nuestra aplicación, requisitos presentes y futuros, restricciones y atributos de la aplicación, adentrándonos en cada apartado y profundizando en las propiedades de nuestro software.
+Constará de los siguientes apartados:
+	\begin{itemize}
+		\item \textbf{Perspectiva del producto}, donde introduciremos un supuesto de una empresa donde veremos las características que nuestro software puede ofrecerles.
+		\item \textbf{Funciones del producto}, donde veremos las opciones del programa según el tipo de usuario que lo ejecute.
+		\item En \textbf{Características del usuario} desglosaremos el prototipo de cliente que sería aconsejable que manejara la aplicacion.
+		\item \textbf{Restricciones} del software, como pueden ser el harware que necesita o la legislación vigente que le afecta.
+		\item \textbf{Supuestos y dependencias:} Explica qué hardware es el óptimo para la aplicación.
+		\item \textbf{Requisitos futuros} comenta la extensibilidad del programa en un futuro a partir del software actual.
+		\item \textbf{Interfaces externas:} Son las pantallas que veremos al ejecutar la aplicacion.
+		\item \textbf{Funciones} que ejecutará la aplicación.
+		\item \textbf{Requisitos de rendimiento} del sistema.
+		\item Los \textbf{Requisitos lógicos de la base de datos} son las restricciones de nuestro software respecto al hardware en el que se ejecutará.
+		\item Las \textbf{Restricciones de diseño} son condiciones que ponemos al software para garantizar su funcionamiento correcto.
+		\item \textbf{Atributos del sistema software:} Propiedades que tendrá la aplicacion una vez instalada en la empresa.
+	\end{itemize}
+
+
+\setcounter{section}{0}
+
+%%% SEGUNDA PARTE____________________________________________________________________________________________________________________
+\part{Descripción general}
+\section{Perspectiva del producto}
+
+Suponemos que se trata de una empresa española, que posee infraestructuras para el desarrollo de un hotel con restaurante- bar. Nuestro producto entra en escena para facilitar las necesidades que tal negocio genera, y para simplificar la comunicación entre trabajadores del mismo. Así, permite llevar el control de la empresa, para un mejor desarrollo de ésta, mientrás que guarda la información que de otra manera sería fácil traspapelar o confundir. Como ejemplo más sencillo, se puede poner el control del menú. Siempre está actualizado: en función de los ingredientes disponibles, los actores eliminan o añaden los platos correspondientes. 
+
+El sistema se comunica con los usuarios a través de distintos soportes. En general, para ver y modificar campos, se usará un smartphone, una tableta o un ordenador. Además, hay un caso especial: en cocina habrá una pantalla donde irán apareciendo y desapareciendo los pedidos cuando estén listos.
+
+La interfaz se basará en una disposición en apartados. En función de qué tipo de usuario se trate, este verá unos u otros apartados. Por ejemplo, el chef tendrá acceso a los apartados “Restaurante" (ver y modificar el menú en función de la temporada) y  “Notas", que es el canal de comunicación entre todos los actores. Además, en cada apartado pueden verse las distintas opciones que este presenta. Por ejemplo, en “Restaurante'' está la opción de “Ver/ modificar menú".
+
+
+
+\section{Funciones del producto}
+	\begin{itemize}
+		\item El programa pide necesariamente un usuario y una contraseña para funcionar. Una vez introducido un usuario y una contraseña si estos son correctos comienza la aplicación. En función del tipo de usuario que la utilice apareceran diferentes opciones las cuales veremos a continuación:
+		\begin{itemize}
+			\item \textbf{Contabilidad:} Solo es accesible para el jefe. Esta opción le permite acceder a una ventana donde se anotan los gastos e ingresos producidos y su cantidad. Además tiene un acceso al libro diario y al libro mayor, los cuales serán calculados de forma automática. Es una buena herramienta para facilitar la contabilidad de la empresa.
+			\item \textbf{Empleados:} De nuevo solo es accesible para el jefe. Muestra una lista con todos los empleados que trabajan actualmente en el negocio como los que ya no trabajan allí. Para cada empleado se muestra el nombre y apellidos, una foto y si trabaja o no actualmente en la empresa. Desde aquí podremos acceder a la ficha de cada empleado, donde se muestran mas datos como el DNI o su horario de trabajo.
+			\item \textbf{Clientes:} A esta opción pueden acceder el jefe, el maître y los camareros. Muestra el nombre, los apellidos, un telefono de contacto y si es vip o no para cada cliente. Permite cargar en la cuenta de un cliente los gastos que haga en el restaurante. Además nos da la posibilidad de apuntar cualquier incidencia que pueda suceder durante su estancia en el hotel.
+			\item \textbf{Restaurante:} Esta opción dispone de diferentes enlaces a otras ventanas que permiten realizar diferentes funciones dependiendo del tipo de usuario que se ha registrado. Así, el jefe y el maître pueden acceder a todas, mientras que el camarero solo puede acceder a los enlaces de reservas, los cuales le permiten ver las reservas de mesas, modificarlas y anularla, de pedidos, que le permiten generar, modificar o anular un pedido, y de generación de facturas. El chef puede acceder a la gestión de existencias, para realizar el recuento de las existencias al final del día y así poder notificar que sea necesario comprar algo, y a la modificación del menú. Los clientes pueden acceder solo a sus pedidos y sus reservas, por tanto es algo mas restrictivo que para los camareros. Todos los empleados pueden notificar incidencias.
+			\item \textbf{Habitaciones:} Tanto el jefe como el recepcionista pueden acceder a esta opción, dentro de la cual pueden gestionar las reservas de las habitaciones, viendo las reservas, haciendo nuevas reservas o anulando algunas ya existentes, emitir facturas para los clientes y entrar a la descripcion de las habitaciones.
+			\item \textbf{Organización limpieza:} Solo el encargado de limpieza puede acceder a esta opción. Le permite determinar las tareas de cada empleado de la limpieza, revisar el trabajo de éstos y notificar incidencias. El encargado de la limpieza es responsable también de la limpieza del restaurante. Debido a la gran cantidad de ámbitos que abarca la limpieza tiene pestañas diferentes para la limpieza de habitaciones y para limpiar sábanas, manteles...
+			\item \textbf{Limpieza:} Los empleados de la limpieza son los únicos que pueden acceder a la opción “Limpieza". Pueden consultar sus tareas del día, apuntar aquellas que ya hayan realizado y notificar las incidencias que se hayan podido apreciar durante el transcurso de su jornada (desperfectos en las habitaciones).
+			\item \textbf{Mantenimiento:} Todas las notificaciones que agreguen el resto de usuarios podrán ser vistos por los empleados de mantenimiento. Realizaran su trabajo y una vez finalizado podran borrar las notificaciones correspondientes.
+			\item \textbf{Notas:} Todos los usuarios a excepción de los clientes pueden acceder al tablón de notas. Allí podran escribir aquello de lo que deseen dejar constancia, sea quien sea a quien va dirigido. Las notas podran ser leidas por todos los empleados, independientemente de quien lo haya escrito.
+		\end{itemize}
+	 
+		\item KIKE- Hostelería ® va a ser la base fundamental para organizar el trabajo que deben realizar los usuarios. El jefe podra organizar a todos sus empleados a través de la aplicación, pero no solo se trata de organizarlos, también los empleados necesitan constatemente la aplicación pues los camareros notificaran a los cocineros los platos y organizaran el restaurante entre ellos  a traves de la aplicación. Los empleados de la limpieza por su parte se coordinan con el encargado el cual reparte las tareas y los organiza a través de la aplicación. Por ultimo tambien se usará como base de datos de clientes y provisiones, puediendo avisarnos en caso necesario, como cuando se deba abastecer el almacen o un cliente no realice un pago.
+	\end{itemize}
+
+\section{Características del usuario}
+	En general el usuario no requiere ningún tipo de formación especifica, tan solo con la básica es suficiente. Por el contrario debe ser ágil con el uso de la tecnología pues el día a día de su trabajo se va a basar en usar la aplicación. Podemos distinguir claramente dos tipos de usuarios: el usuario cotidiano, que serán los empleados, y un usuario ocasional, que son los clientes. Los clientes no necesitan formación en absoluto, ya que todo lo que la aplicación realiza pueden realizarlo ellos mismos a través de los empleados. Sin embargo, los empleados necesitan una cierta experiencia en el ámbito tecnológico. Un camarero jamás podra ser eficiente si no es capaz de tomar nota de los platos a una velocidad considerable. Por ello también sera positivo que el usuario empleado posea una buena capacidad para aprender a manejar nuevo software rapidamente pues es muy posible que la aplicación acabe extendiendose a un ámbito más amplio.
+
+\section{Restricciones}
+
+Teniendo en cuenta la ley de protección de datos, si un cliente o un empleado solicita que le quiten de la base de datos, se procederá a la eliminación del mismo. El sistema lo permite fácilmente. 
+
+El hardware sobre el que se supone que correrá, viene desarrollado en el siguiente punto. El lenguaje de alto nivel: Java, por su versatilidad de plataformas para su ejecución. En cuanto a otras aplicaciones, las facturas y los C.V. se abren en pdf, utilizando el visor de pdf que tenga el equipo sobre el que estémos. También permite, al generar las facturas, exportarlas a pdf. Las modificaciones de campos como pedidos, se actualizará rápidamente para un mejor funcionamiento del negocio. Cuanto más rapido es, más efectivas se vuelven las acciones.
+
+Al iniciar la aplicación, si tras cuatro intentos la combinación Usuario + Contraseña no es correcta, el sistema se bloqueará durante 3 minutos, mejorando la seguridad de la aplicación. Además, continuamente se realizarán copias de seguridad de los elementos modificados (reservas, cambios en la distribución de las mesas...), para que en caso de que se agote la batería del equipo, no se pierda información. Todo queda recogido en el servidor. Cada vez, que un campo se modifique, se actualiza en el servidor.
+
+
+\section{Supuestos y dependencias}	
+	El software estará enfocado para ser utilizado en dispositivos con sistema operativo Android o Windows, aunque al estar programado en Java  nos permitirá cambiar de sistema operativo sin demasiados cambios debido a que la implementación cambiará solo en casos muy especificos, así que podriamos decir que depende relativamente del sistema operativo.  Por el contrario,la dependencia del hardware será mayor, puesto que necesitará sincronizarse con un sistema central que organice y distribuya toda la información de los dispositivos de los empleados,para lo que hará faltaun procesador muy rápido que organice todo. También será necesario un servidor interno que distribuya la información entre los distintos dispositivos.	\\
+
+En definitiva,  nuestro cliente necesitará tener Windows XP, Vista o 7, o Android 2.3 (Gingerbread) o superior (hasta android Jelly Bean).
+Procesador Dual Core de 800MHz. para dispositivos móviles o tablets, y procesador Dual Core 2GHz. para ordenadores fijos.
+
+\section{Requisitos futuros}
+	\begin{itemize}
+		\item Para versiones futuras nuestro software podrá disponer de nuevas funcionalidades, como permitir que los clientes del hotel accedan al servidor interno en modo invitado puediendo realizar algunas funciones como reservar mesa, anular reserva de mesa, realizar pedido o anular pedido.
+
+		\item También se diseñara una opción que ayude a organizar mesas y sillas en función del numero de comensales por mesa y como queramos distribuirlos. Esta nueva función permitirá estructurar nuestro restaurante para eventos especiales tales como bodas, reuniones de trabajo, celebraciones...
+
+		\item El cliente estaba pensando en hacer una página web para hacer reservas, ver habitaciones, ver precios... Por tanto diseñaríamos una página web con un formato similar basándonos en el programa que ahora nos ha pedido.
+
+		\item La aplicación se implementará para otros sistemas operativos de forma que aumentaremos el mercado hacia el que va destinado. Con esta futura versión desvincularíamos el proyecto de nuestro cliente para pasar a vender nuestra aplicación a cualquier cliente que la requiera.
+		
+		\item El cliente podrá configurar el programa para que cuando las existencias se encuentre bajo un mínimo importante se genere automáticamente un pedido.
+	\end{itemize}
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\setcounter{section}{0}
+
+%%% TERCERA PARTE______________________________________________________________________________________________________________________
+\part{Requisitos específicos}
+
+
+
+		\section{Interfaces externos}
+			
+			El usuario tendrá varias maneras de interactuar con el programa. El programa le permite hacerlo mediante botones y campos. Los botones pueden servir para elegir pestañas concretas o acceder a un determinado sitio, es decir, para obtener datos del sistema. Los campos sirven para enviar información al sistema y a otros usuarios, y se pueden rellenar mediante cuadros de texto (por ejemplo, para enviar la descripción de una incidencia) o marcando las opciones disponibles (por ejemplo, al hacer un pedido en el restaurante). Aquí también intervienen los botones, ya que se puede aceptar para enviar la información, o cancelar si hemos cometido un error, para volver a rellenar los campos. En el programa hay varias ventanas con varias opciones, pensadas para los distintos tipos de usuario.
+			\begin{itemize}
+				% \item \textbf{}
+				\item \textbf{Pantalla de inicio} En la pantalla de inicio aparecerán dos campos a rellenar: usuario y contraseña. También aparecerá el logo del producto.
+				\item \textbf{Usuario “Jefe"} Para el Jefe se muestran los siguientes apartados: contabilidad, empleados, cliente, restaurante, habitaciones y notas. Además, tendremos un botón para cerrar sesión. En la pantalla se mostrará el tipo de usuario que está logueado, en este caso, el Jefe. 
+				\begin{itemize}
+					\item \textbf{Contabilidad: }Se mostrarán 4 opciones: Cuenta de caja: Recepción, Cuenta de caja: Restaurante, Acceso al libro diario y Acceso al libro mayor.En las dos primeras se mostrará una tabla con tres columnas: Ingreso, gasto y concepto.
+					 \item \textbf{Empleados: }Se mostrará una tabla con 4 columnas: foto, nombre, apellidos y “trabaja actualmente". Tendremos la opción de "Búsqueda", en la que se podrá elegir el campo (Nombre, apellidos, ...), y la de ''Añadir empleado". 
+					 \item \textbf{Clientes: }La parte superior será igual que en la pantalla de empleados. Se mostrará una tabla con 4 columnas: Nombre, apellidos, número de teléfono y VIP. 
+					 \item \textbf{Restaurante: }Se muestran 9 opciones: Realizar reserva, Ver/Anular reserva, Distribución de mesas, Cantidad de existencias, Generar/modificar comanda, Sobre aplicacion, Generar factura, Ver/modificar menú y Notificar incidencias.
+					\begin{itemize}
+						\item En “Realizar reserva" se mostrarán los campos fecha, hora, nombre, número de comensales y las mesas por si quieren seleccionarse de antemano. 
+						\item En “Ver/Anular reserva" se mostrarán  los campos  nombre, fecha, número de comensales, y mesas. Se podrá  añadir, editar o borrar una reserva.
+						\item En “Distribución de mesas" se mostrará un mapa esquemático con las mesas del restaurante. 
+						\item En “Cantidad de existencias" se mostrarán los campos bebidas, vinos e ingredientes, y en cada uno de ellos se podrá elegir algo específico. Solo está disponible en la versión de pago.
+						\item En “Generar/modificar comanda" se mostrarán los campos número de mesa, un botón de añadir y otro de eliminar. Además, estarán guardadas las comandas pedidas por cada mesa hasta el momento. 
+						\item En “Sobre aplicacion" aparecerá una lista con los integrantes del grupo desarrollador. En la versión de pago no estará.
+						\item En “Generar factura" aparecerá una lista de mesas para seleccionar de la que se quiere obtener la factura. 
+						\item En “Ver/modificar menú'' aparecerá una lista de todas las consumiciones contenidas en el menú ordenadas por tipo. Se podrán crear nuevas, editar y eliminar. 
+						\item En “Notificar incidencias'' se ofrecerá un campo de texto para detallas cualquier problema que se tenga.
+					\end{itemize}
+					
+					 \item \textbf{Habitaciones:} En la ventana habitaciones aparecerán las opciones: Realizar reserva, Ver/anular reserva, Generar factura, Ver habitaciones y Notificar incidencias. 
+					\begin{itemize}		
+							\item En “Realizar reserva'' aparecerán los campos Desde, Hasta, Número de inquilinos, Número de niños, Tipo de pensión, y Número de habitación.
+							\item En “Anular reserva'' se verá una tabla con las columnas: Habitación, Desde, Hasta, Número de inquilinos/niños, Pensión.\\
+							\item En “Generar factura'' aparecerán los campos: Número de habitación, Desde, Hasta, Número de inquilinos, Número de niños, Tipo de pensión, Facturas de Restaurante y VIP. \\
+							\item En “Ver habitaciones'' se verá el campo “Número de habitación''. Aparecerá una foto de la habitación en cuestión, y una descripción de la habitación en la que aparecerá: planta, ascensor, ducha y mobiliario. 
+					\end{itemize}
+					 \item \textbf{Notas:} En "Notas" aparecerán las notas, con la posibilidad de crear una nueva nota o eliminar una ya existente.
+				\end{itemize}
+				
+				 \item \textbf{Usuario “Maître/Recepcionista'' } El maître y recepcionista verán las opciones: Clientes, Restaurante, Habitaciones y Notas. 
+				 \item \textbf{Usuario “Camareros" } El camarero verá los apartados: Clientes, Restaurante y Notas. 	
+				 \item \textbf{Usuario “Chef/Cocineros" } El chef y cocineros verán los apartados Restaurante y Notas. 
+				 \item \textbf{Usuario “Organización limpieza" } El jefe de limpieza verá los apartados Organización de limpieza y Notas. 
+					\begin{itemize}
+						 \item \textbf{Organización limpieza: }En el apartado “Organización de limpieza" se mostrarán las opciones: Determinar tareas, Revisión de limpieza, Control de lavandería y Notificar incidencias. 
+						 \begin{itemize}
+							\item En “Determinar tareas'' aparecerán los campos Empleado y Día. Se podrá añadir una tarea,indicando lugar, descripción de tarea y hora.
+							\item En “Control de lavandería'' aparecerán los campos: Día de salida a la lavandería, nº de manteles, nº de servilletas, nº de toallas y nº de pack de sábanas. Aparecerá un cuadro que se puede marcar cuando esté limpio. 
+							\item En “Revisión de limpieza'' aparecerá una tabla con las columnas Encargado, Limpiador y Descripción.	
+						\end{itemize}
+					\end{itemize}
+				 \item \textbf{Usuario “Limpieza" }El personal de limpieza verá las pestañas “Limpieza'' y “Notas". En la pestaña “Limpieza'' aparecen las opciones “Consultar tareas", “Notificar tareas realizadas (hoy)'' y “Notificar incidencias".
+					\begin{itemize}
+						\item \textbf{Consultar tareas:} Aparece el campo Día, junto con las descripciones de las tareas de ese día. 
+						 \item \textbf{Notificar tareas realizadas (hoy): }Aparecen las tareas a realizar por el trabajador, pudiéndose marcar cada tarea como realizada. 
+					\end{itemize}
+				 \item \textbf{Usuario “Mantenimiento" } El encargado de mantenimiento verá las pestañas “Notificaciones'' y “Notas". En "Notificaciones'' habrá una tabla con tres columnas: “Lugar", “Descripción'' y “Hecho", donde se podrá marcar la incidencia como resuelta. 
+			\end{itemize}
+
+%Sección funciones
+
+\section{Funciones}
+%%Plantilla de funciones al final del documento
+
+	\begin{itemize}%Comienzan las funciones
+
+
+
+		\item \textbf{Log In}  %Nombre de la función
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Alta.
+			\item \textbf{Estabilidad: }Alta.
+			\item \textbf{Descripción: }Cada usuario que quiera utilizar la aplicacion debe introducir su nombre y contraseña.
+			\item \textbf{Entrada: } Nombre de usuario y contraseña.
+			\item \textbf{Salida: }Aplicación desbloqueada.
+			\item \textbf{Origen: }Equipo del usuario.
+			\item \textbf{Destino: }Equipo del usuario.
+			\item \textbf{Necesita: }Base de datos de empleados.
+			\item \textbf{Acción: }Procesa el nombre de usuario y la contraseña, cotejándolos con los de la base de datos, y en caso de que sean correctos, abre la aplicación.
+			\item \textbf{Precondición: }Base de datos implementada, y el cliente no pone impedimentos en formar parte de ella.
+			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo cliente. 
+			\item \textbf{Efectos laterales: }Si los datos son erróneos, no permite la entrada a la aplicación.
+		\end{itemize}%Fin de la función
+
+		
+		\item \textbf{Acceder a la ficha de un empleado}  %Done
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Media.
+			\item \textbf{Estabilidad: }Media.
+			\item \textbf{Descripción: }El jefe abre la ficha de un empleado de la base de datos.
+			\item \textbf{Entrada: } Nombre o DNI del empleado.
+			\item \textbf{Salida: }Ficha del empleado.
+			\item \textbf{Origen: }Equipo del jefe.
+			\item \textbf{Destino: }Base de datos de empleados. 
+			\item \textbf{Necesita: }Nombre/DNI del empleado que se desea consultar. 
+			\item \textbf{Acción: }Muestra la ficha del empleado.
+			\item \textbf{Precondición: }Base de datos de empleados implementada, el empleado perteneciente a ella
+			\item \textbf{Poscondición: } Ficha mostrada por pantalla. 
+			\item \textbf{Efectos laterales: } Nombre erróneo, vuelve a introducirse.
+
+		\end{itemize}%Fin de la función
+
+
+		\item \textbf{Añadir cliente}  %Nombre de la función
+
+			\begin{itemize}
+			\item \textbf{Prioridad: }Alta.
+			\item \textbf{Estabilidad: }Media.
+			\item \textbf{Descripción: }Cada vez que un cliente visita el hotel o el restaurante, su ficha es añadida o actualizada en la base de datos si éste está de acuerdo.
+			\item \textbf{Entrada: } Datos conocidos del cliente
+			\item \textbf{Salida: }Base de datos de clientes actualizada
+			\item \textbf{Origen: }Equipo del recepcionista o del jefe.
+			\item \textbf{Destino: }Base de datos de clientes. 
+			\item \textbf{Necesita: }Datos que se deseen añadir del cliente y base de datos de los clientes
+			\item \textbf{Acción: }Añadir cliente a la base de datos.
+			\item \textbf{Precondición: }Base de datos implementada, y el cliente no pone impedimentos en formar parte de ella.
+			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo cliente. 
+			%\item \textvf{Efectos laterales: } No hay.
+
+
+		\end{itemize}%Fin de la función
+
+		\item \textbf{Ver ficha de cliente}%Nombre de la función
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Media.
+			\item \textbf{Estabilidad: }Media.
+			\item \textbf{Descripción: }El jefe o el recepcionista desean consultar la ficha de un cliente.
+			\item \textbf{Entrada: } Nombre del cliente
+			\item \textbf{Salida: }Ficha del cliente
+			\item \textbf{Origen: }Equipo del recepcionista o del jefe.
+			\item \textbf{Destino: }Base de datos de clientes. 
+			\item \textbf{Necesita: }Datos del cliente. 
+			\item \textbf{Acción: }Visualiza la ficha de un cliente.
+			\item \textbf{Precondición: }Base de datos implementada, y el cliente del que se desea ver la ficha se encuentra en ella.
+		\end{itemize}%Fin de la función
+
+		\item \textbf{Añadir nota}  %Nombre de la función
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Alta.
+			\item \textbf{Estabilidad: }Media/baja.
+			\item \textbf{Descripción: }Un empleado añade una nota al tablón de notas.
+			\item \textbf{Entrada: } Nota del empleado.
+			\item \textbf{Salida: }Tablón de notas actualizado.
+			\item \textbf{Origen: }Equipo del empleado.
+			\item \textbf{Destino: }Equipos de los demas empleados. 
+			\item \textbf{Necesita: }Nota del empleado. 
+			\item \textbf{Acción: }Añade la nota al tablon general de notas.
+			\item \textbf{Precondición: }Base de datos implementada, y nota de menos de 140 caracteres
+			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo cliente. 
+			%\item \textvf{Efectos laterales: } No hay.
+
+
+		\end{itemize}%Fin de la función
+
+
+		\item \textbf{Borrar nota}  %Nombre de la función
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Alta.
+			\item \textbf{Estabilidad: }Alta.
+			\item \textbf{Descripción: }Un empleado borra una nota al tablón de notas.
+			\item \textbf{Entrada: } Nota a borrar .
+			\item \textbf{Salida: }Tablón de notas actualizado.
+			\item \textbf{Origen: }Equipo del empleado.
+			\item \textbf{Destino: }Equipos de los demas empleados. 
+			\item \textbf{Necesita: }Nota a borrar. 
+			\item \textbf{Acción: }Borra la nota del tablon general de notas.
+			\item \textbf{Precondición: }Base de datos implementada, y nota de menos de 140 caracteres
+			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo cliente. 
+			%\item \textvf{Efectos laterales: } No hay.
+
+
+		\end{itemize}%Fin de la función
+
+
+		\item \textbf{Añadir un nuevo empleado}  %Nombre de la función
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Media/baja.
+			\item \textbf{Estabilidad: }Media.
+			\item \textbf{Descripción: }El jefe añade un empleado a la base de datos.
+			\item \textbf{Entrada: } Ficha del empleado.
+			\item \textbf{Salida: }Base de datos de empleados actualizada.
+			\item \textbf{Origen: }Equipo del jefe.
+			\item \textbf{Destino: }Base de datos de empleados. 
+			\item \textbf{Necesita: }Ficha del nuevo empleado. 
+			\item \textbf{Acción: }Añade la ficha a la base de datos de empleados.
+			\item \textbf{Precondición: }Base de datos implementada.
+			\item \textbf{Poscondición: }Base de datos actualizada con la ficha del nuevo empleado. 
+			\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
+
+		\end{itemize}%Fin de la función
+
+
+		\item \textbf{Dar de baja un empleado}  %Nombre de la función
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Media/baja.
+			\item \textbf{Estabilidad: }Media/alta.
+			\item \textbf{Descripción: }El jefe borra a un empleado de la base de datos.
+			\item \textbf{Entrada: } Ficha del empleado.
+			\item \textbf{Salida: }Base de datos de empleados actualizada.
+			\item \textbf{Origen: }Equipo del jefe.
+			\item \textbf{Destino: }Base de datos de empleados. 
+			\item \textbf{Necesita: }Nombre/DNI y ficha del empleado a borrar. 
+			\item \textbf{Acción: }Transfiere a un empleado a la sección de "Antiguos empleados".
+			\item \textbf{Precondición: }Base de datos implementada, y el empleado pertenece a ella.
+			\item \textbf{Poscondición: }Base de datos actualizada.
+			%\item \textvf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
+
+		\end{itemize}%Fin de la función
+
+		\item \textbf{Modificar la ficha de un empleado}  %Done
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Media.
+			\item \textbf{Estabilidad: }Media.
+			\item \textbf{Descripción: }El jefe edita la ficha de un empleado de la base de datos.
+			\item \textbf{Entrada: } Ficha del empleado.
+			\item \textbf{Salida: }Base de datos de empleados actualizada.
+			\item \textbf{Origen: }Equipo del jefe.
+			\item \textbf{Destino: }Base de datos de empleados. 
+			\item \textbf{Necesita: }Nombre/DNI y ficha del empleado que se desea editar. 
+			\item \textbf{Acción: }Modifica la ficha del empleado.
+			\item \textbf{Precondición: }Base de datos de empleados implementada, el empleado perteneciente a ella
+			\item \textbf{Poscondición: }Base de datos de empleados actualizada con la ficha del nuevo cliente. 
+			\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
+
+		\end{itemize}%Fin de la función
+
+		\item \textbf{Ver currículum de un empleado}  %Done
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Media/baja.
+			\item \textbf{Estabilidad: }Media/alta.
+			\item \textbf{Descripción: }El jefe accede al currículum vitar de un empleado de la base de datos.
+			\item \textbf{Entrada: } Nombre del empleado.
+			\item \textbf{Salida: }Ficha y currículum del empleado.
+			\item \textbf{Origen: }Equipo del jefe.
+			\item \textbf{Destino: }Equipo del jefe. 
+			\item \textbf{Necesita: }Nombre/DNI del empleado. 
+			\item \textbf{Acción: }Accede al currículum proporcionado por el empleado cuando entró a la empresa.
+			\item \textbf{Precondición: }Base de datos de empleados implementada, y empleado perteneciente a ella.
+			%\item \textbf{Poscondición: }Base de datos actualizada con el empleado en la seccion de antiguos empleados. 
+			%\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
+
+		\end{itemize}%Fin de la función
+
+		\item \textbf{Dar de baja un cliente}  %Done
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Media.
+			\item \textbf{Estabilidad: }Alta.
+			\item \textbf{Descripción: }El jefe o el recepcionista borran a un cliente de la base de datos.
+			\item \textbf{Entrada: } Ficha del cliente.
+			\item \textbf{Salida: }Base de datos de clientes actualizada.
+			\item \textbf{Origen: }Equipo del jefe o del recepcionista.
+			\item \textbf{Destino: }Base de datos de empleados. 
+			\item \textbf{Necesita: }Nombre/DNI y ficha del cliente a borrar. 
+			\item \textbf{Acción: }Borra al cliente de la base de datos.
+			\item \textbf{Precondición: }Base de datos de clientes implementada, y cliente perteneciente a ella
+			\item \textbf{Poscondición: }Base de datos de clientes actualizada con el cliente borrado de ella. 
+			%\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
+
+		\end{itemize}%Fin de la función
+
+		\item \textbf{Editar un cliente}  %Done
+
+			\begin{itemize}
+				\item \textbf{Prioridad: }Media.
+				\item \textbf{Estabilidad: }Media.
+				\item \textbf{Descripción: }El jefe/recepcionista edita la ficha de un cliente de la base de datos.
+				\item \textbf{Entrada: } Ficha del cliente.
+				\item \textbf{Salida: }Base de datos de clientes actualizada.
+				\item \textbf{Origen: }Equipo del jefe o del recepcionista.
+				\item \textbf{Destino: }Base de datos de clientes. 
+				\item \textbf{Necesita: }Nombre/DNI y ficha del cliente que se desea editar. 
+				\item \textbf{Acción: }Modifica la ficha del cliente.
+				\item \textbf{Precondición: }Base de datos de clientes implementada, cliente perteneciente a ella
+				\item \textbf{Poscondición: }Base de datos de clientes actualizada con la ficha del nuevo cliente. 
+				\item \textbf{Efectos laterales: } Ficha errónea, vuelve a introducirse.
+
+		\end{itemize}%Fin de la función
+
+
+
+
+%%CASOS DE USO LIMPIEZA
+
+	\item \textbf{Organizar tareas de limpieza} %Nombre de la función
+
+		\begin{itemize}
+			\item \textbf{Prioridad: }Media.
+			\item \textbf{Estabilidad: }Media.
+			\item \textbf{Descripción: }El jefe de limpieza tiene la opción de organizar las tareas de limpieza. Pulsando esta opción puede crear una lista de tareas de limpieza, y repartir dichas tareas entre los trabajadores de limpieza.
+			\item \textbf{Entrada: }Lugar a limpiar, hora de limpieza, descripción de la tarea, empleado.
+			\item \textbf{Salida: }Lista con las tareas.
+			\item \textbf{Origen: }Tablet del jefe de limpieza.
+			\item \textbf{Destino: }Tablets o dispositivos del personal de limpieza. 
+			\item \textbf{Necesita: }Datos de los empleados. 
+			\item \textbf{Acción: }Crear lista de tareas de limpieza.
+			\item \textbf{Precondición: }Empleados dados de alta, que el empleado al que le toque limpiar esté trabajando actualmente.
+			\item \textbf{Poscondición: }Creada lista de tareas de limpieza, y enviada al empleado correspondiente. 
+			%\item \textvf{Efectos laterales: } No hay.
+
+
+		\end{itemize}%Fin de la función Crear listas de limpieza
+		%Siguiente función
+
+\item \textbf{Revisión de limpieza} %Nombre de la función
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }Media.
+			\item \textbf{Estabilidad: }Media.
+			\item \textbf{Descripción: }El jefe de limpieza revisa que los lugares que se suponen limpios efectivamente lo están. Para ello, en la lista de "tareas a realizar", las tareas que han sido marcadas como "Realizadas" por los trabajadores de limpieza, el jefe de limpieza podrá poner un tick, si el lugar se ha limpiado bien, y una cruz si se debe volver a limpiar. Si se tiene que volver a limpiar, se notificará al empleado en cuestión.
+			\item \textbf{Entrada: }Lista de tareas realizadas por el personal de limpieza.
+			\item \textbf{Salida: }La misma lista de tareas realizadas, con un nuevo atributo en cada tarea: si se ha realizado correctamente o no. 
+			\item \textbf{Origen: }Tablet del jefe de limpieza.
+			\item \textbf{Destino: }Tablets de los trabajadores de limpieza.
+			\item \textbf{Necesita: }La lista de tareas a realizar.
+			\item \textbf{Acción: }En la lista de tareas realizadas, indicar cuáles fueron correctamente limpiadas y cuáles no.
+			\item \textbf{Precondición: }Lista de tareas por realizar ha sido creada. 
+			\item \textbf{Poscondición: }La misma lista de tareas, indicando cuáles han sido limpiadas correctamente y cuáles no.
+			\item \textbf{Efectos laterales: }No hay.
+		\end{itemize}%Fin de la función <Función>
+
+\item \textbf{Consultar tareas} %Nombre de la función
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }Media.
+			\item \textbf{Estabilidad: }Medio-alta.
+			\item \textbf{Descripción: }Permite al personal de limpieza las tareas que tienen que hacer.
+			\item \textbf{Entrada: }No necesita entrada (el usuario tiene que haber pulsado el botón de "Consultar tareas").
+			\item \textbf{Salida: }Lista de tareas que el empleado tiene que realizar.
+			\item \textbf{Origen: }Sistema. (El usuario pide al sistema determinada información).
+			\item \textbf{Destino: }Tablet del usuario.
+			\item \textbf{Necesita: }Lista de tareas creada por el jefe de limpieza.
+			\item \textbf{Acción: }Devolver las tareas por realizar por un determinado trabajador de limpieza.
+			\item \textbf{Precondición: }El empleado ha iniciado sesión correctamente, la lista de tareas ha sido anteriormente creadas.
+			\item \textbf{Poscondición: }Muestra las tareas por realizar del empleado en cuestión.
+
+		\end{itemize}%Fin de la función <Función>
+
+\item \textbf{Confirmar limpieza de habitación} %Nombre de la función
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }Medio-alta.
+			\item \textbf{Estabilidad: }Alta.
+			\item \textbf{Descripción: }El usuario (trabajador de limpieza) debe tachar de la lista de tareas por realizar aquellas tareas que ha completado.
+			\item \textbf{Entrada: }Lista de tareas por realizar, en la que todavía no se ha indicado si la tarea fue o no realizada.
+			\item \textbf{Salida: }Lista de tareas con algunas tareas marcadas como realizadas.
+			\item \textbf{Origen: }Tablet del personal de limpieza.
+			\item \textbf{Destino: }Tablet del jefe de limpieza.
+			\item \textbf{Necesita: }Lista de tareas.
+			\item \textbf{Acción: }Tachar de la lista de tareas por realizar aquellas tareas que han sido completadas.
+			\item \textbf{Precondición: }La lista de tareas existe.
+			\item \textbf{Poscondición: }Las tareas marcadas se tachan de la lista de tareas por realizar. La lista entera con las tareas marcadas llega al jefe de limpieza.
+
+		\end{itemize}%Fin de la función <Función>
+
+\item \textbf{Informar de incidencias} %Nombre de la función
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }Alta.
+			\item \textbf{Estabilidad: }Alta.
+			\item \textbf{Descripción: }Los usuarios pueden informar (a través de las pestañas "Habitaciones", "Restaurante" y "Limpieza" de alguna incidencia que ha ocurrido en el hotel a través de esta función.
+			\item \textbf{Entrada: }Ninguna.
+			\item \textbf{Salida: }Texto con la notificación de incidencia.
+			\item \textbf{Origen: }Dispositivo de cualquier usuario.
+			\item \textbf{Destino: }Tablet del encargado de mantenimiento.
+			\item \textbf{Necesita: }del vacío.
+			\item \textbf{Acción: }Informar de incidencias.
+			\item \textbf{Precondición: }Ninguna.
+			\item \textbf{Poscondición: }notificación enviada al encargado de mantenimiento.
+			\item \textbf{Efectos laterales: }no hay.
+
+		\end{itemize}%Fin de la función <Función>
+
+\item \textbf{Eliminar incidencia} %Nombre de la función
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }Media.
+			\item \textbf{Estabilidad: }Medio-alta.
+			\item \textbf{Descripción: }En la lista de notificaciones de incidencias que tiene el encargado de mantenimiento, a medida que las va resolviendo puede ir tachándolas.
+			\item \textbf{Entrada: }Lista de notificaciones.
+			\item \textbf{Salida: }Lista de notificaciones, en las que ya no están las notificaciones resueltas.
+			\item \textbf{Origen: }Tablet del encargado de mantenimiento.
+			\item \textbf{Destino: }Sistema y tablet del encargado de mantenimiento.
+			\item \textbf{Necesita: }Que exista la lista con las notificaciones de incidencia.
+			\item \textbf{Acción: }Tachar de la lista las incidencias resueltas.
+			\item \textbf{Precondición: }Lista de notificaciones.
+			\item \textbf{Poscondición: }Lista de notificaciones en la que se han tachado aquellas incidencias que fueron resueltas.
+			%no hay \item \textbf{Efectos laterales: }
+
+		\end{itemize}%Fin de la función <Función>
+
+\item \textbf{Reservar Mesa} %Reservar Mesa
+
+		\begin{itemize}
+			\item \textbf{Prioridad: } Media.
+			\item \textbf{Estabilidad: } Media.
+			\item \textbf{Descripción: } Reserva una mesa en el restaurante para comer.
+			\item \textbf{Entrada: } Fecha de reserva, hora de la reserva, nombre, número de comensales y opcionalmente las mesas a ocupar.
+			\item \textbf{Salida: } Mensaje indicando que se ha realizado correctamente.
+			\item \textbf{Origen: } Tablet del camarero, maître o jefe que realiza la reserva.
+			\item \textbf{Destino: } Archivos que contienen la información de las reservas.
+			\item \textbf{Necesita: } Datos de las mesas reservadas.
+			\item \textbf{Acción: } Reservar mesa.
+			\item \textbf{Precondición: } La fecha debe ser válida.
+			\item \textbf{Poscondición: } Mesa reservada a un cliente.
+
+		\end{itemize}%Fin de la función
+		%Siguiente función
+
+\item \textbf{Anular reserva} %Anular reserva
+
+		\begin{itemize}
+			\item \textbf{Prioridad: } Media.
+			\item \textbf{Estabilidad: } Media.
+			\item \textbf{Descripción: } Anula una reserva hecha por un cliente en el restaurante.
+			\item \textbf{Entrada: } Seleccionar anular en la reserva correspondiente.
+			\item \textbf{Salida: } Mensaje indicando que la reserva se ha anulado.
+			\item \textbf{Origen: } Tablet del camarero, maître o jefe que anula la reserva.
+			\item \textbf{Destino: } Datos de las mesas reservadas.
+			\item \textbf{Necesita: } Datos de las mesas reservadas.
+			\item \textbf{Acción: } Anular reserva.
+			\item \textbf{Precondición: } Debe existir la reserva.
+			\item \textbf{Poscondición: } La reserva se anua.
+
+		\end{itemize}%Fin de la función
+		%Siguiente función
+
+	\item \textbf{Generar un pedido para una mesa} %Generar un pedido para una mesa
+
+		\begin{itemize}
+			\item \textbf{Prioridad: } Alta.
+			\item \textbf{Estabilidad: } Media.
+			\item \textbf{Descripción: } El camarero apunta lo que los clientes desean tomar.
+			\item \textbf{Entrada: } Número de mesa y comanda.
+			\item \textbf{Salida: } El pedido se envia a la cocina y al camarero le aparece un mensaje de pedido enviado junto a las características del pedido.
+			\item \textbf{Origen: } Tablet del camarero, maître o cocinero que ha realizado el pedido.
+			\item \textbf{Destino: } Datos de los pedidos realizados, Pantalla situada en la cocina donde los cocineros ven los pedidos.
+			\item \textbf{Necesita: } Menú del restaurante.
+			\item \textbf{Acción: } Generar pedido.
+			\item \textbf{Precondición: } La cocina aún está abierta.
+			\item \textbf{Poscondición: } El pedido se genera y se envía a la cocina donde comienzan a prepararlo.
+
+		\end{itemize}%Fin de la función
+		%Siguiente función
+
+	\item \textbf{Cancelar un pedido} %Cancelar un pedido
+
+		\begin{itemize}
+			\item \textbf{Prioridad: } Alta.
+			\item \textbf{Estabilidad: } Media.
+			\item \textbf{Descripción: } Se cancela el pedido que ha realizado un cliente.
+			\item \textbf{Entrada: } Número de la mesa y Pedido que se ha realizado.
+			\item \textbf{Salida: } Mensaje indicando que el pedido se ha cancelado.
+			\item \textbf{Origen: } Tablet del camarero, maître o cocinero que cancela el pedido.
+			\item \textbf{Destino: } Libro de las comandas realizadas, Pantalla situada en la cocina.
+			\item \textbf{Necesita: } Numeros de mesa y pedido.
+			\item \textbf{Acción: } Cancelar pedido.
+			\item \textbf{Precondición: } El cliente ha realizado un pedido.
+			\item \textbf{Poscondición: } El pedido se cancela.
+
+		\end{itemize}%Fin de la función
+		%Siguiente función
+
+	\item \textbf{Generar factura a un cliente} %Generar factura a un cliente
+
+		\begin{itemize}
+			\item \textbf{Prioridad: } Alta.
+			\item \textbf{Estabilidad: } Alta.
+			\item \textbf{Descripción: } Se genera una factura al cliente que la solicite, el cual puede pagarla en el momento o que se la carguen en la habitación del hotel.
+			\item \textbf{Entrada: } Número de la mesa.
+			\item \textbf{Salida: } Factura para que el cliente pague o Mensaje indicando que el cargo se realizo en la habitación del cliente.
+			\item \textbf{Origen: } Ordenador del recepcionista o del encargado de la caja.
+			\item \textbf{Destino: } Papel impreso con la factura o cargo en la cuenta de la habitación.
+			\item \textbf{Necesita: } Datos de los pedidos realizados y precios de los platos.
+			\item \textbf{Acción: } Generar factura.
+			\item \textbf{Precondición: } El cliente ha realizado algún pedido y haber solicitado la factura de la comida.
+			\item \textbf{Poscondición: } La factura se imprime y se entrega al cliente o se carga el pago a la cuenta de la habitación y se le entrega una copia al cliente.
+			\item \textbf{Efectos laterales: } Llamar a la policía si el cliente intenta engañarnos en el pago.
+
+		\end{itemize}%Fin de la función
+		%Siguiente función
+
+	\item \textbf{Ver Menú} %Ver Menú
+
+		\begin{itemize}
+			\item \textbf{Prioridad: } Alta.
+			\item \textbf{Estabilidad: } Media.
+			\item \textbf{Descripción: } Se muestra el menú por pantalla.
+			\item \textbf{Entrada: }Selección de la opción para ver el menú.
+			\item \textbf{Salida: } Las consumiciónes del menú organizadas por tipo de consumición.
+			\item \textbf{Origen: } Tablet del camarero, maître o jefe.
+			\item \textbf{Destino: } Tablet del camarero, maître o jefe.
+			\item \textbf{Necesita: } Datos de las consumiciones del menú.
+			\item \textbf{Acción: } Ver Menú.
+			\item \textbf{Precondición: } El menú no se está modificando y el usuario tiene acceso a dicha opción.
+			\item \textbf{Poscondición: } El usuario ve el menú.
+
+
+		\end{itemize}%Fin de la función
+		%Siguiente función
+
+		%Función secundaria
+
+		\item \textbf{Comprobar distribución y número de las mesas en el comedor} %Comprobar distribucion y numero de las mesas en el comedor
+
+		\begin{itemize}
+			\item \textbf{Prioridad: } Baja.
+			\item \textbf{Estabilidad: } Alta.
+			\item \textbf{Descripción: } Permite ver el número de mesas y sillas que hay en el restaurante y como están repartidas.
+			\item \textbf{Entrada: } Selección del botón "Distribución de las mesas".
+			\item \textbf{Salida: } Muestra por pantalla la distribución de las mesas y las sillas en el restaurante.
+			\item \textbf{Origen: } Tablet del camarero, maître o jefe.
+			\item \textbf{Destino: } Tablet del camarero, maître o jefe. 
+			\item \textbf{Necesita: } Datos actuales de la distribución de las mesas y sillas.
+			\item \textbf{Acción: } Ver distribución del restaurante.
+			\item \textbf{Precondición: } El restaurante tiene una distribución definida.
+			\item \textbf{Poscondición: } Se muestra en la pantalla una imagen con la distribución del restaurante.
+
+		\end{itemize}%Fin de la función
+		%Siguiente función
+
+		\item \textbf{Modificar Menú} %Modificar Menú
+
+		\begin{itemize}
+			\item \textbf{Prioridad: } Baja.
+			\item \textbf{Estabilidad: } Alta.
+			\item \textbf{Descripción: } Permite ver el menú actual y modificar lo que se desee.
+			\item \textbf{Entrada: } Consumiciones del menú que se desean añadir, modificar o eliminar.
+			\item \textbf{Salida: } Mensaje indicando que el menú se modificó satisfactoriamente.
+			\item \textbf{Origen: } Tablet del jefe, camarero, maître o jefe de cocina.
+			\item \textbf{Destino: } Datos del menú y Mensaje indicando que la operación se realizó con éxito.
+			\item \textbf{Necesita: } Datos del menú anterior.
+			\item \textbf{Acción: } Modificar Menú
+			\item \textbf{Precondición: } Disponer de un menú y que el usuario tenga acceso a esta opción.
+			\item \textbf{Poscondición: } El menú ha cambiado por otro.
+
+		\end{itemize}%Fin de la función
+
+		\item \textbf{Reservar habitación} 
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: } Alta.
+			\item \textbf{Estabilidad: }Alta
+			\item \textbf{Descripción: }Permite hacer la reserva de una habitación en un período de tiempo.
+			\item \textbf{Entrada: } Fecha de llegada, fecha de salida, inquilinos, niños, tipo de pensión y número de habitación.
+			\item \textbf{Salida: } Habitación reservada
+			\item \textbf{Origen: } Tablet o terminal con sesión de metre, jefe o recepcionista.
+			\item \textbf{Destino: } Sistema que guarda las reservas
+			\item \textbf{Necesita: } Número de habitación.
+			\item \textbf{Acción: } Reservar habitación
+			\item \textbf{Precondición: } Habitación libre esos días.
+			\item \textbf{Poscondición: } La habitación deja de estar libre para esos días.
+
+		\end{itemize}%Fin de la función 
+		\item \textbf{ Eliminar reservas} 
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }Alta
+			\item \textbf{Estabilidad: }Media
+			\item \textbf{Descripción: }Elimina del listado con las reservas pendientes
+			\item \textbf{Entrada: }Acceder al listado, y seleccionar la reserva a eliminar
+			\item \textbf{Salida: }Listado sin la reserva eliminada
+			\item \textbf{Origen: }Tablet o terminal de maitre, jefe o recepcionista
+			\item \textbf{Destino: }Sistema de almacenamiento de reservas
+			\item \textbf{Necesita: } Listado de reservas
+			\item \textbf{Acción: }Eliminar reservas
+			\item \textbf{Precondición: }Que esté en la lista la reserva
+			\item \textbf{Poscondición: } Se elimina de la lista.
+
+		\end{itemize}%Fin de la función 
+
+		\item \textbf{Generar factura hotel} 
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }Alta
+			\item \textbf{Estabilidad: }Alta
+			\item \textbf{Descripción: }Genera  una factura para el cliente del hotel
+			\item \textbf{Entrada: }Datos completos del cliente, guardados en el sistema más las modificaciones pertinentes que realice el empleado que cobra
+			\item \textbf{Salida: }Factura para un cliente
+			\item \textbf{Origen: }Generalmente terminal de recepcionista, también tablet o terminal del jefe o del maitre
+			\item \textbf{Destino: }Generador de facturas
+			\item \textbf{Necesita: }Datos cliente hotel
+			\item \textbf{Acción: }Generar factura
+			\item \textbf{Precondición: }Que el cliente esté en el sistema
+			\item \textbf{Poscondición: }Se ha generado la factura
+
+		\end{itemize}%Fin de la función 
+
+		\item \textbf{Editar habitación} 
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }Media
+			\item \textbf{Estabilidad: }Media
+			\item \textbf{Descripción: }Modifica las características de una habitación
+			\item \textbf{Entrada: }Número de habitación, campos que se modifican y nuevos datos.
+			\item \textbf{Salida: }Habitación modificada
+			\item \textbf{Origen: }Tablet o Terminal conectado al sistema( Maitre, Jefe o recepcionista)
+			\item \textbf{Destino: }Sistema que almacena la información de laas habitaciones
+			\item \textbf{Necesita: }Número de habitación
+			\item \textbf{Acción: }Editar habitación
+			\item \textbf{Precondición: }Que exista la habitación
+			\item \textbf{Poscondición: }Se han modificado los datos sobre la habitación
+
+		\end{itemize}%Fin de la función <Función>
+
+		\item \textbf{Ver contabilidad} %Nombre de la función
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }Alta
+			\item \textbf{Estabilidad: }Media
+			\item \textbf{Descripción: }Permite al jefe controlar los distintos aspectos de la contabilidad de la empresa
+			\item \textbf{Entrada: } Aspecto a revisar
+			\item \textbf{Salida: } Datos pedidos
+			\item \textbf{Origen: } Tablet o terminal del jefe
+			\item \textbf{Destino: } El mismo que el origen
+			\item \textbf{Necesita: } Elegir la opción a revisar.
+			\item \textbf{Acción: }Mostrar cuenta diaria de la caja de recepción, mostrar cuenta diaria de la caja del restaurante, consultar libro diario, consultar libro .
+			\item \textbf{Precondición: } Que se haya realizado el asiento de apertura del año contable.
+			\item \textbf{Poscondición: } Se muestra el listado solicitado
+
+		\end{itemize}%Fin de la función <Función>
+
+\end{itemize}%Fin de todas las funciones
+
+\section{Requisitos de rendimiento}
+\begin{itemize}
+	\item El sistema debe soportar al menos diez usuarios conectados simultáneamente con tablet y cinco con ordenador persona, que es la fuerza de trabajo máxima esperada en un negocio de carácter medio.
+	\item El sistema debe por lo tanto soportar también diez pedidos por segundo y la creación de dos clientes por segundo. 
+\end{itemize}
+
+\section{Requisitos lógicos de la base de datos}
+\begin{itemize}
+	\item Existen varias restricciones importantes en el diseño, especialmente en cuanto a limitaciones de hardware:
+	\begin{itemize}
+		\item El diseño debe funcionar tanto en tablet como en ordenador de sobremesa,  pero solo sobre windows y android.
+		\item Debido a nuestro desconocimiento de bases de datos, no podremos implementar en una base de datos real, por lo que los detalles sobre la base de datos, su seguridad y el intercambio de información que realiza con el sistema quedan reducidos a los datos mínimos necesarios para asegurar su correcto funcionamiento.
+		\item Por al elevado coste, que lo hace inviable, no podemos instalar un hardware en cada habitación que permita crear pedidos y reservar en el restaurante a los propios clientes.
+
+	\end{itemize}
+\end{itemize}
+
+\section{Restricciones de diseño}
+\begin{itemize}
+	\item En todo momento debe existir una copia de todos los pedidos por si se produce 	un apagón.
+	\item La base de datos de clientes debe estar claramente separada de la de empleados, para que no haya conflicto en caso de que un empleado también sea cliente.
+	\item En principio se implementará como un sistema de ficheros que simulan bases de datos reales.
+\end{itemize}
+
+
+\section{Atributos del sistema software}
+\begin{itemize}
+	\item Una vez creado el servidor seguirá funcionando permanentemente.
+	\item Al estar programado en Java, la portabilidad o la ampliación a cualquier sistema operativo  nuevo será sencilla. 
+	\item La conexión de las tablets por wifi estará cifrada. El acceso directo estará controlado por el login, que exige usuario y contraseña para conectarse al sistema.
+\end{itemize}
+
+
+\newpage
+\mbox{}
+\thispagestyle{empty}						% Hoja en blanco, sin numeros ni nada
+\newpage
+
+\end{document}
+ 
+%%% FINAL DEL DOCUMENTO Y PLANTILLAS _____________________________________________________________________________________________
+
+
+\item \textbf{} %Nombre de la función
+
+		\begin{itemize}
+
+			\item \textbf{Prioridad: }
+			\item \textbf{Estabilidad: }
+			\item \textbf{Descripción: }
+			\item \textbf{Entrada: }
+			\item \textbf{Salida: }
+			\item \textbf{Origen: }
+			\item \textbf{Destino: }
+			\item \textbf{Necesita: }
+			\item \textbf{Acción: }
+			\item \textbf{Precondición: }
+			\item \textbf{Poscondición: }
+			\item \textbf{Efectos laterales: }
+
+		\end{itemize}%Fin de la función <Función>
+\item \textbf{Añadir cliente}  %Nombre de la función
+

@@ -1,0 +1,70 @@
+format 76
+
+note 128005 "Caso de uso:
+Modificar menu
+(eliminar consumición)"
+  color mediumblue  xyzwh 569.7 274.2 2000 141 63
+classinstance 128133 class_ref 128011 // RestauranteSwing
+  name ""   xyz 34.6 4 2000 life_line_z 2000
+classinstance 128261 class_ref 128514 // Menu
+  name ""   xyz 430.3 4 2000 life_line_z 2000
+note 129413 "Estos métodos son auxiliares, dentro de la misma clase.Solo los nombramos con fin ilustrativo."
+  xyzwh 544.6 27.4 2000 190 65
+classinstance 130309 class_ref 134661 // GUIController
+  name ""   xyz 228.8 4 2000 life_line_z 2000
+durationcanvas 131589 classinstance_ref 128133 // :RestauranteSwing
+  xyzwh 81 81 2010 11 170
+end
+durationcanvas 131717 classinstance_ref 130309 // :GUIController
+  xyzwh 261 92 2010 11 150
+end
+durationcanvas 131973 classinstance_ref 128261 // :Menu
+  xyzwh 449 107 2010 11 125
+  overlappingdurationcanvas 132229
+    xyzwh 455 131 2020 11 30
+  end
+  overlappingdurationcanvas 132485
+    xyzwh 455 189 2020 11 31
+  end
+end
+msg 131845 synchronous
+  from durationcanvas_ref 131589
+  to durationcanvas_ref 131717
+  yz 93 2015 explicitmsg "eliminarConsumicion(Nombre)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 111 82
+msg 132101 synchronous
+  from durationcanvas_ref 131717
+  to durationcanvas_ref 131973
+  yz 110 2015 explicitmsg "eliminarConsumicion(Nombre)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 295 98
+reflexivemsg 132357 synchronous
+  to durationcanvas_ref 132229
+  yz 131 2025 explicitmsg "buscaConsumicion(Nombre)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 471 117
+reflexivemsg 132613 synchronous
+  to durationcanvas_ref 132485
+  yz 189 2025 explicitmsg "eliminaConsumicion(Posicion)"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 470 177
+msg 132869 return
+  from durationcanvas_ref 131973
+  to durationcanvas_ref 131717
+  yz 219 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 283 209
+msg 132997 return
+  from durationcanvas_ref 131717
+  to durationcanvas_ref 131589
+  yz 227 2015 explicitmsg "ok"
+  show_full_operations_definition default drawing_language default show_context_mode default
+  label_xy 101 217
+line 133893 -_-_ decenter_begin 712
+  from ref 129413 z 2026 to point 677 134
+  line 134021 z 2026 to ref 132357
+line 134149 -_-_ decenter_begin 712
+  from ref 129413 z 2026 to point 677 192
+  line 134405 z 2026 to ref 132613
+end

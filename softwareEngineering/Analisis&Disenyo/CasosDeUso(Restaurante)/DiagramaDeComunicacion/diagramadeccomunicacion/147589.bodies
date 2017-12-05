@@ -1,0 +1,47 @@
+class Loader
+!!!175877.java!!!	forceString(in str : String) : void
+		if (!(tokenizer.nextToken() == StreamTokenizer.TT_WORD && tokenizer.sval
+				.equals(str))) {
+			System.err.println("Fichero dañado");
+			System.exit(1);
+		}
+!!!176005.java!!!	forceString(in str1 : String, in str2 : String) : Boolean
+		if (tokenizer.nextToken() == StreamTokenizer.TT_WORD)
+			if (tokenizer.sval.equals(str1))
+				return true;
+			else if (tokenizer.sval.equals(str2))
+				return false;
+			else {
+				System.err.println("Fichero dañado");
+				System.exit(1);
+			}
+		else {
+			System.err.println("Fichero dañado");
+			System.exit(1);
+		}
+		return null;
+!!!176133.java!!!	forceInt(in i : int) : void
+		if (tokenizer.nextToken() != StreamTokenizer.TT_NUMBER
+				|| i != tokenizer.nval) {
+			System.err.println("Fichero dañado");
+			System.exit(1);
+		}
+!!!176261.java!!!	forceInt() : int
+		if (tokenizer.nextToken() == StreamTokenizer.TT_NUMBER
+				&& (int) tokenizer.nval == tokenizer.nval)
+			return (int) tokenizer.nval;
+		else {
+			System.err.println("Fichero dañado");
+			System.exit(1);
+		}
+		return 0;
+!!!176389.java!!!	forceFloat() : float
+		if (tokenizer.nextToken() != StreamTokenizer.TT_NUMBER) {
+			System.err.println("Fichero dañado");
+			System.exit(1);
+		}
+		return (float) tokenizer.nval;
+!!!176517.java!!!	peek() : String
+		if (tokenizer.nextToken() == StreamTokenizer.TT_WORD)
+			return tokenizer.sval;
+		return "";

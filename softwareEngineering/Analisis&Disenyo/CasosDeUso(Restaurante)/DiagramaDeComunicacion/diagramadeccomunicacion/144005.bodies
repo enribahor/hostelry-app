@@ -1,0 +1,4 @@
+class NotificarIncidencias
+!!!150917.java!!!	NotificarIncidencias(inout controller : GUIController)
+		this.controlador = controller;
+		

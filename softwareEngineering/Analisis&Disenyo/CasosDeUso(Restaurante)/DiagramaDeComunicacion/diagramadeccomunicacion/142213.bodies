@@ -1,0 +1,47 @@
+class CeldaPlato
+!!!148485.java!!!	CeldaPlato(inout controller : GUIController, in plato : Consumicion, in numMesa : int, in numComanda : int, in tPlato : TipoPlatos)
+		this.restControl = controller;
+		this.veces = 0;
+		this.plato = plato;
+		this.botonPlato = new JButton(plato.getNombre()){
+			{
+				this.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						incrementaVeces();
+						restControl.requestNewConsumption(numComanda, numMesa, plato, tPlato);
+					}
+					
+				});
+			}
+		};
+		this.flechitas = new JSpinner();
+		this.flechitas.setValue(0);
+		this.flechitas.addChangeListener(new ChangeListener() {
+
+			//TODO cada vez que se añade un plato, habrá que añadirlo a la lista de pedidos
+			//asi que hay que registrar como observador la parte derecha de realizar pedido, que es la lista final con todas las cosas
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				veces = (int) flechitas.getValue();
+				if (veces < 0){
+					flechitas.setValue(0);
+					veces = 0;
+				}
+				
+			}
+			
+		});
+		this.setLayout(new FlowLayout());
+		this.add(botonPlato);
+		this.add(flechitas);
+		
+!!!148613.java!!!	incrementaVeces() : void
+		//int numero = (int) this.flechitas.getValue();
+		//numero++;
+		this.veces++;
+		this.flechitas.setValue(this.veces);
+		//this.veces = numero;
+!!!148741.java!!!	getVeces() : int
+		return this.veces;
